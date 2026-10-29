@@ -1,0 +1,267 @@
+{
+  "frames": [
+    {
+      "duration": 83,
+      "filename": "cauldron-green_Bubble_South_00.png",
+      "frame": {
+        "h": 48,
+        "w": 48,
+        "x": 0,
+        "y": 0
+      },
+      "pixor": {
+        "action": "Bubble",
+        "degrees": 0.0,
+        "id": "9bf2104067eb593b",
+        "index": 0,
+        "pivot": {
+          "x": 24,
+          "y": 39
+        },
+        "side": "South",
+        "tag": "Bubble_South"
+      },
+      "rotated": false,
+      "sourceSize": {
+        "h": 48,
+        "w": 48
+      },
+      "spriteSourceSize": {
+        "h": 48,
+        "w": 48,
+        "x": 0,
+        "y": 0
+      },
+      "trimmed": false
+    },
+    {
+      "duration": 84,
+      "filename": "cauldron-green_Bubble_South_01.png",
+      "frame": {
+        "h": 48,
+        "w": 48,
+        "x": 48,
+        "y": 0
+      },
+      "pixor": {
+        "action": "Bubble",
+        "degrees": 0.0,
+        "id": "965b8e7da3f739b6",
+        "index": 1,
+        "pivot": {
+          "x": 24,
+          "y": 39
+        },
+        "side": "South",
+        "tag": "Bubble_South"
+      },
+      "rotated": false,
+      "sourceSize": {
+        "h": 48,
+        "w": 48
+      },
+      "spriteSourceSize": {
+        "h": 48,
+        "w": 48,
+        "x": 0,
+        "y": 0
+      },
+      "trimmed": false
+    },
+    {
+      "duration": 83,
+      "filename": "cauldron-green_Bubble_South_02.png",
+      "frame": {
+        "h": 48,
+        "w": 48,
+        "x": 96,
+        "y": 0
+      },
+      "pixor": {
+        "action": "Bubble",
+        "degrees": 0.0,
+        "id": "094422123b12edaa",
+        "index": 2,
+        "pivot": {
+          "x": 24,
+          "y": 39
+        },
+        "side": "South",
+        "tag": "Bubble_South"
+      },
+      "rotated": false,
+      "sourceSize": {
+        "h": 48,
+        "w": 48
+      },
+      "spriteSourceSize": {
+        "h": 48,
+        "w": 48,
+        "x": 0,
+        "y": 0
+      },
+      "trimmed": false
+    },
+    {
+      "duration": 83,
+      "filename": "cauldron-green_Bubble_South_03.png",
+      "frame": {
+        "h": 48,
+        "w": 48,
+        "x": 144,
+        "y": 0
+      },
+      "pixor": {
+        "action": "Bubble",
+        "degrees": 0.0,
+        "id": "34cefee97df2c4d9",
+        "index": 3,
+        "pivot": {
+          "x": 24,
+          "y": 39
+        },
+        "side": "South",
+        "tag": "Bubble_South"
+      },
+      "rotated": false,
+      "sourceSize": {
+        "h": 48,
+        "w": 48
+      },
+      "spriteSourceSize": {
+        "h": 48,
+        "w": 48,
+        "x": 0,
+        "y": 0
+      },
+      "trimmed": false
+    },
+    {
+      "duration": 84,
+      "filename": "cauldron-green_Bubble_South_04.png",
+      "frame": {
+        "h": 48,
+        "w": 48,
+        "x": 192,
+        "y": 0
+      },
+      "pixor": {
+        "action": "Bubble",
+        "degrees": 0.0,
+        "id": "30655c599d040309",
+        "index": 4,
+        "pivot": {
+          "x": 24,
+          "y": 39
+        },
+        "side": "South",
+        "tag": "Bubble_South"
+      },
+      "rotated": false,
+      "sourceSize": {
+        "h": 48,
+        "w": 48
+      },
+      "spriteSourceSize": {
+        "h": 48,
+        "w": 48,
+        "x": 0,
+        "y": 0
+      },
+      "trimmed": false
+    },
+    {
+      "duration": 83,
+      "filename": "cauldron-green_Bubble_South_05.png",
+      "frame": {
+        "h": 48,
+        "w": 48,
+        "x": 240,
+        "y": 0
+      },
+      "pixor": {
+        "action": "Bubble",
+        "degrees": 0.0,
+        "id": "5ddf9a4460d9b9dd",
+        "index": 5,
+        "pivot": {
+          "x": 24,
+          "y": 39
+        },
+        "side": "South",
+        "tag": "Bubble_South"
+      },
+      "rotated": false,
+      "sourceSize": {
+        "h": 48,
+        "w": 48
+      },
+      "spriteSourceSize": {
+        "h": 48,
+        "w": 48,
+        "x": 0,
+        "y": 0
+      },
+      "trimmed": false
+    }
+  ],
+  "meta": {
+    "app": "Pixor",
+    "format": "I8",
+    "frameTags": [
+      {
+        "color": "#000000ff",
+        "direction": "forward",
+        "from": 0,
+        "name": "Bubble_South",
+        "to": 5
+      }
+    ],
+    "image": "cauldron-green_48px_top-down_outline_lit.png",
+    "layers": [
+      {
+        "blendMode": "normal",
+        "name": "final",
+        "opacity": 255
+      }
+    ],
+    "pixor": {
+      "cell": {
+        "h": 48,
+        "w": 48
+      },
+      "emission": "s_emission.png",
+      "pivot": {
+        "x": 24,
+        "y": 39
+      }
+    },
+    "scale": "1",
+    "size": {
+      "h": 48,
+      "w": 288
+    },
+    "slices": [
+      {
+        "color": "#0000ffff",
+        "keys": [
+          {
+            "bounds": {
+              "h": 48,
+              "w": 48,
+              "x": 0,
+              "y": 0
+            },
+            "frame": 0,
+            "pivot": {
+              "x": 24,
+              "y": 39
+            }
+          }
+        ],
+        "name": "pivot"
+      }
+    ],
+    "version": "2.1.0"
+  }
+}

@@ -1,0 +1,267 @@
+{
+  "frames": [
+    {
+      "duration": 83,
+      "filename": "candle-holder-ivory_Flicker_South_00.png",
+      "frame": {
+        "h": 48,
+        "w": 48,
+        "x": 0,
+        "y": 0
+      },
+      "pixor": {
+        "action": "Flicker",
+        "degrees": 0.0,
+        "id": "397a0a43874d315f",
+        "index": 0,
+        "pivot": {
+          "x": 24,
+          "y": 39
+        },
+        "side": "South",
+        "tag": "Flicker_South"
+      },
+      "rotated": false,
+      "sourceSize": {
+        "h": 48,
+        "w": 48
+      },
+      "spriteSourceSize": {
+        "h": 48,
+        "w": 48,
+        "x": 0,
+        "y": 0
+      },
+      "trimmed": false
+    },
+    {
+      "duration": 84,
+      "filename": "candle-holder-ivory_Flicker_South_01.png",
+      "frame": {
+        "h": 48,
+        "w": 48,
+        "x": 48,
+        "y": 0
+      },
+      "pixor": {
+        "action": "Flicker",
+        "degrees": 0.0,
+        "id": "c71b5cf3c5f1df1a",
+        "index": 1,
+        "pivot": {
+          "x": 24,
+          "y": 39
+        },
+        "side": "South",
+        "tag": "Flicker_South"
+      },
+      "rotated": false,
+      "sourceSize": {
+        "h": 48,
+        "w": 48
+      },
+      "spriteSourceSize": {
+        "h": 48,
+        "w": 48,
+        "x": 0,
+        "y": 0
+      },
+      "trimmed": false
+    },
+    {
+      "duration": 83,
+      "filename": "candle-holder-ivory_Flicker_South_02.png",
+      "frame": {
+        "h": 48,
+        "w": 48,
+        "x": 96,
+        "y": 0
+      },
+      "pixor": {
+        "action": "Flicker",
+        "degrees": 0.0,
+        "id": "63f078d765f55e46",
+        "index": 2,
+        "pivot": {
+          "x": 24,
+          "y": 39
+        },
+        "side": "South",
+        "tag": "Flicker_South"
+      },
+      "rotated": false,
+      "sourceSize": {
+        "h": 48,
+        "w": 48
+      },
+      "spriteSourceSize": {
+        "h": 48,
+        "w": 48,
+        "x": 0,
+        "y": 0
+      },
+      "trimmed": false
+    },
+    {
+      "duration": 83,
+      "filename": "candle-holder-ivory_Flicker_South_03.png",
+      "frame": {
+        "h": 48,
+        "w": 48,
+        "x": 144,
+        "y": 0
+      },
+      "pixor": {
+        "action": "Flicker",
+        "degrees": 0.0,
+        "id": "ecdc8ceb7559027d",
+        "index": 3,
+        "pivot": {
+          "x": 24,
+          "y": 39
+        },
+        "side": "South",
+        "tag": "Flicker_South"
+      },
+      "rotated": false,
+      "sourceSize": {
+        "h": 48,
+        "w": 48
+      },
+      "spriteSourceSize": {
+        "h": 48,
+        "w": 48,
+        "x": 0,
+        "y": 0
+      },
+      "trimmed": false
+    },
+    {
+      "duration": 84,
+      "filename": "candle-holder-ivory_Flicker_South_04.png",
+      "frame": {
+        "h": 48,
+        "w": 48,
+        "x": 192,
+        "y": 0
+      },
+      "pixor": {
+        "action": "Flicker",
+        "degrees": 0.0,
+        "id": "7a3b13946d355375",
+        "index": 4,
+        "pivot": {
+          "x": 24,
+          "y": 39
+        },
+        "side": "South",
+        "tag": "Flicker_South"
+      },
+      "rotated": false,
+      "sourceSize": {
+        "h": 48,
+        "w": 48
+      },
+      "spriteSourceSize": {
+        "h": 48,
+        "w": 48,
+        "x": 0,
+        "y": 0
+      },
+      "trimmed": false
+    },
+    {
+      "duration": 83,
+      "filename": "candle-holder-ivory_Flicker_South_05.png",
+      "frame": {
+        "h": 48,
+        "w": 48,
+        "x": 240,
+        "y": 0
+      },
+      "pixor": {
+        "action": "Flicker",
+        "degrees": 0.0,
+        "id": "3da20a5ba5ac3f31",
+        "index": 5,
+        "pivot": {
+          "x": 24,
+          "y": 39
+        },
+        "side": "South",
+        "tag": "Flicker_South"
+      },
+      "rotated": false,
+      "sourceSize": {
+        "h": 48,
+        "w": 48
+      },
+      "spriteSourceSize": {
+        "h": 48,
+        "w": 48,
+        "x": 0,
+        "y": 0
+      },
+      "trimmed": false
+    }
+  ],
+  "meta": {
+    "app": "Pixor",
+    "format": "I8",
+    "frameTags": [
+      {
+        "color": "#000000ff",
+        "direction": "forward",
+        "from": 0,
+        "name": "Flicker_South",
+        "to": 5
+      }
+    ],
+    "image": "candle-holder-ivory_48px_scroller_outline_lit.png",
+    "layers": [
+      {
+        "blendMode": "normal",
+        "name": "final",
+        "opacity": 255
+      }
+    ],
+    "pixor": {
+      "cell": {
+        "h": 48,
+        "w": 48
+      },
+      "emission": "s_emission.png",
+      "pivot": {
+        "x": 24,
+        "y": 39
+      }
+    },
+    "scale": "1",
+    "size": {
+      "h": 48,
+      "w": 288
+    },
+    "slices": [
+      {
+        "color": "#0000ffff",
+        "keys": [
+          {
+            "bounds": {
+              "h": 48,
+              "w": 48,
+              "x": 0,
+              "y": 0
+            },
+            "frame": 0,
+            "pivot": {
+              "x": 24,
+              "y": 39
+            }
+          }
+        ],
+        "name": "pivot"
+      }
+    ],
+    "version": "2.1.0"
+  }
+}
