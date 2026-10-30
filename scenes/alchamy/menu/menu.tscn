@@ -5,6 +5,42 @@
 [ext_resource type="FontFile" uid="uid://bfcdqcxhc71mh" path="res://assets/auldmagick-font/AuldmagickItalic-0zEG.ttf" id="3_3t2em"]
 [ext_resource type="FontFile" uid="uid://dlsw8mfvu7hof" path="res://assets/fonts/Enchanted Land.otf" id="4_j51tj"]
 
+[sub_resource type="GDScript" id="GDScript_3t2em"]
+resource_name = "bg-canvas"
+script/source = "extends CanvasLayer
+
+@onready var main_canvas = $\"../main\"
+@onready var label = $Label
+func _unhandled_input(event: InputEvent) -> void:
+	if not ((event is InputEventKey) or (event is InputEventMouseButton) or (event is InputEventJoypadButton)): return
+	await get_tree().create_timer(0.15).timeout
+	layer = -50
+	label.visible = false
+	main_canvas.layer = 0
+	main_canvas.visible = true
+"
+
+[sub_resource type="LabelSettings" id="LabelSettings_tr8j5"]
+font = ExtResource("4_j51tj")
+font_size = 64
+outline_size = 16
+outline_color = Color(0, 0, 0, 1)
+shadow_size = 8
+shadow_color = Color(0, 0, 0, 1)
+
+[sub_resource type="GDScript" id="GDScript_8t61q"]
+resource_name = "start label"
+script/source = "extends Label
+
+func _ready():
+	var start_y := position.y
+	
+	var tween := create_tween().set_loops()
+	
+	tween.tween_property(self,\"position:y\",start_y-20.0,1.2).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN_OUT)
+	tween.tween_property(self,\"position:y\",start_y,1.2).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN_OUT)
+"
+
 [sub_resource type="LabelSettings" id="LabelSettings_nfrx5"]
 font = ExtResource("2_ugj43")
 font_size = 96
@@ -75,6 +111,31 @@ corner_radius_bottom_right = 64
 corner_radius_bottom_left = 64
 corner_detail = 1
 
+[sub_resource type="GDScript" id="GDScript_nfrx5"]
+resource_name = "start"
+script/source = "extends Button
+
+func _on_pressed() -> void:
+	get_tree().change_scene_to_file(\"res://scenes/game/game.tscn\")
+"
+
+[sub_resource type="GDScript" id="GDScript_ugj43"]
+resource_name = "settings"
+script/source = "extends Button
+
+
+
+func _on_pressed() -> void:
+	get_tree().change_scene_to_file(\"res://scenes/settings/settings.tscn\")
+"
+
+[sub_resource type="GDScript" id="GDScript_0hvcy"]
+resource_name = "help"
+script/source = "extends Button
+func _on_pressed() -> void:
+	get_tree().change_scene_to_file(\"res://scenes/help/help.tscn\")
+"
+
 [sub_resource type="LabelSettings" id="LabelSettings_0hvcy"]
 font = ExtResource("4_j51tj")
 font_size = 32
@@ -90,6 +151,7 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="canvas" type="CanvasLayer" parent="." unique_id=1869960745]
+script = SubResource("GDScript_3t2em")
 
 [node name="TextureRect" type="TextureRect" parent="canvas" unique_id=1316088535]
 anchors_preset = 15
@@ -99,15 +161,35 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("1_q3xdc")
 
-[node name="ColorRect" type="ColorRect" parent="canvas" unique_id=1446103355]
+[node name="Label" type="Label" parent="canvas" unique_id=1482698653]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -292.0
+offset_top = -102.0
+offset_right = 292.0
+offset_bottom = -27.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "How Goofy... Press any key to start"
+label_settings = SubResource("LabelSettings_tr8j5")
+horizontal_alignment = 1
+vertical_alignment = 1
+script = SubResource("GDScript_8t61q")
+
+[node name="main" type="CanvasLayer" parent="." unique_id=1270055810]
+layer = -2
+visible = false
+
+[node name="ColorRect" type="ColorRect" parent="main" unique_id=1446103355]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 0.5882353)
-
-[node name="main" type="CanvasLayer" parent="." unique_id=1270055810]
 
 [node name="title" type="Label" parent="main" unique_id=394948205]
 anchors_preset = 5
@@ -159,6 +241,10 @@ alignment = 1
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(0.9999992, 0.86437696, 0.4041677, 1)
 theme_override_constants/outline_size = 8
 theme_override_fonts/font = ExtResource("4_j51tj")
@@ -168,11 +254,16 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_lqyo6")
 theme_override_styles/hover = SubResource("StyleBoxFlat_3mduc")
 theme_override_styles/focus = SubResource("StyleBoxFlat_67pex")
 text = "START"
+script = SubResource("GDScript_nfrx5")
 
-[node name="start2" type="Button" parent="main/buttons" unique_id=1876586731]
+[node name="settings" type="Button" parent="main/buttons" unique_id=1876586731]
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(0.9999992, 0.86437696, 0.4041677, 1)
 theme_override_constants/outline_size = 8
 theme_override_fonts/font = ExtResource("4_j51tj")
@@ -182,11 +273,16 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_lqyo6")
 theme_override_styles/hover = SubResource("StyleBoxFlat_3mduc")
 theme_override_styles/focus = SubResource("StyleBoxFlat_67pex")
 text = "SETTINGS"
+script = SubResource("GDScript_ugj43")
 
 [node name="help" type="Button" parent="main/buttons" unique_id=1693899085]
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(0.9999992, 0.86437696, 0.4041677, 1)
 theme_override_constants/outline_size = 8
 theme_override_fonts/font = ExtResource("4_j51tj")
@@ -196,6 +292,7 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_lqyo6")
 theme_override_styles/hover = SubResource("StyleBoxFlat_3mduc")
 theme_override_styles/focus = SubResource("StyleBoxFlat_67pex")
 text = "HELP"
+script = SubResource("GDScript_0hvcy")
 
 [node name="credits" type="Label" parent="main" unique_id=1204355424]
 anchors_preset = 2
@@ -208,3 +305,7 @@ offset_bottom = -10.0
 grow_vertical = 0
 text = "Hazoro - AboEl5yr - Vii"
 label_settings = SubResource("LabelSettings_0hvcy")
+
+[connection signal="pressed" from="main/buttons/start" to="main/buttons/start" method="_on_pressed"]
+[connection signal="pressed" from="main/buttons/settings" to="main/buttons/settings" method="_on_pressed"]
+[connection signal="pressed" from="main/buttons/help" to="main/buttons/help" method="_on_pressed"]
