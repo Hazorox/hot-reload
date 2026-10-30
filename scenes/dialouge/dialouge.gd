@@ -6,6 +6,7 @@ extends Control
 @onready var textbox: RichTextLabel = $MarginContainer/MarginContainer/HBoxContainer/MarginContainer2/HBoxContainer/dialouge
 @onready var audio: AudioStreamPlayer = $AudioStreamPlayer
 @onready var speaker: Label = $name
+@onready var decorations: Array[Sprite2D] = [$"MarginContainer/3",$"MarginContainer/6", $"38", $"28"]
 signal finished
 var queue: Array = []
 var choices: Array = []
@@ -62,6 +63,8 @@ func _process(delta: float) -> void:
 func hide_box():
 	panel.hide()
 	sprite.hide()
+	for i in decorations:
+		i.hide()
 	start.text = ""
 	end.text = ""
 	textbox.text = ""
@@ -71,6 +74,8 @@ func hide_box():
 func show_box():
 	panel.show()
 	sprite.show()
+	for i in decorations:
+		i.show()
 	start.text = ""
 	
 func queue_text(talker: String, sprite_path: String, text: String, sound_path: String):

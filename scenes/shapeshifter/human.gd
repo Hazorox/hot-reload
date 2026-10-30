@@ -9,6 +9,9 @@ var jump_force : int = 250
 var heading : Vector2
 var player_state : String
 
+func _ready() -> void:
+	add_to_group("player")
+
 func _process(delta: float) -> void:
 	var direction := Input.get_vector("left", "right", "null", "null")
 	movement_speed_modifier(delta)

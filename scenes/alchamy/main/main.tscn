@@ -1,6 +1,7 @@
 [gd_scene format=4 uid="uid://e1ygh8tlcd7g"]
 
 [ext_resource type="Texture2D" uid="uid://mw3j1gmf0vwp" path="res://assets/The Fan-tasy Tileset (Free) 1.5.7/The Fan-tasy Tileset (Free)/Art/Ground Tileset/Tileset_Ground.png" id="1_fj6oy"]
+[ext_resource type="Script" uid="uid://bgmvdkiopwuvg" path="res://scenes/alchamy/main/main.gd" id="1_ymbda"]
 [ext_resource type="Texture2D" uid="uid://33vycbqravrq" path="res://assets/The Fan-tasy Tileset (Free) 1.5.7/The Fan-tasy Tileset (Free)/Art/Ground Tileset/Tileset_Road.png" id="2_mo1nl"]
 [ext_resource type="Texture2D" uid="uid://b704qkprdmls4" path="res://assets/Alchemy_Shop_Tiles/Alchemy_Shop_Tiles/PNG/alchemy_shop_floor_walls_32x32.png" id="3_pfpqp"]
 [ext_resource type="Texture2D" uid="uid://bgag1hy4aqm5r" path="res://assets/Alchemy_Shop_Tiles/Alchemy_Shop_Tiles/PNG/alchemy_shop_props_32x32.png" id="4_05fwc"]
@@ -8,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://4vvlb1gwn2j3" path="res://scenes/alchamy/ingredients/death.tscn" id="6_mo1nl"]
 [ext_resource type="PackedScene" uid="uid://bo5n531cafxd4" path="res://scenes/alchamy/ingredients/life.tscn" id="7_pfpqp"]
 [ext_resource type="PackedScene" uid="uid://cx8ny1p0t0rqp" path="res://scenes/alchamy/alchemist/alchemist.tscn" id="8_05fwc"]
+[ext_resource type="PackedScene" uid="uid://dnv8kl8nseyrj" path="res://scenes/shapeshifter/human.tscn" id="9_nixkr"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ymbda"]
 texture = ExtResource("1_fj6oy")
@@ -1010,6 +1012,7 @@ sources/1 = SubResource("TileSetAtlasSource_wsx2g")
 
 [node name="Main" type="Node2D" unique_id=271197293]
 scale = Vector2(1.9599993, 1.9599993)
+script = ExtResource("1_ymbda")
 
 [node name="Map" type="Node2D" parent="." unique_id=1717498564]
 
@@ -1053,3 +1056,7 @@ scale = Vector2(1.28, 1.28)
 
 [node name="alchemist" parent="." unique_id=273705664 instance=ExtResource("8_05fwc")]
 position = Vector2(303.57153, 122.44903)
+
+[node name="Human" parent="." unique_id=2071774316 instance=ExtResource("9_nixkr")]
+position = Vector2(223.97968, 146.42862)
+scale = Vector2(-1, 1)

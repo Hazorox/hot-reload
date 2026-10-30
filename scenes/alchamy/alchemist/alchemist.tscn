@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://cx8ny1p0t0rqp"]
 
 [ext_resource type="Texture2D" uid="uid://bsxl2qg51e025" path="res://assets/Witch's brew-spritesheet.png" id="1_xikbo"]
+[ext_resource type="Script" uid="uid://btdywlahbu8ed" path="res://scenes/alchamy/alchemist/alchemist.gd" id="1_yemy3"]
 [ext_resource type="Script" uid="uid://bywr3aod1ejxs" path="res://scenes/alchamy/alchemist/area_2d.gd" id="2_7px4v"]
 [ext_resource type="FontFile" uid="uid://56elsektb64g" path="res://assets/fonts/alchemy-font/Elemental-lg5B0.ttf" id="3_yemy3"]
 
@@ -111,6 +112,7 @@ height = 52.0
 radius = 38.052597
 
 [node name="alchemist" type="CharacterBody2D" unique_id=273705664]
+script = ExtResource("1_yemy3")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1648133386]
 sprite_frames = SubResource("SpriteFrames_s7wsd")
