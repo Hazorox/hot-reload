@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://bgag1hy4aqm5r" path="res://assets/Alchemy_Shop_Tiles/Alchemy_Shop_Tiles/PNG/alchemy_shop_props_32x32.png" id="4_05fwc"]
 [ext_resource type="Texture2D" uid="uid://bc7hjbcfodo2b" path="res://assets/The Fan-tasy Tileset (Free) 1.5.7/The Fan-tasy Tileset (Free)/Art/Trees and Bushes/Atlas/Trees_Bushes.png" id="5_nixkr"]
 [ext_resource type="PackedScene" uid="uid://4vvlb1gwn2j3" path="res://scenes/alchamy/ingredients/speed.tscn" id="6_mo1nl"]
+[ext_resource type="PackedScene" uid="uid://bo5n531cafxd4" path="res://scenes/alchamy/ingredients/slow.tscn" id="7_pfpqp"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ymbda"]
 texture = ExtResource("1_fj6oy")
@@ -1043,3 +1044,7 @@ tile_set = SubResource("TileSet_bhy14")
 [node name="Speed" parent="." unique_id=1798645364 instance=ExtResource("6_mo1nl")]
 position = Vector2(158, 232)
 scale = Vector2(0.47999573, 0.47999573)
+
+[node name="Slow" parent="." unique_id=62878046 instance=ExtResource("7_pfpqp")]
+position = Vector2(228, 237)
+scale = Vector2(1.28, 1.28)
