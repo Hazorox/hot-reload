@@ -17,6 +17,7 @@ config/icon="res://assets/icon.png"
 [autoload]
 
 Dialogue="*uid://d016lh8wqcp5y"
+Events="*uid://cpi1jhc2lpnlo"
 
 [display]
 

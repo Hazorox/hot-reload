@@ -1,6 +1,8 @@
 [gd_scene format=3 uid="uid://cx8ny1p0t0rqp"]
 
 [ext_resource type="Texture2D" uid="uid://bsxl2qg51e025" path="res://assets/Witch's brew-spritesheet.png" id="1_xikbo"]
+[ext_resource type="Script" uid="uid://bywr3aod1ejxs" path="res://scenes/alchamy/alchemist/area_2d.gd" id="2_7px4v"]
+[ext_resource type="FontFile" uid="uid://56elsektb64g" path="res://assets/fonts/alchemy-font/Elemental-lg5B0.ttf" id="3_yemy3"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_agtp0"]
 atlas = ExtResource("1_xikbo")
@@ -118,6 +120,19 @@ frame_progress = 0.55719346
 shape = SubResource("CapsuleShape2D_s7wsd")
 
 [node name="Area2D" type="Area2D" parent="." unique_id=856104274]
+script = ExtResource("2_7px4v")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1491402522]
 shape = SubResource("CircleShape2D_s7wsd")
+
+[node name="Label" type="Label" parent="." unique_id=263777475]
+offset_left = -36.0
+offset_top = -41.0
+offset_right = 36.0
+offset_bottom = -25.0
+theme_override_fonts/font = ExtResource("3_yemy3")
+theme_override_font_sizes/font_size = 11
+text = "E to Interact"
+
+[connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
+[connection signal="body_exited" from="Area2D" to="Area2D" method="_on_body_exited"]
