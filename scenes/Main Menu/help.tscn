@@ -1,0 +1,158 @@
+[gd_scene format=3 uid="uid://dnxd6oj83q5pb"]
+
+[ext_resource type="Texture2D" uid="uid://b57kg1l7m1ion" path="res://assets/pngs/tall.png" id="1_qnrxu"]
+[ext_resource type="FontFile" uid="uid://dlsw8mfvu7hof" path="res://assets/fonts/Enchanted Land.otf" id="2_5vp0l"]
+[ext_resource type="FontFile" uid="uid://dcnoxc2coa4sc" path="res://assets/pixelwarden/PixelWarden.ttf" id="3_4twnw"]
+[ext_resource type="Script" uid="uid://dbap0gqox0ty1" path="res://addons/markdownlabel/markdownlabel.gd" id="3_ombew"]
+[ext_resource type="Script" uid="uid://dcx7crs23nf4" path="res://addons/markdownlabel/header_formats/h1_format.gd" id="4_qewt7"]
+[ext_resource type="Script" uid="uid://d0sin64i4v3op" path="res://addons/markdownlabel/header_formats/h2_format.gd" id="5_mgp5l"]
+[ext_resource type="Script" uid="uid://dlok0dv1tq2bf" path="res://addons/markdownlabel/header_formats/h3_format.gd" id="6_08put"]
+[ext_resource type="Script" uid="uid://bayuh2vafablg" path="res://addons/markdownlabel/header_formats/h4_format.gd" id="7_2o0lf"]
+[ext_resource type="Script" uid="uid://dfr1w7u3jgni3" path="res://addons/markdownlabel/header_formats/h5_format.gd" id="8_gmhk4"]
+[ext_resource type="Script" uid="uid://bsi6dexoofpe6" path="res://addons/markdownlabel/header_formats/h6_format.gd" id="9_rgl68"]
+
+[sub_resource type="GDScript" id="GDScript_nfrx5"]
+resource_name = "scroll"
+script/source = "extends CanvasLayer
+@onready var stuff_to_animate = [$TextureRect,$text,$lore]
+const diff_y := 170.0
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	for node in stuff_to_animate:
+		node.position.y -= diff_y
+	var tween := create_tween().set_parallel(true)
+	for node in stuff_to_animate:
+		tween.tween_property(node,\"position:y\",node.position.y+diff_y,0.65).set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_LINEAR)
+
+func _input(event: InputEvent) -> void:
+	if event is InputEventMouseButton and event.pressed:
+		if not $TextureRect.get_global_rect().has_point(event.global_position):
+			var tween = create_tween().set_ease(Tween.EASE_IN).set_trans(Tween.TRANS_BACK).set_parallel(true)
+			for node in stuff_to_animate:
+				tween.tween_property(node,\"modulate:a\",0,0.5)
+			await tween.finished
+			queue_free()
+"
+
+[sub_resource type="Resource" id="Resource_s2ho8"]
+resource_local_to_scene = true
+script = ExtResource("4_qewt7")
+
+[sub_resource type="Resource" id="Resource_wkrfo"]
+resource_local_to_scene = true
+script = ExtResource("5_mgp5l")
+
+[sub_resource type="Resource" id="Resource_0jc6i"]
+resource_local_to_scene = true
+script = ExtResource("6_08put")
+
+[sub_resource type="Resource" id="Resource_k4ily"]
+resource_local_to_scene = true
+script = ExtResource("7_2o0lf")
+
+[sub_resource type="Resource" id="Resource_ra241"]
+resource_local_to_scene = true
+script = ExtResource("8_gmhk4")
+
+[sub_resource type="Resource" id="Resource_32nm5"]
+resource_local_to_scene = true
+script = ExtResource("9_rgl68")
+
+[sub_resource type="LabelSettings" id="LabelSettings_nfrx5"]
+font = ExtResource("3_4twnw")
+font_size = 64
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_0hvcy"]
+font = ExtResource("2_5vp0l")
+font_size = 32
+outline_size = 8
+outline_color = Color(0, 0, 0, 1)
+
+[node name="scroll" type="CanvasLayer" unique_id=1652518074]
+layer = 20
+script = SubResource("GDScript_nfrx5")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=516014104]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -360.0
+offset_top = -340.0
+offset_right = 340.0
+offset_bottom = 340.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_qnrxu")
+expand_mode = 1
+
+[node name="text" type="RichTextLabel" parent="." unique_id=42913355]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -240.0
+offset_top = -142.0
+offset_right = 224.0
+offset_bottom = 222.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_colors/selection_color = Color(0.101960786, 0.101960786, 1, 0)
+theme_override_fonts/normal_font = ExtResource("2_5vp0l")
+theme_override_font_sizes/normal_font_size = 32
+bbcode_enabled = true
+script = ExtResource("3_ombew")
+markdown_text = "## Setup :
+	You, an arrogant bastard, stumble upon a dwarf...
+	You make fun of their size. Little did you know 	about 
+	their powers.
+	powers. He is a magical alchemist that curses you!
+## Present :
+	You are set on a journey, through the jungles, to find an
+	alchemist that can set you free from the curse.
+## Gameplay:
+	You will fight monsters, do parkour ( hint: pogos exist! ), and more!!
+	You can change controls from the settings menu..
+## Creators
+	[Hazoro](https://github.com/hazorox), [Vii](https://github.com/vii-abdullatif), and [AboEl5yr](https://github.com/adhammohamedkhairy)
+	<3                                  <3																<3					<3
+
+"
+h1 = SubResource("Resource_s2ho8")
+h2 = SubResource("Resource_wkrfo")
+h3 = SubResource("Resource_0jc6i")
+h4 = SubResource("Resource_k4ily")
+h5 = SubResource("Resource_ra241")
+h6 = SubResource("Resource_32nm5")
+metadata/_custom_type_script = "uid://dbap0gqox0ty1"
+
+[node name="lore" type="Label" parent="." unique_id=2054969828]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -96.0
+offset_top = 159.0
+offset_right = 96.0
+offset_bottom = 223.0
+grow_horizontal = 2
+text = "LORE"
+label_settings = SubResource("LabelSettings_nfrx5")
+
+[node name="tip" type="Label" parent="." unique_id=1503529480]
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -328.0
+offset_top = -38.0
+grow_horizontal = 0
+grow_vertical = 0
+text = "Press anywhere outside the scroll to exit"
+label_settings = SubResource("LabelSettings_0hvcy")
+horizontal_alignment = 1
+vertical_alignment = 1
