@@ -1,9 +1,9 @@
 [gd_scene format=3 uid="uid://bgpob5ntcoils"]
 
-[ext_resource type="Texture2D" uid="uid://crmnub0l6h61p" path="res://assets/menu-bg.png" id="1_ins27"]
-[ext_resource type="FontFile" uid="uid://dlsw8mfvu7hof" path="res://assets/fonts/Enchanted Land.otf" id="2_xtxcf"]
-[ext_resource type="FontFile" uid="uid://56elsektb64g" path="res://assets/fonts/alchemy-font/Elemental-lg5B0.ttf" id="3_xg7mo"]
-[ext_resource type="FontFile" uid="uid://bfcdqcxhc71mh" path="res://assets/auldmagick-font/AuldmagickItalic-0zEG.ttf" id="4_2b2bm"]
+[ext_resource type="Texture2D" uid="uid://crmnub0l6h61p" path="res://assets/menu-bg.png" id="1_6iq4q"]
+[ext_resource type="FontFile" uid="uid://dlsw8mfvu7hof" path="res://assets/fonts/Enchanted Land.otf" id="2_d8kk8"]
+[ext_resource type="FontFile" uid="uid://56elsektb64g" path="res://assets/fonts/alchemy-font/Elemental-lg5B0.ttf" id="3_dan2o"]
+[ext_resource type="FontFile" uid="uid://bfcdqcxhc71mh" path="res://assets/auldmagick-font/AuldmagickItalic-0zEG.ttf" id="4_w68gl"]
 
 [sub_resource type="GDScript" id="GDScript_3t2em"]
 resource_name = "bg-canvas"
@@ -21,7 +21,7 @@ func _unhandled_input(event: InputEvent) -> void:
 "
 
 [sub_resource type="LabelSettings" id="LabelSettings_tr8j5"]
-font = ExtResource("2_xtxcf")
+font = ExtResource("2_d8kk8")
 font_size = 64
 outline_size = 16
 outline_color = Color(0, 0, 0, 1)
@@ -41,8 +41,22 @@ func _ready():
 	tween.tween_property(self,\"position:y\",start_y,1.2).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN_OUT)
 "
 
+[sub_resource type="GDScript" id="GDScript_a0du7"]
+resource_name = "main"
+script/source = "extends CanvasLayer
+
+@onready var start_btn = $buttons/start
+
+func _input(event):
+	if get_viewport().gui_get_focus_owner() != null:
+		return
+	if event.is_action_pressed(\"up\") or event.is_action_pressed(\"down\") or event.is_action_pressed(\"left\") or event.is_action_pressed(\"right\"):
+		start_btn.grab_focus()
+		get_viewport().set_input_as_handled()
+"
+
 [sub_resource type="LabelSettings" id="LabelSettings_nfrx5"]
-font = ExtResource("3_xg7mo")
+font = ExtResource("3_dan2o")
 font_size = 96
 outline_size = 24
 outline_color = Color(0, 0, 0, 1)
@@ -51,7 +65,7 @@ shadow_color = Color(0, 0, 0, 1)
 shadow_offset = Vector2(-5, 1)
 
 [sub_resource type="LabelSettings" id="LabelSettings_ugj43"]
-font = ExtResource("4_2b2bm")
+font = ExtResource("4_w68gl")
 font_size = 64
 outline_size = 16
 outline_color = Color(0, 0, 0, 1)
@@ -137,7 +151,7 @@ func _on_pressed() -> void:
 "
 
 [sub_resource type="LabelSettings" id="LabelSettings_0hvcy"]
-font = ExtResource("2_xtxcf")
+font = ExtResource("2_d8kk8")
 font_size = 32
 outline_size = 8
 outline_color = Color(0, 0, 0, 1)
@@ -159,7 +173,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("1_ins27")
+texture = ExtResource("1_6iq4q")
 
 [node name="Label" type="Label" parent="canvas" unique_id=1482698653]
 anchors_preset = 7
@@ -182,6 +196,7 @@ script = SubResource("GDScript_8t61q")
 [node name="main" type="CanvasLayer" parent="." unique_id=1270055810]
 layer = -2
 visible = false
+script = SubResource("GDScript_a0du7")
 
 [node name="ColorRect" type="ColorRect" parent="main" unique_id=1446103355]
 anchors_preset = 15
@@ -240,6 +255,8 @@ alignment = 1
 [node name="start" type="Button" parent="main/buttons" unique_id=1126223786]
 layout_mode = 2
 size_flags_vertical = 3
+focus_neighbor_top = NodePath("../help")
+focus_neighbor_bottom = NodePath("../settings")
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
 theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
@@ -247,7 +264,7 @@ theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
 theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(0.9999992, 0.86437696, 0.4041677, 1)
 theme_override_constants/outline_size = 8
-theme_override_fonts/font = ExtResource("2_xtxcf")
+theme_override_fonts/font = ExtResource("2_d8kk8")
 theme_override_font_sizes/font_size = 64
 theme_override_styles/normal = SubResource("StyleBoxFlat_3t2em")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_lqyo6")
@@ -259,6 +276,8 @@ script = SubResource("GDScript_nfrx5")
 [node name="settings" type="Button" parent="main/buttons" unique_id=1876586731]
 layout_mode = 2
 size_flags_vertical = 3
+focus_neighbor_top = NodePath("../start")
+focus_neighbor_bottom = NodePath("../help")
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
 theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
@@ -266,7 +285,7 @@ theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
 theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(0.9999992, 0.86437696, 0.4041677, 1)
 theme_override_constants/outline_size = 8
-theme_override_fonts/font = ExtResource("2_xtxcf")
+theme_override_fonts/font = ExtResource("2_d8kk8")
 theme_override_font_sizes/font_size = 64
 theme_override_styles/normal = SubResource("StyleBoxFlat_3t2em")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_lqyo6")
@@ -278,6 +297,8 @@ script = SubResource("GDScript_ugj43")
 [node name="help" type="Button" parent="main/buttons" unique_id=1693899085]
 layout_mode = 2
 size_flags_vertical = 3
+focus_neighbor_top = NodePath("../settings")
+focus_neighbor_bottom = NodePath("../start")
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
 theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
@@ -285,7 +306,7 @@ theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
 theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(0.9999992, 0.86437696, 0.4041677, 1)
 theme_override_constants/outline_size = 8
-theme_override_fonts/font = ExtResource("2_xtxcf")
+theme_override_fonts/font = ExtResource("2_d8kk8")
 theme_override_font_sizes/font_size = 64
 theme_override_styles/normal = SubResource("StyleBoxFlat_3t2em")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_lqyo6")
