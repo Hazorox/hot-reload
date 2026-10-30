@@ -25,9 +25,6 @@ func _ready() -> void:
 	hide_box()
 	print("ready")
 	process_mode = Node.PROCESS_MODE_ALWAYS
-	queue_text("random flower", "res://assets/dialogue-images/player(mby).png", "I wanna die rn fr fr fr fr fr fr f rf rf rf rf rf rfrfr fr", "res://assets/sound_beeps/freesound_community-bllrr-text-loop-82399.mp3")
-	queue_choices("random flower", "res://assets/dialogue-images/player(mby).png", ["study","suicide", "manslaughter"])
-	queue_text("other random flower", "res://assets/dialogue-images/alchemist.png", "I wanna die rn fr fr fr fr fr fr f rf rf rf rf rf rfrfr fr", "res://assets/sound_beeps/susie_s_dialogue.wav")
 	audio.finished.connect(func():
 		if current == state.read:
 			audio.play()

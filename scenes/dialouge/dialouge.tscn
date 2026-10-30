@@ -17,6 +17,7 @@ border_width_bottom = 10
 border_color = Color(1, 1, 1, 1)
 
 [node name="Control" type="Control" unique_id=1780912664]
+z_index = 1000
 layout_mode = 3
 anchors_preset = 12
 anchor_top = 1.0
