@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://e1ygh8tlcd7g"]
+
+[node name="Main" type="Node2D" unique_id=271197293]
+
+[node name="Map" type="Node2D" parent="." unique_id=1717498564]
+
+[node name="AlchemyShop" type="Node2D" parent="Map" unique_id=777399487]
+
+[node name="Forest" type="Node2D" parent="Map" unique_id=1990013819]
