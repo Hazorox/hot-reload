@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://bc7hjbcfodo2b" path="res://assets/The Fan-tasy Tileset (Free) 1.5.7/The Fan-tasy Tileset (Free)/Art/Trees and Bushes/Atlas/Trees_Bushes.png" id="5_nixkr"]
 [ext_resource type="PackedScene" uid="uid://4vvlb1gwn2j3" path="res://scenes/alchamy/ingredients/death.tscn" id="6_mo1nl"]
 [ext_resource type="PackedScene" uid="uid://bo5n531cafxd4" path="res://scenes/alchamy/ingredients/life.tscn" id="7_pfpqp"]
+[ext_resource type="PackedScene" uid="uid://cx8ny1p0t0rqp" path="res://scenes/alchamy/alchemist/alchemist.tscn" id="8_05fwc"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ymbda"]
 texture = ExtResource("1_fj6oy")
@@ -1049,3 +1050,6 @@ scale = Vector2(0.47999573, 0.47999573)
 [node name="life" parent="." unique_id=62878046 instance=ExtResource("7_pfpqp")]
 position = Vector2(90, 179)
 scale = Vector2(1.28, 1.28)
+
+[node name="alchemist" parent="." unique_id=273705664 instance=ExtResource("8_05fwc")]
+position = Vector2(303.57153, 122.44903)
