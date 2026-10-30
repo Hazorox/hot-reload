@@ -1,0 +1,141 @@
+[gd_scene format=3 uid="uid://d016lh8wqcp5y"]
+
+[ext_resource type="Script" uid="uid://56cmskwauwvf" path="res://scenes/dialouge/dialouge.gd" id="1_ewt3s"]
+[ext_resource type="FontFile" uid="uid://dcnoxc2coa4sc" path="res://assets/pixelwarden/PixelWarden.ttf" id="1_neku5"]
+[ext_resource type="Texture2D" uid="uid://b1ue6eh7ivqer" path="res://assets/alchhemy pack/alchhemy pack/3.png" id="2_f846i"]
+[ext_resource type="FontFile" uid="uid://b43u6vad8turf" path="res://assets/alchhemy pack/potionmaster-font/Potionmaster-L3P55.ttf" id="3_6kjf5"]
+[ext_resource type="Texture2D" uid="uid://dnpq8p4881ovw" path="res://assets/alchhemy pack/alchhemy pack/6.png" id="3_ixbxx"]
+[ext_resource type="Texture2D" uid="uid://cnkg1e6upvy5p" path="res://assets/Alchemy Herbs Vector Icons/PNG/shadow/38.png" id="6_18unr"]
+[ext_resource type="Texture2D" uid="uid://b8yivwjnwhk71" path="res://assets/Alchemy Herbs Vector Icons/PNG/shadow/28.png" id="7_3ffe0"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_s7rlf"]
+bg_color = Color(0.11764706, 0.3019608, 0.31764707, 1)
+border_width_left = 10
+border_width_top = 10
+border_width_right = 10
+border_width_bottom = 10
+border_color = Color(1, 1, 1, 1)
+
+[node name="Control" type="Control" unique_id=1780912664]
+layout_mode = 3
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -261.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource("1_ewt3s")
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=1663831419]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -4.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_top = 1
+theme_override_constants/margin_right = 15
+theme_override_constants/margin_bottom = 15
+
+[node name="Panel" type="Panel" parent="MarginContainer" unique_id=1786768735]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_s7rlf")
+
+[node name="3" type="Sprite2D" parent="MarginContainer" unique_id=1276155193]
+position = Vector2(1109, 158.99991)
+rotation = 0.5670937
+scale = Vector2(3.84375, 3.84375)
+texture = ExtResource("2_f846i")
+
+[node name="6" type="Sprite2D" parent="MarginContainer" unique_id=2136532327]
+position = Vector2(629, 219)
+rotation = -0.3035438
+scale = Vector2(5.15625, 5.15625)
+texture = ExtResource("3_ixbxx")
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer" unique_id=347472030]
+layout_mode = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/MarginContainer" unique_id=386464327]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/MarginContainer/HBoxContainer" unique_id=1516378699]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 4.2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="Sprite2D" type="Sprite2D" parent="MarginContainer/MarginContainer/HBoxContainer/MarginContainer" unique_id=864341068]
+position = Vector2(100, 100)
+
+[node name="MarginContainer2" type="MarginContainer" parent="MarginContainer/MarginContainer/HBoxContainer" unique_id=1196699815]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 20.0
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/MarginContainer/HBoxContainer/MarginContainer2" unique_id=579839278]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="Start" type="Label" parent="MarginContainer/MarginContainer/HBoxContainer/MarginContainer2/HBoxContainer" unique_id=1617852343]
+z_index = 3
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_fonts/font = ExtResource("1_neku5")
+theme_override_font_sizes/font_size = 48
+text = "*"
+
+[node name="dialouge" type="RichTextLabel" parent="MarginContainer/MarginContainer/HBoxContainer/MarginContainer2/HBoxContainer" unique_id=235926940]
+z_index = 3
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_fonts/normal_font = ExtResource("1_neku5")
+theme_override_font_sizes/normal_font_size = 56
+text = "Placeholder"
+
+[node name="End" type="Label" parent="MarginContainer/MarginContainer/HBoxContainer/MarginContainer2/HBoxContainer" unique_id=968761282]
+z_index = 3
+layout_mode = 2
+size_flags_vertical = 8
+theme_override_fonts/font = ExtResource("1_neku5")
+theme_override_font_sizes/font_size = 48
+text = "v"
+
+[node name="name" type="Label" parent="." unique_id=1905061257]
+layout_mode = 0
+offset_left = 28.0
+offset_top = -60.0
+offset_right = 1263.0
+offset_bottom = -18.0
+theme_override_colors/font_color = Color(0, 0.10980392, 0.19607843, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 7
+theme_override_fonts/font = ExtResource("3_6kjf5")
+theme_override_font_sizes/font_size = 72
+text = "Lagraunge"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=963565901]
+
+[node name="38" type="Sprite2D" parent="." unique_id=1964098052]
+position = Vector2(1192, -27)
+texture = ExtResource("6_18unr")
+
+[node name="28" type="Sprite2D" parent="." unique_id=1577131151]
+position = Vector2(71, 189)
+texture = ExtResource("7_3ffe0")
