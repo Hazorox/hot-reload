@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://4vvlb1gwn2j3"]
+
+[ext_resource type="Texture2D" uid="uid://bskbrem4m4j3c" path="res://assets/Alchemy Herbs Vector Icons/PNG/shadow/1.png" id="1_yngfo"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_s7rlf"]
+radius = 42.426407
+
+[node name="Speed" type="CharacterBody2D" unique_id=1798645364]
+
+[node name="1" type="Sprite2D" parent="." unique_id=1889953927]
+scale = Vector2(0.17578125, 0.17578125)
+texture = ExtResource("1_yngfo")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=353933179]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=369000382]
+shape = SubResource("CircleShape2D_s7rlf")
