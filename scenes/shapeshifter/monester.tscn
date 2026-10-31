@@ -5,6 +5,10 @@
 [ext_resource type="Texture2D" uid="uid://c8y78gg2ch7cu" path="res://assets/Vii/Monsters_Creatures_Fantasy/Monsters_Creatures_Fantasy/Flying eye/Take Hit.png" id="3_k6s3a"]
 [ext_resource type="Texture2D" uid="uid://bynvpht3q48nd" path="res://assets/Vii/Monsters_Creatures_Fantasy/Monsters_Creatures_Fantasy/Flying eye/Flight.png" id="4_gshhu"]
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_ai0g8"]
+atlas = ExtResource("2_ai0g8")
+region = Rect2(450, 0, 150, 150)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_qjrw4"]
 atlas = ExtResource("2_ai0g8")
 region = Rect2(0, 0, 150, 150)
@@ -69,6 +73,14 @@ region = Rect2(1050, 0, 150, 150)
 animations = [{
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_ai0g8")
+}],
+"loop": 1,
+"name": &"died",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_qjrw4")
 }, {
 "duration": 1.0,
@@ -90,7 +102,7 @@ animations = [{
 "texture": SubResource("AtlasTexture_vabn7")
 }],
 "loop": 0,
-"name": &"death",
+"name": &"dying",
 "speed": 9.0
 }, {
 "frames": [{
@@ -123,8 +135,10 @@ animations = [{
 "speed": 18.0
 }]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_ad8vj"]
-radius = 15.297058
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_onkbk"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_kaadr"]
+radius = 12.0
 
 [node name="FlyingMonster" type="CharacterBody2D" unique_id=1090826913]
 script = ExtResource("1_wfain")
@@ -132,16 +146,16 @@ script = ExtResource("1_wfain")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=975527515]
 position = Vector2(0, -26)
 sprite_frames = SubResource("SpriteFrames_onkbk")
-animation = &"flying"
+animation = &"died"
 autoplay = "flying"
+frame_progress = 0.947607
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=89659673]
-position = Vector2(0, -22)
-shape = SubResource("CircleShape2D_ad8vj")
-
-[node name="Area2D" type="Area2D" parent="." unique_id=865543686]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1349896866]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1853667634]
+visible = false
+position = Vector2(3, -23)
+shape = SubResource("RectangleShape2D_onkbk")
+disabled = true
+debug_color = Color(0.07663252, 0.6496034, 0, 0.41960785)
 
 [node name="LeftRay" type="RayCast2D" parent="." unique_id=563847324]
 position = Vector2(-19, -22)
@@ -152,3 +166,9 @@ target_position = Vector2(0, 5)
 position = Vector2(25, -22)
 rotation = 4.712389
 target_position = Vector2(0, 5)
+
+[node name="Area2D" type="Area2D" parent="." unique_id=865543686 groups=["monster"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1349896866]
+position = Vector2(5, -24)
+shape = SubResource("CircleShape2D_kaadr")

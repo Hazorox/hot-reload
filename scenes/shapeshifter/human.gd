@@ -5,14 +5,16 @@ const PLAYER_WITH_STICK = preload("uid://b4a77y88btrlt")
 
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 @onready var sprite_2d: Sprite2D = $Sprite2D
-@onready var collision_shape_2d: CollisionShape2D = $Area2D/CollisionShape2D
-@onready var area_2d: Area2D = $Area2D
+@onready var collision_shape_2d: CollisionShape2D = $SideAttack/CollisionShape2D
+@onready var side_attack_area: Area2D = $SideAttack
+@onready var DoubleJump: Area2D = $DoubleJump
+@onready var double_jump_shape: CollisionShape2D = $DoubleJump/CollisionShape2D
 
 @export var player_has_stick : bool = false
 
 var speed : float = 0.0
 var speed_rate := 500
-var jump_force : int = 450
+var jump_force : int = 750
 var heading : Vector2
 var player_state : String
 var gravity : float = 980
@@ -27,7 +29,6 @@ func _process(delta: float) -> void:
 	if not is_player_attacking:
 		collision_shape_2d.disabled = true
 		movement_speed_modifier(delta)
-		handling_player_jump(delta)
 	else:
 		velocity.x = 0
 		collision_shape_2d.disabled = false
@@ -77,16 +78,27 @@ func movement_speed_modifier(delta: float) -> void:
 func handling_player_jump(delta: float) -> void:
 	if not is_on_floor():
 		velocity.y += gravity * delta
-	elif Input.is_action_just_pressed("jump") and is_on_floor():
-		velocity.y = -jump_force
+	if Input.is_action_just_pressed("jump"):
+		if is_on_floor():
+			velocity.y = -jump_force
+		else:
+			var damaged_monster = false
+			for area in DoubleJump.get_overlapping_areas():
+				if area.is_in_group("monster"):
+					damaged_monster = true
+					if area.owner and area.owner.has_method("take_damage"):
+						area.owner.take_damage()
+					break
+			if damaged_monster:
+				velocity.y = -jump_force * 1
 
 func flip_animation() -> void:
 	if heading == Vector2.RIGHT:
 		sprite_2d.flip_h = true
-		area_2d.scale.x = -1
+		side_attack_area.scale.x = -1
 	if heading == Vector2.LEFT:
 		sprite_2d.flip_h = false
-		area_2d.scale.x = 1
+		side_attack_area.scale.x = 1
 
 func set_player_state() -> void:
 	if Input.is_action_just_pressed("attack") and player_has_stick and is_on_floor():

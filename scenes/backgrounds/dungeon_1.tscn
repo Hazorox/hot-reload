@@ -1542,16 +1542,17 @@ position = Vector2(524, 676)
 shape = SubResource("RectangleShape2D_vyk6n")
 
 [node name="StaticBody2D3" type="StaticBody2D" parent="." unique_id=180658422]
-position = Vector2(222, -283)
+position = Vector2(498, -281)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D3" unique_id=1119319898]
 position = Vector2(524, 676)
 shape = SubResource("RectangleShape2D_vyk6n")
 
 [node name="Human" parent="." unique_id=2071774316 instance=ExtResource("7_k536t")]
-position = Vector2(261, 657)
+position = Vector2(486, 218)
 scale = Vector2(3, 3)
 player_has_stick = true
 
 [node name="FlyingMonster" parent="." unique_id=1090826913 instance=ExtResource("9_812e3")]
-position = Vector2(593, 411)
+position = Vector2(749, 439)
+scale = Vector2(2, 2)
