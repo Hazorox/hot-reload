@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://c8ahforppc0ka"]
+
+[ext_resource type="Script" uid="uid://dj5btfljafbe3" path="res://scenes/test_stuff/test_player.gd" id="1_rwj60"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_nfrx5"]
+radius = 20.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_nfrx5"]
+
+[node name="TestPlayer" type="CharacterBody2D" unique_id=1636318335 groups=["player"]]
+script = ExtResource("1_rwj60")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1029895648]
+shape = SubResource("CircleShape2D_nfrx5")
+debug_color = Color(0.99692196, 0, 0.18626031, 0.41960785)
+
+[node name="attack" type="Area2D" parent="." unique_id=692384498]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="attack" unique_id=1895799741]
+shape = SubResource("CapsuleShape2D_nfrx5")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=245961613]
+limit_left = 0
+limit_top = 0
+limit_bottom = 720
