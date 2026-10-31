@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://shxg885fj6i1"]
+
+[ext_resource type="Texture2D" uid="uid://cylgr42c7n2ok" path="res://assets/Vii/GandalfHardcore FREE Warrior/GandalfHardcore Warrior.png" id="1_2ndlp"]
+
+[node name="Boss" type="CharacterBody2D" unique_id=105943920]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=2137938991]
+position = Vector2(0, -32)
+texture = ExtResource("1_2ndlp")
+hframes = 10
+vframes = 17
