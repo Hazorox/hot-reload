@@ -6,6 +6,8 @@
 [ext_resource type="Script" uid="uid://d0cxk4igv0wm5" path="res://scenes/Main Menu/control_change.gd" id="4_6eabd"]
 [ext_resource type="Script" uid="uid://bwkb0a8wcfpl8" path="res://scenes/Main Menu/fullscreen.gd" id="5_t30n4"]
 [ext_resource type="Script" uid="uid://cymjpeov4p00h" path="res://scenes/Main Menu/audio.gd" id="6_1elg5"]
+[ext_resource type="Script" uid="uid://bdsgqdhnoavl" path="res://scenes/Main Menu/back.gd" id="7_fgfdp"]
+[ext_resource type="Script" uid="uid://c2mbuudc2nhfh" path="res://scenes/Main Menu/main_menu.gd" id="8_6eabd"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_8tkh1"]
 atlas = ExtResource("1_vttr7")
@@ -449,5 +451,36 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_0cvp5")
 text = "ON"
 script = ExtResource("6_1elg5")
 
+[node name="back" type="Button" parent="." unique_id=219897085]
+layout_mode = 0
+offset_left = 339.0
+offset_top = 441.0
+offset_right = 566.0
+offset_bottom = 535.0
+theme_override_fonts/font = ExtResource("3_fgfdp")
+theme_override_font_sizes/font_size = 72
+theme_override_styles/normal = SubResource("StyleBoxFlat_s7wsd")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_s7rlf")
+theme_override_styles/hover = SubResource("StyleBoxFlat_0cvp5")
+text = "Back"
+script = ExtResource("7_fgfdp")
+
+[node name="main menu" type="Button" parent="." unique_id=1507999496]
+layout_mode = 0
+offset_left = 47.0
+offset_top = 447.0
+offset_right = 295.0
+offset_bottom = 541.0
+theme_override_fonts/font = ExtResource("3_fgfdp")
+theme_override_font_sizes/font_size = 72
+theme_override_styles/normal = SubResource("StyleBoxFlat_s7wsd")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_s7rlf")
+theme_override_styles/hover = SubResource("StyleBoxFlat_0cvp5")
+text = "Main Menu"
+script = ExtResource("8_6eabd")
+
 [connection signal="pressed" from="Control8/fullscreen" to="Control8/fullscreen" method="_on_pressed"]
 [connection signal="pressed" from="Control9/audio" to="Control9/audio" method="_on_pressed"]
+[connection signal="pressed" from="back" to="Control/left" method="_on_back_pressed"]
+[connection signal="pressed" from="back" to="back" method="_on_pressed"]
+[connection signal="pressed" from="main menu" to="main menu" method="_on_pressed"]
