@@ -85,6 +85,7 @@ func movement_speed_modifier(delta: float) -> void:
 func handling_player_jump(delta: float) -> void:
 	if not is_on_floor():
 		velocity.y += gravity * delta
+		
 	if Input.is_action_just_pressed("jump"):
 		if is_on_floor():
 			velocity.y = -jump_force
@@ -98,6 +99,11 @@ func handling_player_jump(delta: float) -> void:
 					break
 			if damaged_monster:
 				velocity.y = -jump_force * 1
+
+	# --- Jump Cut Mechanism ---
+	# If the player releases the jump button while still moving upwards, cut their upward velocity
+	if Input.is_action_just_released("jump") and velocity.y < 0:
+		velocity.y *= 0.5 # Adjust 0.5 (e.g., 0.3 to 0.6) to change how quickly the jump cuts
 
 func flip_animation() -> void:
 	if heading == Vector2.RIGHT:
