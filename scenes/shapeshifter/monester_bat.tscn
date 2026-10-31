@@ -120,6 +120,9 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_kaadr"]
 radius = 12.0
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ad8vj"]
+size = Vector2(22, 11)
+
 [node name="FlyingMonster" type="CharacterBody2D" unique_id=1090826913]
 script = ExtResource("1_66ddj")
 
@@ -153,3 +156,9 @@ target_position = Vector2(0, 5)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1349896866]
 position = Vector2(5, -24)
 shape = SubResource("CircleShape2D_kaadr")
+
+[node name="BouncingArea" type="Area2D" parent="." unique_id=632075685 groups=["bouncing"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BouncingArea" unique_id=1559035860]
+position = Vector2(34, -14)
+shape = SubResource("RectangleShape2D_ad8vj")
