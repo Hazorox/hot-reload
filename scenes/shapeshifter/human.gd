@@ -19,6 +19,8 @@ var heading : Vector2
 var player_state : String
 var gravity : float = 980
 var is_player_attacking : bool = false
+var is_bouncing_h : bool = false
+var bounce_timer : float = 0.0
 
 func _ready() -> void:
 	add_to_group("player")
@@ -26,13 +28,18 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	handle_player_items()
 	var direction := Input.get_vector("left", "right", "null", "null")
-	if not is_player_attacking:
-		collision_shape_2d.disabled = true
-		movement_speed_modifier(delta)
+	if is_bouncing_h:
+		bounce_timer -= delta
+		if bounce_timer <= 0:
+			is_bouncing_h = false
 	else:
-		velocity.x = 0
-		collision_shape_2d.disabled = false
-	velocity.x = direction.x * speed
+		if not is_player_attacking:
+			collision_shape_2d.disabled = true
+			movement_speed_modifier(delta)
+		else:
+			speed = 0
+			collision_shape_2d.disabled = false
+		velocity.x = direction.x * speed
 	if not is_player_attacking:
 		handling_player_jump(delta)
 	flip_animation()
@@ -78,6 +85,7 @@ func movement_speed_modifier(delta: float) -> void:
 func handling_player_jump(delta: float) -> void:
 	if not is_on_floor():
 		velocity.y += gravity * delta
+		
 	if Input.is_action_just_pressed("jump"):
 		if is_on_floor():
 			velocity.y = -jump_force
@@ -91,6 +99,11 @@ func handling_player_jump(delta: float) -> void:
 					break
 			if damaged_monster:
 				velocity.y = -jump_force * 1
+
+	# --- Jump Cut Mechanism ---
+	# If the player releases the jump button while still moving upwards, cut their upward velocity
+	if Input.is_action_just_released("jump") and velocity.y < 0:
+		velocity.y *= 0.5 # Adjust 0.5 (e.g., 0.3 to 0.6) to change how quickly the jump cuts
 
 func flip_animation() -> void:
 	if heading == Vector2.RIGHT:
@@ -135,3 +148,12 @@ func _on_animation_player_animation_finished(anim_name: StringName) -> void:
 	if anim_name == "attacking":
 		is_player_attacking = false
 		player_state = "player_idle"
+
+func _on_area_2d_area_entered(area: Area2D) -> void:
+	if area.is_in_group("bouncing"):
+		var bounce_direction = sign(global_position.x - area.global_position.x)
+		if bounce_direction == 0:
+			bounce_direction = 1
+		velocity.x = bounce_direction * 500.0
+		is_bouncing_h = true
+		bounce_timer = 0.2
