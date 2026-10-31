@@ -11,10 +11,10 @@ const PLAYER_WITH_STICK = preload("uid://b4a77y88btrlt")
 @onready var double_jump_shape: CollisionShape2D = $DoubleJump/CollisionShape2D
 
 @export var player_has_stick : bool = false
-
-var speed : float = 500.0
+@export var is_heavy:bool = false
+var speed : float = 0.0
 var speed_rate := 500
-var jump_force : int = 750
+var jump_force : int = 700 # I changed init value Vii added
 var heading : Vector2
 var player_state : String
 var gravity : float = 980

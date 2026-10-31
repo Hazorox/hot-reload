@@ -204,5 +204,10 @@ libraries/ = SubResource("AnimationLibrary_w75iq")
 position = Vector2(-1, -22)
 shape = SubResource("CapsuleShape2D_onkbk")
 
+[node name="Camera2D" type="Camera2D" parent="." unique_id=363290635]
+limit_left = 0
+limit_top = 0
+limit_bottom = 720
+
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
