@@ -1,0 +1,453 @@
+[gd_scene format=3 uid="uid://bjsplafh0wt4f"]
+
+[ext_resource type="Texture2D" uid="uid://wb0rfyo0vg5l" path="res://assets/controls.png" id="1_vttr7"]
+[ext_resource type="FontFile" uid="uid://dcnoxc2coa4sc" path="res://assets/pixelwarden/PixelWarden.ttf" id="2_1elg5"]
+[ext_resource type="FontFile" uid="uid://dlsw8mfvu7hof" path="res://assets/fonts/Enchanted Land.otf" id="3_fgfdp"]
+[ext_resource type="Script" uid="uid://d0cxk4igv0wm5" path="res://scenes/Main Menu/control_change.gd" id="4_6eabd"]
+[ext_resource type="Script" uid="uid://bwkb0a8wcfpl8" path="res://scenes/Main Menu/fullscreen.gd" id="5_t30n4"]
+[ext_resource type="Script" uid="uid://cymjpeov4p00h" path="res://scenes/Main Menu/audio.gd" id="6_1elg5"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8tkh1"]
+atlas = ExtResource("1_vttr7")
+region = Rect2(0, 0, 80, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_prh7v"]
+atlas = ExtResource("1_vttr7")
+region = Rect2(80, 0, 80, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yvpam"]
+atlas = ExtResource("1_vttr7")
+region = Rect2(160, 0, 80, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4ls8l"]
+atlas = ExtResource("1_vttr7")
+region = Rect2(240, 0, 80, 128)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_s7wsd"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8tkh1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_prh7v")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yvpam")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4ls8l")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 0.5
+}]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_s7wsd"]
+bg_color = Color(0.6627451, 0.14901961, 0.23921569, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.8, 0.023529412, 0.40392157, 1)
+border_blend = true
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_s7rlf"]
+bg_color = Color(0, 0.23921569, 0.72156864, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0, 0.5686275, 0.8, 1)
+border_blend = true
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0cvp5"]
+bg_color = Color(0.3254902, 0.6862745, 0.047058824, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.10980392, 1, 0, 1)
+border_blend = true
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[node name="Settings" type="Control" unique_id=201110816]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=339345520]
+layer = -1
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer" unique_id=1506034792]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.050980393, 0.078431375, 0.18431373, 1)
+
+[node name="ColorRect2" type="ColorRect" parent="CanvasLayer" unique_id=1767893209]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -182.0
+offset_top = 637.0
+offset_right = 156.75928
+offset_bottom = 10.265259
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.7058824, 0.078431375, 0.18431373, 1)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=815834736]
+position = Vector2(1161, 322)
+scale = Vector2(4.8375, 4.8375)
+sprite_frames = SubResource("SpriteFrames_s7wsd")
+autoplay = "default"
+frame_progress = 0.17851412
+
+[node name="Label" type="Label" parent="." unique_id=1808314064]
+layout_mode = 0
+offset_left = 421.0
+offset_top = 50.0
+offset_right = 871.0
+offset_bottom = 180.0
+theme_override_fonts/font = ExtResource("2_1elg5")
+theme_override_font_sizes/font_size = 120
+text = "Pause"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Control" type="Control" parent="." unique_id=1590902060]
+layout_mode = 1
+anchor_left = -0.016
+anchor_right = -0.016
+offset_left = 245.48
+offset_top = -16.0
+offset_right = 285.48
+offset_bottom = 24.0
+
+[node name="label" type="Label" parent="Control" unique_id=1371679845]
+layout_mode = 0
+offset_left = 114.0
+offset_top = 190.0
+offset_right = 196.0
+offset_bottom = 274.0
+theme_override_fonts/font = ExtResource("3_fgfdp")
+theme_override_font_sizes/font_size = 72
+text = "Left"
+
+[node name="left" type="Button" parent="Control" unique_id=1702036213]
+layout_mode = 0
+offset_left = 129.0
+offset_top = 282.0
+offset_right = 193.0
+offset_bottom = 376.0
+theme_override_fonts/font = ExtResource("3_fgfdp")
+theme_override_font_sizes/font_size = 72
+theme_override_styles/normal = SubResource("StyleBoxFlat_s7wsd")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_s7rlf")
+theme_override_styles/hover = SubResource("StyleBoxFlat_0cvp5")
+text = "A"
+script = ExtResource("4_6eabd")
+
+[node name="Control2" type="Control" parent="." unique_id=987186083]
+anchors_preset = 0
+offset_left = 880.0
+offset_top = -32.0
+offset_right = 920.0
+offset_bottom = 8.0
+
+[node name="label" type="Label" parent="Control2" unique_id=1500154100]
+layout_mode = 0
+offset_left = -437.0
+offset_top = 210.0
+offset_right = -323.0
+offset_bottom = 294.0
+theme_override_fonts/font = ExtResource("3_fgfdp")
+theme_override_font_sizes/font_size = 72
+text = "Right"
+
+[node name="right" type="Button" parent="Control2" unique_id=742733834]
+layout_mode = 0
+offset_left = -409.0
+offset_top = 297.0
+offset_right = -345.0
+offset_bottom = 391.0
+theme_override_fonts/font = ExtResource("3_fgfdp")
+theme_override_font_sizes/font_size = 72
+theme_override_styles/normal = SubResource("StyleBoxFlat_s7wsd")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_s7rlf")
+theme_override_styles/hover = SubResource("StyleBoxFlat_0cvp5")
+text = "D"
+script = ExtResource("4_6eabd")
+
+[node name="Control3" type="Control" parent="." unique_id=863385138]
+anchors_preset = 0
+offset_left = 313.0
+offset_top = 228.0
+offset_right = 353.0
+offset_bottom = 268.0
+
+[node name="label" type="Label" parent="Control3" unique_id=1244657617]
+layout_mode = 0
+offset_left = 252.0
+offset_top = -51.0
+offset_right = 334.0
+offset_bottom = 33.0
+theme_override_fonts/font = ExtResource("3_fgfdp")
+theme_override_font_sizes/font_size = 72
+text = "Up"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="up" type="Button" parent="Control3" unique_id=769607615]
+layout_mode = 0
+offset_left = 259.0
+offset_top = 37.0
+offset_right = 323.0
+offset_bottom = 131.0
+theme_override_fonts/font = ExtResource("3_fgfdp")
+theme_override_font_sizes/font_size = 72
+theme_override_styles/normal = SubResource("StyleBoxFlat_s7wsd")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_s7rlf")
+theme_override_styles/hover = SubResource("StyleBoxFlat_0cvp5")
+text = "W"
+script = ExtResource("4_6eabd")
+
+[node name="Control4" type="Control" parent="." unique_id=941654826]
+anchors_preset = 0
+offset_left = 1224.0
+offset_top = 46.0
+offset_right = 1264.0
+offset_bottom = 86.0
+
+[node name="label" type="Label" parent="Control4" unique_id=1951373388]
+layout_mode = 0
+offset_left = -576.0
+offset_top = 137.0
+offset_right = -455.0
+offset_bottom = 221.0
+theme_override_fonts/font = ExtResource("3_fgfdp")
+theme_override_font_sizes/font_size = 72
+text = "Down"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="down" type="Button" parent="Control4" unique_id=1831119407]
+layout_mode = 0
+offset_left = -543.0
+offset_top = 213.0
+offset_right = -479.0
+offset_bottom = 307.0
+theme_override_fonts/font = ExtResource("3_fgfdp")
+theme_override_font_sizes/font_size = 72
+theme_override_styles/normal = SubResource("StyleBoxFlat_s7wsd")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_s7rlf")
+theme_override_styles/hover = SubResource("StyleBoxFlat_0cvp5")
+text = "S"
+script = ExtResource("4_6eabd")
+
+[node name="Control5" type="Control" parent="." unique_id=1437051176]
+anchors_preset = 0
+offset_left = -54.0
+offset_top = 74.0
+offset_right = -14.0
+offset_bottom = 114.0
+
+[node name="label" type="Label" parent="Control5" unique_id=604259107]
+layout_mode = 0
+offset_left = 232.0
+offset_top = 112.0
+offset_right = 346.0
+offset_bottom = 196.0
+theme_override_fonts/font = ExtResource("3_fgfdp")
+theme_override_font_sizes/font_size = 72
+text = "Jump"
+
+[node name="jump" type="Button" parent="Control5" unique_id=1512211298]
+layout_mode = 0
+offset_left = 230.0
+offset_top = 188.0
+offset_right = 362.0
+offset_bottom = 282.0
+theme_override_fonts/font = ExtResource("3_fgfdp")
+theme_override_font_sizes/font_size = 72
+theme_override_styles/normal = SubResource("StyleBoxFlat_s7wsd")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_s7rlf")
+theme_override_styles/hover = SubResource("StyleBoxFlat_0cvp5")
+text = "Space"
+script = ExtResource("4_6eabd")
+
+[node name="Control6" type="Control" parent="." unique_id=1740144097]
+anchors_preset = 0
+offset_left = -26.0
+offset_top = 262.0
+offset_right = 14.0
+offset_bottom = 302.0
+
+[node name="label" type="Label" parent="Control6" unique_id=2135481550]
+layout_mode = 0
+offset_left = 35.0
+offset_top = -84.0
+offset_right = 184.0
+theme_override_fonts/font = ExtResource("3_fgfdp")
+theme_override_font_sizes/font_size = 72
+text = "Interact"
+
+[node name="interact" type="Button" parent="Control6" unique_id=1329493434]
+layout_mode = 0
+offset_left = 75.0
+offset_top = 4.0
+offset_right = 139.0
+offset_bottom = 98.0
+theme_override_fonts/font = ExtResource("3_fgfdp")
+theme_override_font_sizes/font_size = 72
+theme_override_styles/normal = SubResource("StyleBoxFlat_s7wsd")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_s7rlf")
+theme_override_styles/hover = SubResource("StyleBoxFlat_0cvp5")
+text = "E"
+script = ExtResource("4_6eabd")
+
+[node name="Control7" type="Control" parent="." unique_id=266380519]
+anchors_preset = 0
+offset_left = 744.0
+offset_top = 163.0
+offset_right = 784.0
+offset_bottom = 203.0
+
+[node name="label" type="Label" parent="Control7" unique_id=1259317860]
+layout_mode = 0
+offset_left = 17.0
+offset_top = 17.0
+offset_right = 175.0
+offset_bottom = 101.0
+theme_override_fonts/font = ExtResource("3_fgfdp")
+theme_override_font_sizes/font_size = 72
+text = "Dash"
+horizontal_alignment = 1
+
+[node name="dashing" type="Button" parent="Control7" unique_id=768024371]
+layout_mode = 0
+offset_left = 57.0
+offset_top = 105.0
+offset_right = 121.0
+offset_bottom = 199.0
+theme_override_fonts/font = ExtResource("3_fgfdp")
+theme_override_font_sizes/font_size = 72
+theme_override_styles/normal = SubResource("StyleBoxFlat_s7wsd")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_s7rlf")
+theme_override_styles/hover = SubResource("StyleBoxFlat_0cvp5")
+text = "V"
+script = ExtResource("4_6eabd")
+
+[node name="attackControl" type="Control" parent="." unique_id=238777764]
+anchors_preset = 0
+offset_left = 657.0
+offset_top = 109.0
+offset_right = 697.0
+offset_bottom = 149.0
+
+[node name="label" type="Label" parent="attackControl" unique_id=241375130]
+layout_mode = 0
+offset_left = 258.0
+offset_top = 68.0
+offset_right = 407.0
+offset_bottom = 152.0
+theme_override_fonts/font = ExtResource("3_fgfdp")
+theme_override_font_sizes/font_size = 72
+text = "Attack"
+
+[node name="attack" type="Button" parent="attackControl" unique_id=924956989]
+layout_mode = 0
+offset_left = 261.0
+offset_top = 154.0
+offset_right = 392.0
+offset_bottom = 248.0
+theme_override_fonts/font = ExtResource("3_fgfdp")
+theme_override_font_sizes/font_size = 72
+theme_override_styles/normal = SubResource("StyleBoxFlat_s7wsd")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_s7rlf")
+theme_override_styles/hover = SubResource("StyleBoxFlat_0cvp5")
+text = "LMB"
+
+[node name="Control8" type="Control" parent="." unique_id=1469620001]
+anchors_preset = 0
+offset_left = 619.0
+offset_top = 394.0
+offset_right = 659.0
+offset_bottom = 434.0
+
+[node name="label" type="Label" parent="Control8" unique_id=868711849]
+layout_mode = 0
+offset_left = 238.0
+offset_top = 19.0
+offset_right = 443.0
+offset_bottom = 103.0
+theme_override_fonts/font = ExtResource("3_fgfdp")
+theme_override_font_sizes/font_size = 72
+text = "Fullscreen"
+
+[node name="fullscreen" type="Button" parent="Control8" unique_id=1199568542]
+layout_mode = 0
+offset_left = 278.0
+offset_top = 107.0
+offset_right = 398.0
+offset_bottom = 201.0
+theme_override_fonts/font = ExtResource("3_fgfdp")
+theme_override_font_sizes/font_size = 72
+theme_override_styles/normal = SubResource("StyleBoxFlat_s7wsd")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_s7rlf")
+theme_override_styles/hover = SubResource("StyleBoxFlat_0cvp5")
+text = "OFF"
+script = ExtResource("5_t30n4")
+
+[node name="Control9" type="Control" parent="." unique_id=1975716346]
+anchors_preset = 0
+offset_left = 372.0
+offset_top = 387.0
+offset_right = 412.0
+offset_bottom = 427.0
+
+[node name="label" type="Label" parent="Control9" unique_id=1649659773]
+layout_mode = 0
+offset_left = 238.0
+offset_top = 21.0
+offset_right = 443.0
+offset_bottom = 105.0
+theme_override_fonts/font = ExtResource("3_fgfdp")
+theme_override_font_sizes/font_size = 72
+text = "SFX"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="audio" type="Button" parent="Control9" unique_id=129760523]
+layout_mode = 0
+offset_left = 278.0
+offset_top = 107.0
+offset_right = 398.0
+offset_bottom = 201.0
+theme_override_fonts/font = ExtResource("3_fgfdp")
+theme_override_font_sizes/font_size = 72
+theme_override_styles/normal = SubResource("StyleBoxFlat_s7wsd")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_s7rlf")
+theme_override_styles/hover = SubResource("StyleBoxFlat_0cvp5")
+text = "ON"
+script = ExtResource("6_1elg5")
+
+[connection signal="pressed" from="Control8/fullscreen" to="Control8/fullscreen" method="_on_pressed"]
+[connection signal="pressed" from="Control9/audio" to="Control9/audio" method="_on_pressed"]

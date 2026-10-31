@@ -113,11 +113,11 @@ grow_vertical = 2
 color = Color(0.7058824, 0.078431375, 0.18431373, 1)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=815834736]
-position = Vector2(1171, 222)
+position = Vector2(1161, 322)
 scale = Vector2(4.8375, 4.8375)
 sprite_frames = SubResource("SpriteFrames_s7wsd")
 autoplay = "default"
-frame_progress = 0.6014232
+frame_progress = 0.17851412
 
 [node name="Label" type="Label" parent="." unique_id=1808314064]
 layout_mode = 0

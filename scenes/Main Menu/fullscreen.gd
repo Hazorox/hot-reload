@@ -1,7 +1,4 @@
 extends Button
-
-
-
 func _on_pressed() -> void:
 	var mode := DisplayServer.window_get_mode()
 	if mode == DisplayServer.WINDOW_MODE_WINDOWED:
