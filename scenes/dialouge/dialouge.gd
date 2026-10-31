@@ -31,7 +31,7 @@ func _ready() -> void:
 			audio.play()
 	)
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	match current:
 		state.waiting:
 			if !queue.is_empty():
@@ -87,7 +87,7 @@ func queue_text(talker: String, sprite_path: String, text: String, sound_path: S
 		"sound": sound_path
 	})
 
-func queue_choices(talker: String, sprite_path: String, options: Array, callback: Callable = Callable()):
+func queue_choices(talker: String, sprite_path: String, options: Array, _callback: Callable = Callable()):
 	queue.push_back({
 		"type": "choices",
 		"options": options,
