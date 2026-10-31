@@ -16,6 +16,7 @@
 [ext_resource type="Script" uid="uid://cxxsvpcnns3nu" path="res://scenes/platformers/1/final_tile_real.gd" id="12_ojoxh"]
 [ext_resource type="Script" uid="uid://w6r6j4rn2lf4" path="res://scenes/platformers/1/end.gd" id="12_pk8jt"]
 [ext_resource type="Script" uid="uid://bxlh6rdkrlq06" path="res://scenes/platformers/1/final_trap.gd" id="13_ojoxh"]
+[ext_resource type="PackedScene" uid="uid://bln0jbf2p76pn" path="res://scenes/items/stick.tscn" id="17_vix0j"]
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_0hvcy"]
 a = Vector2(29, 1)
@@ -1548,3 +1549,9 @@ script = ExtResource("13_ojoxh")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="final_tile_real/trap2" unique_id=1306357435]
 position = Vector2(12, -26)
 shape = SubResource("RectangleShape2D_0hvcy")
+
+[node name="Stick" parent="." unique_id=909055187 instance=ExtResource("17_vix0j")]
+position = Vector2(226, 560)
+scale = Vector2(0.4, 0.4)
+collision_layer = 7
+collision_mask = 7
