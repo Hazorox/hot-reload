@@ -6,7 +6,7 @@ extends CharacterBody2D
 @export_range(-1, 1) var dir: int = 1
 @export var health : int = 50
 
-var speed : float = 5.0
+var speed : float = 75.0
 var gravity : float = 98.0
 var is_dead : bool = false
 
@@ -24,15 +24,17 @@ func _physics_process(delta: float) -> void:
 		is_dead = true
 		animated_sprite_2d.play("dying")
 		$Area2D/CollisionShape2D.set_deferred("disabled", true)
-		$Area2D.set_deferred("monitoring", false)
+		$BouncingArea/CollisionShape2D.set_deferred("disabled", true)
 		return
 	if dir == 1 and ($RightRay.is_colliding()):
 		animated_sprite_2d.flip_h = true
 		$Area2D.scale.x = -1
+		$BouncingArea.scale.x = -1
 		dir = -1
 	if dir == -1 and ($LeftRay.is_colliding()):
 		animated_sprite_2d.flip_h = false
 		$Area2D.scale.x = 1
+		$BouncingArea.scale.x = 1
 		dir = 1
 		
 	velocity.x = lerp(velocity.x, dir * speed, 10 * delta)

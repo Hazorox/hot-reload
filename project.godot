@@ -45,6 +45,7 @@ folder_colors={
 
 player="global player group"
 monster=""
+bouncing=""
 
 [input]
 
