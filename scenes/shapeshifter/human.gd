@@ -12,7 +12,7 @@ const PLAYER_WITH_STICK = preload("uid://b4a77y88btrlt")
 
 @export var player_has_stick : bool = false
 
-var speed : float = 0.0
+var speed : float = 500.0
 var speed_rate := 500
 var jump_force : int = 750
 var heading : Vector2

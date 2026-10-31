@@ -7,7 +7,9 @@
 [ext_resource type="Texture2D" uid="uid://rnnnh0lki65y" path="res://assets/Vii/GandalfHardcore FREE Platformer Assets/GandalfHardcore FREE Platformer Assets/Animated Sprites/GandalfHardcore Water Tiles sheet.png" id="4_vyk6n"]
 [ext_resource type="Texture2D" uid="uid://cycn0icx3dy37" path="res://assets/Vii/GandalfHardcore FREE Platformer Assets/GandalfHardcore FREE Platformer Assets/Animated Sprites/GandalfHardcore Animated Water Tiles.png" id="5_812e3"]
 [ext_resource type="Texture2D" uid="uid://cwmm67aeff2kv" path="res://assets/Vii/GandalfHardcore FREE Platformer Assets/GandalfHardcore FREE Platformer Assets/Other Tiles1.png" id="6_gpi6y"]
-[ext_resource type="PackedScene" uid="uid://c7ruh5gw0hl0g" path="res://scenes/alchamy/alchemist/top_down_player.tscn" id="8_vyk6n"]
+[ext_resource type="PackedScene" uid="uid://dnv8kl8nseyrj" path="res://scenes/shapeshifter/human.tscn" id="7_k536t"]
+[ext_resource type="PackedScene" uid="uid://be8qnw3kygngq" path="res://scenes/shapeshifter/monester_bat.tscn" id="10_jvwk5"]
+[ext_resource type="PackedScene" uid="uid://shxg885fj6i1" path="res://scenes/shapeshifter/boss.tscn" id="10_urwh0"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_gbc6e"]
 texture = ExtResource("3_k536t")
@@ -1530,6 +1532,13 @@ tile_set = SubResource("TileSet_onkbk")
 position = Vector2(674, 685)
 shape = SubResource("RectangleShape2D_onkbk")
 
-[node name="TopDownPlayer" parent="." unique_id=2058447936 instance=ExtResource("8_vyk6n")]
-position = Vector2(577, 310)
+[node name="FlyingMonster" parent="." unique_id=1090826913 instance=ExtResource("10_jvwk5")]
+
+[node name="Human" parent="." unique_id=2071774316 instance=ExtResource("7_k536t")]
+position = Vector2(266, 653)
 scale = Vector2(3, 3)
+player_has_stick = true
+
+[node name="Boss" parent="." unique_id=105943920 instance=ExtResource("10_urwh0")]
+position = Vector2(725.99994, 623.99994)
+scale = Vector2(3.5, 3.5)

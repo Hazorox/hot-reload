@@ -20,6 +20,7 @@ config/icon="res://assets/icon.png"
 Dialogue="*uid://d016lh8wqcp5y"
 Events="*uid://cpi1jhc2lpnlo"
 Globals="*uid://b5m3gfbnjjkgs"
+ViiGlobals="*uid://dtlsldsy2es5y"
 
 [display]
 
