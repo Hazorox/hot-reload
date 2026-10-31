@@ -1528,6 +1528,7 @@ tile_set = SubResource("TileSet_onkbk")
 position = Vector2(675.5, 669)
 shape = SubResource("RectangleShape2D_onkbk")
 
-[node name="Human" parent="." unique_id=2071774316 instance=ExtResource("7_k536t")]
+[node name="Human" parent="StaticBody2D" unique_id=2071774316 instance=ExtResource("7_k536t")]
 position = Vector2(263, 621)
 scale = Vector2(3, 3)
+player_has_stick = true
