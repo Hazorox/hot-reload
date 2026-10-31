@@ -21,6 +21,7 @@ var gravity : float = 980
 var is_player_attacking : bool = false
 var is_bouncing_h : bool = false
 var bounce_timer : float = 0.0
+var is_player_heavy : bool = false
 
 func _ready() -> void:
 	add_to_group("player")
@@ -99,11 +100,8 @@ func handling_player_jump(delta: float) -> void:
 					break
 			if damaged_monster:
 				velocity.y = -jump_force * 1
-
-	# --- Jump Cut Mechanism ---
-	# If the player releases the jump button while still moving upwards, cut their upward velocity
 	if Input.is_action_just_released("jump") and velocity.y < 0:
-		velocity.y *= 0.5 # Adjust 0.5 (e.g., 0.3 to 0.6) to change how quickly the jump cuts
+		velocity.y *= 0.5
 
 func flip_animation() -> void:
 	if heading == Vector2.RIGHT:
