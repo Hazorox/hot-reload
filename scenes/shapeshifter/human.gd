@@ -5,12 +5,16 @@ const PLAYER_WITH_STICK = preload("uid://b4a77y88btrlt")
 
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 @onready var sprite_2d: Sprite2D = $Sprite2D
+@onready var collision_shape_2d: CollisionShape2D = $SideAttack/CollisionShape2D
+@onready var side_attack_area: Area2D = $SideAttack
+@onready var DoubleJump: Area2D = $DoubleJump
+@onready var double_jump_shape: CollisionShape2D = $DoubleJump/CollisionShape2D
 
 @export var player_has_stick : bool = false
 
 var speed : float = 0.0
 var speed_rate := 500
-var jump_force : int = 450
+var jump_force : int = 750
 var heading : Vector2
 var player_state : String
 var gravity : float = 980
@@ -22,19 +26,15 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	handle_player_items()
 	var direction := Input.get_vector("left", "right", "null", "null")
-	
-	# 1. Stop movement/state updates from interrupting attacks
 	if not is_player_attacking:
+		collision_shape_2d.disabled = true
 		movement_speed_modifier(delta)
-		handling_player_jump(delta)
 	else:
-		velocity.x = 0 # Optional: Stops sliding while attacking
-		
+		velocity.x = 0
+		collision_shape_2d.disabled = false
 	velocity.x = direction.x * speed
-	
 	if not is_player_attacking:
 		handling_player_jump(delta)
-		
 	flip_animation()
 	set_animations()
 	print(player_state)
@@ -78,17 +78,29 @@ func movement_speed_modifier(delta: float) -> void:
 func handling_player_jump(delta: float) -> void:
 	if not is_on_floor():
 		velocity.y += gravity * delta
-	elif Input.is_action_just_pressed("jump") and is_on_floor():
-		velocity.y = -jump_force
+	if Input.is_action_just_pressed("jump"):
+		if is_on_floor():
+			velocity.y = -jump_force
+		else:
+			var damaged_monster = false
+			for area in DoubleJump.get_overlapping_areas():
+				if area.is_in_group("monster"):
+					damaged_monster = true
+					if area.owner and area.owner.has_method("take_damage"):
+						area.owner.take_damage()
+					break
+			if damaged_monster:
+				velocity.y = -jump_force * 1
 
 func flip_animation() -> void:
 	if heading == Vector2.RIGHT:
 		sprite_2d.flip_h = true
+		side_attack_area.scale.x = -1
 	if heading == Vector2.LEFT:
 		sprite_2d.flip_h = false
+		side_attack_area.scale.x = 1
 
 func set_player_state() -> void:
-	# 2. Corrected operators and logic conditions
 	if Input.is_action_just_pressed("attack") and player_has_stick and is_on_floor():
 		is_player_attacking = true
 		player_state = "player_attacking"
@@ -109,7 +121,7 @@ func set_animations() -> void:
 	elif player_state == "player_falling":
 		animation_player.play("falling")
 	elif player_state == "player_attacking":
-		animation_player.play("attacking") # Keeps playing "attacking"
+		animation_player.play("attacking")
 	else:
 		animation_player.play("idle")
 
@@ -119,7 +131,6 @@ func handle_player_items() -> void:
 	else:
 		sprite_2d.texture = PLAYER_WITH_STICK
 
-# 3. Fixed string mismatch here ("attacking" instead of "attack")
 func _on_animation_player_animation_finished(anim_name: StringName) -> void:
 	if anim_name == "attacking":
 		is_player_attacking = false
