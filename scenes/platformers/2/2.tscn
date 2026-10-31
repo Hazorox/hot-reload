@@ -4,7 +4,6 @@
 [ext_resource type="Texture2D" uid="uid://bjej57um0ms4e" path="res://assets/free-cartoon-forest-game-backgrounds/PNG/Cartoon_Forest_BG_03/Layers/Sky.png" id="1_2l8xk"]
 [ext_resource type="PackedScene" uid="uid://bgpob5ntcoils" path="res://scenes/Main Menu/main.tscn" id="2_6dlvn"]
 [ext_resource type="Texture2D" uid="uid://u43r3m8jbyx6" path="res://assets/Vii/GandalfHardcore FREE Platformer Assets/GandalfHardcore FREE Platformer Assets/GandalfHardcore Background layers/Autumn BG/GandalfHardcore Background layers_layer 1.png" id="2_voi22"]
-[ext_resource type="Texture2D" uid="uid://dayvupuo4j68l" path="res://assets/free-cartoon-forest-game-backgrounds/PNG/Cartoon_Forest_BG_04/Layers/Ground.png" id="3_1s8x3"]
 [ext_resource type="Texture2D" uid="uid://cttjeqioc27uv" path="res://assets/Vii/GandalfHardcore FREE Platformer Assets/GandalfHardcore FREE Platformer Assets/Floor Tiles1.png" id="4_bwdjn"]
 [ext_resource type="Texture2D" uid="uid://cwmm67aeff2kv" path="res://assets/Vii/GandalfHardcore FREE Platformer Assets/GandalfHardcore FREE Platformer Assets/Other Tiles1.png" id="5_2fiiu"]
 [ext_resource type="Texture2D" uid="uid://b2rv8k2gk02dv" path="res://assets/Vii/GandalfHardcore FREE Platformer Assets/GandalfHardcore FREE Platformer Assets/Decor.png" id="6_kb28l"]
@@ -17,7 +16,7 @@
 [ext_resource type="PackedScene" uid="uid://cyi0lo7molblp" path="res://scenes/shapeshifter/monester_eye.tscn" id="14_4eyjj"]
 [ext_resource type="Script" uid="uid://cdgrtwom7j15" path="res://scenes/platformers/2/end.gd" id="15_mp8n0"]
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_a4ll7"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_mp8n0"]
 texture = ExtResource("4_bwdjn")
 0:0/0 = 0
 1:0/0 = 0
@@ -584,7 +583,7 @@ texture = ExtResource("4_bwdjn")
 16:35/0 = 0
 17:35/0 = 0
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_epi78"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_6dlvn"]
 texture = ExtResource("5_2fiiu")
 0:0/0 = 0
 1:0/0 = 0
@@ -760,7 +759,7 @@ texture = ExtResource("5_2fiiu")
 6:13/0 = 0
 7:13/0 = 0
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_4eyjj"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_cedwp"]
 texture = ExtResource("6_kb28l")
 2:0/0 = 0
 3:0/0 = 0
@@ -1188,9 +1187,9 @@ texture = ExtResource("6_kb28l")
 7:31/0 = 0
 
 [sub_resource type="TileSet" id="TileSet_mp8n0"]
-sources/0 = SubResource("TileSetAtlasSource_a4ll7")
-sources/1 = SubResource("TileSetAtlasSource_epi78")
-sources/2 = SubResource("TileSetAtlasSource_4eyjj")
+sources/0 = SubResource("TileSetAtlasSource_mp8n0")
+sources/1 = SubResource("TileSetAtlasSource_6dlvn")
+sources/2 = SubResource("TileSetAtlasSource_cedwp")
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_nfrx5"]
 a = Vector2(149, 5)
@@ -1218,7 +1217,6 @@ a = Vector2(738, 0)
 b = Vector2(-170, 0)
 
 [node name="2" type="Node2D" unique_id=1602830302]
-position = Vector2(401, -2)
 script = ExtResource("1_2fiiu")
 next_scene = ExtResource("2_6dlvn")
 
@@ -1238,24 +1236,11 @@ expand_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_top = -32.0
-offset_bottom = -32.0
+offset_top = -103.0
+offset_bottom = 7.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("2_voi22")
-expand_mode = 1
-
-[node name="grass" type="TextureRect" parent="canvas" unique_id=1481381728]
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -9.0
-offset_top = -39.0
-offset_right = -9.0
-offset_bottom = -39.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("3_1s8x3")
 expand_mode = 1
 
 [node name="tiles" type="TileMapLayer" parent="." unique_id=1557508760]

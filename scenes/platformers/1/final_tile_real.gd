@@ -17,4 +17,5 @@ func toggle_enabled(to:bool):
 			collision.set_deferred("disabled",true)
 
 func _on_trap_reset():
+	$"../final_tile_fake".toggle_enabled(true)
 	toggle_enabled(false)

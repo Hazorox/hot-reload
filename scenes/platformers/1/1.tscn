@@ -6,11 +6,11 @@
 [ext_resource type="PackedScene" uid="uid://bgpob5ntcoils" path="res://scenes/Main Menu/main.tscn" id="2_pk8jt"]
 [ext_resource type="Texture2D" uid="uid://c16s2mmv50u8y" path="res://assets/free-cartoon-forest-game-backgrounds/PNG/Cartoon_Forest_BG_03/Layers/Ground.png" id="3_lyh2c"]
 [ext_resource type="Texture2D" uid="uid://cttjeqioc27uv" path="res://assets/Vii/GandalfHardcore FREE Platformer Assets/GandalfHardcore FREE Platformer Assets/Floor Tiles1.png" id="4_qht3a"]
-[ext_resource type="PackedScene" uid="uid://c8ahforppc0ka" path="res://scenes/test_stuff/test_player.tscn" id="5_0euf2"]
 [ext_resource type="Texture2D" uid="uid://cwmm67aeff2kv" path="res://assets/Vii/GandalfHardcore FREE Platformer Assets/GandalfHardcore FREE Platformer Assets/Other Tiles1.png" id="5_qht3a"]
 [ext_resource type="Texture2D" uid="uid://b2rv8k2gk02dv" path="res://assets/Vii/GandalfHardcore FREE Platformer Assets/GandalfHardcore FREE Platformer Assets/Decor.png" id="6_1l6v0"]
 [ext_resource type="Script" uid="uid://33m668dgn00g" path="res://scenes/platformers/1/trap.gd" id="8_1l6v0"]
 [ext_resource type="Script" uid="uid://b20r8hx33tthy" path="res://scripts/air_tile.gd" id="9_osswa"]
+[ext_resource type="PackedScene" uid="uid://dnv8kl8nseyrj" path="res://scenes/shapeshifter/human.tscn" id="9_pk8jt"]
 [ext_resource type="Script" uid="uid://brk2wb7f3krxo" path="res://scenes/platformers/1/fake_tile.gd" id="10_w36no"]
 [ext_resource type="Script" uid="uid://c70k2k6r0lq66" path="res://scenes/platformers/1/final_tile_fake.gd" id="11_t6rus"]
 [ext_resource type="Script" uid="uid://cxxsvpcnns3nu" path="res://scenes/platformers/1/final_tile_real.gd" id="12_ojoxh"]
@@ -1285,9 +1285,9 @@ scale = Vector2(2, 2)
 tile_map_data = PackedByteArray("AAAAABIAAAABAAAAAAAAABMAAAABAAEAAAAAABQAAAABAAIAAAAAABUAAAABAAMAAAAAABYAAAABAAMAAAABABIAAAABAAAAAAABABMAAAABAAEAAAABABQAAAABAAIAAAABABUAAAABAAMAAAABABYAAAABAAQAAAACABIAAAACAAAAAAACABMAAAACAAEAAAACABQAAAACAAIAAAACABUAAAACAAMAAAACABYAAAACAAQAAAADABIAAAABAAAAAAADABMAAAABAAEAAAADABQAAAABAAIAAAADABUAAAABAAMAAAADABYAAAABAAQAAAAEABIAAAACAAAAAAAEABMAAAACAAEAAAAEABQAAAACAAIAAAAEABUAAAACAAMAAAAEABYAAAACAAQAAAAFABIAAAADAAAAAAAFABMAAAADAAEAAAAFABQAAAADAAIAAAAFABUAAAADAAMAAAAFABYAAAADAAQAAAAGABIAAAAEAAAAAAAGABMAAAAEAAEAAAAGABQAAAAEAAIAAAAGABUAAAAEAAMAAAAGABYAAAAEAAQAAAAHABIAAAABAAAAAAAHABMAAAABAAEAAAAHABQAAAABAAIAAAAHABUAAAABAAMAAAAHABYAAAABAAQAAAAIABIAAAACAAAAAAAIABMAAAACAAEAAAAIABQAAAACAAIAAAAIABUAAAACAAMAAAAIABYAAAACAAQAAAAJABYAAgAAABMAAAAKABUAAgABABIAAAAKABYAAgABABMAAAALABQAAgACABEAAAALABUAAgACABIAAAALABYAAgACABMAAAAMABQAAgADABEAAAAMABUAAgADABIAAAAMABYAAgADABMAAAANABQAAgAEABEAAAANABUAAgAEABIAAAANABYAAgAEABMAAAAOABUAAgAFABIAAAAOABYAAgAFABMAAAAPABIAAAABAAAAAAAPABMAAAABAAEAAAAPABQAAAABAAIAAAAPABUAAAABAAMAAAAPABYAAAABAAQAAAAQABIAAAACAAAAAAAQABMAAAACAAEAAAAQABQAAAACAAIAAAAQABUAAAACAAMAAAAQABYAAAACAAQAAAARABIAAAADAAAAAAARABMAAAADAAEAAAARABQAAAADAAIAAAARABUAAAADAAMAAAARABYAAAADAAQAAAASABIAAAAEAAAAAAASABMAAAAEAAEAAAASABQAAAAEAAIAAAASABUAAAAEAAMAAAASABYAAAAEAAQAAAATABIAAAABAAAAAAATABMAAAABAAEAAAATABQAAAABAAIAAAATABUAAAABAAMAAAATABYAAAABAAQAAAAUABIAAAACAAAAAAAUABMAAAACAAEAAAAUABQAAAACAAIAAAAUABUAAAACAAMAAAAUABYAAAACAAQAAAA=")
 tile_set = SubResource("TileSet_nfrx5")
 
-[node name="TestPlayer" parent="." unique_id=1636318335 instance=ExtResource("5_0euf2")]
-position = Vector2(79, 531)
-scale = Vector2(2, 2)
+[node name="Human" parent="." unique_id=2071774316 instance=ExtResource("9_pk8jt")]
+position = Vector2(88.99999, 564.99994)
+scale = Vector2(2.25, 2.25)
 
 [node name="tile" type="StaticBody2D" parent="." unique_id=1734707629]
 position = Vector2(139, 578)
