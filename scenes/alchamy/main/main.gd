@@ -1,7 +1,34 @@
 extends Node2D
 
+@onready var ing = [$death, $life]
+@onready var book = $Slow
+
+var waiting_for_choice := false
+
 func _ready() -> void:
 	Events.npc_interacted.connect(_on_npc_interacted)
+	Events.book_found.connect(_book_found)
+	Events.death_leaf.connect(die)
+	Dialogue.choice_made.connect(_on_choice_made)
+	for i in ing:
+		set_active(i, false)
+	book.enable(false)
+	
+func set_active(node: Node, on: bool) -> void:
+	if node.has_method("enable"):
+		node.enable(on)
+	else:
+		node.visible = on
+		
+func _on_choice_made(i: int) -> void:
+	if not waiting_for_choice:
+		return
+	waiting_for_choice = false
+	if i == 0:
+		book.enable(true)
+	else:
+		for j in ing:
+			set_active(j, true)
 
 func _on_npc_interacted(id: String) -> void:
 	if id == "alchemist":
@@ -78,14 +105,71 @@ func _on_npc_interacted(id: String) -> void:
 			"It is ur choice",
 			"res://assets/sound_beeps/susie_s_dialogue.wav"
 		)
+		waiting_for_choice = true
 		Dialogue.queue_choices(
 			"Luna the Alchemist",
 			"res://assets/dialogue-images/alchemist.png",
-			["Look for the book", "Use one of the Herbs"],
-			func(i):
-				if i == 0:
-					print("looking for the book")
-				else:
-					print("using a herb")
+			["Look for the book", "Use one of the Herbs"]
 		)
 		pass
+		
+func _book_found():
+	Dialogue.queue_text(
+			"Luna the Alchemist",
+			"res://assets/dialogue-images/alchemist.png",
+			"I sense that u found my book",
+			"res://assets/sound_beeps/susie_s_dialogue.wav"
+		)
+	Dialogue.queue_text(
+			"Luna the Alchemist",
+			"res://assets/dialogue-images/alchemist.png",
+			"U prolly already know that this was a test",
+			"res://assets/sound_beeps/susie_s_dialogue.wav"
+		)
+	Dialogue.queue_text(
+			"Luna the Alchemist",
+			"res://assets/dialogue-images/alchemist.png",
+			"To reward u, gonna cure use using bluetooth",
+			"res://assets/sound_beeps/susie_s_dialogue.wav"
+		)
+	Dialogue.queue_text(
+			"Luna the Alchemist",
+			"res://assets/dialogue-images/alchemist.png",
+			"*bluetooth device is connected successfully*",
+			"res://assets/sound_beeps/susie_s_dialogue.wav"
+		)
+	
+func die():
+	Dialogue.queue_text(
+			"Luna the Alchemist",
+			"res://assets/dialogue-images/alchemist.png",
+			"gonna make u the potion right away",
+			"res://assets/sound_beeps/susie_s_dialogue.wav"
+		)
+	
+	Dialogue.queue_text(
+			"Luna the Alchemist",
+			"res://assets/dialogue-images/alchemist.png",
+			"Oh.. I think this one is the instant death potion",
+			"res://assets/sound_beeps/susie_s_dialogue.wav"
+		)
+	Dialogue.queue_text(
+			"Human",
+			"res://assets/dialogue-images/player.png",
+			"One sec I'll get u the oth-",
+			"res://assets/sound_beeps/freesound_community-bllrr-text-loop-82399.mp3"
+		)
+	Dialogue.queue_text(
+			"Luna the Alchemist",
+			"res://assets/dialogue-images/alchemist.png",
+			"Can't let it go to waste :3",
+			"res://assets/sound_beeps/susie_s_dialogue.wav"
+		)
+	Dialogue.queue_text(
+			"Luna the Alchemist",
+			"res://assets/dialogue-images/alchemist.png",
+			"*forces u to drink it*",
+			"res://assets/sound_beeps/susie_s_dialogue.wav"
+		)
+	await Dialogue.finished
+	get_tree().reload_current_scene()

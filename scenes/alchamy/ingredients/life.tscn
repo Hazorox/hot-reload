@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://bo5n531cafxd4"]
 
 [ext_resource type="Texture2D" uid="uid://dkreu8e8x64r6" path="res://assets/alchhemy pack/alchhemy pack/basil 32.png" id="1_1t33h"]
+[ext_resource type="Script" uid="uid://25lt8uolxlus" path="res://scenes/alchamy/ingredients/area_2d.gd" id="2_n541n"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_s7rlf"]
 radius = 16.03122
@@ -12,6 +13,10 @@ scale = Vector2(0.30664063, 0.30664063)
 texture = ExtResource("1_1t33h")
 
 [node name="Area2D" type="Area2D" parent="." unique_id=353933179]
+script = ExtResource("2_n541n")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=369000382]
 shape = SubResource("CircleShape2D_s7rlf")
+
+[connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
+[connection signal="body_exited" from="Area2D" to="Area2D" method="_on_body_exited"]

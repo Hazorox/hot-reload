@@ -9,9 +9,12 @@ enum State{
 	ATTACKING,
 }
 
-var speed : int = 5000
+var speed : int = 10000
 var heading : Vector2 = Vector2.DOWN
 var state := State.IDLE
+
+func _ready() -> void:
+	add_to_group("player")
 
 func _process(delta: float) -> void:
 	var direction := Input.get_vector("left", "right", "up", "down")

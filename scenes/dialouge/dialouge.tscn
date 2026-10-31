@@ -17,28 +17,18 @@ border_width_right = 10
 border_width_bottom = 10
 border_color = Color(1, 1, 1, 1)
 
-[node name="Control" type="Control" unique_id=1780912664]
-z_index = 1000
-layout_mode = 3
+[node name="Control" type="CanvasLayer" unique_id=1051988684]
+layer = 100
+script = ExtResource("1_ewt3s")
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=1663831419]
 anchors_preset = 12
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_top = -261.0
+offset_top = -253.0
 grow_horizontal = 2
 grow_vertical = 0
-size_flags_horizontal = 3
-size_flags_vertical = 3
-script = ExtResource("1_ewt3s")
-
-[node name="MarginContainer" type="MarginContainer" parent="." unique_id=1663831419]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_top = -4.0
-grow_horizontal = 2
-grow_vertical = 2
 theme_override_constants/margin_left = 15
 theme_override_constants/margin_top = 1
 theme_override_constants/margin_right = 15
@@ -120,7 +110,6 @@ theme_override_font_sizes/font_size = 48
 text = "v"
 
 [node name="name" type="Label" parent="." unique_id=1905061257]
-layout_mode = 0
 offset_left = 28.0
 offset_top = -60.0
 offset_right = 1263.0
@@ -135,9 +124,9 @@ text = "Lagraunge"
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=963565901]
 
 [node name="38" type="Sprite2D" parent="." unique_id=1964098052]
-position = Vector2(1192, -27)
+position = Vector2(1218, 453)
 texture = ExtResource("6_18unr")
 
 [node name="28" type="Sprite2D" parent="." unique_id=1577131151]
-position = Vector2(30, 210)
+position = Vector2(32, 671)
 texture = ExtResource("7_3ffe0")

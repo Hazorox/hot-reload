@@ -1,4 +1,4 @@
-extends Control
+extends CanvasLayer
 @onready var panel: Panel = $MarginContainer/Panel
 @onready var sprite: Sprite2D = $MarginContainer/MarginContainer/HBoxContainer/MarginContainer/Sprite2D
 @onready var start: Label = $MarginContainer/MarginContainer/HBoxContainer/MarginContainer2/HBoxContainer/Start
@@ -134,13 +134,15 @@ func render_choices():
 	textbox.text = "\n".join(lines)
 	textbox.visible_ratio = 1.0
 	
+signal choice_made(index: int)
+
 func confirm_choice():
-	end.text = "v"
-	change_state(state.done)
-	if callback.is_valid():
-		callback.call(index)
-	get_tree().paused = false
-	return index
+	var picked: int = index
+	hide_box()
+	if queue.is_empty():
+		finished.emit()
+	change_state(state.waiting)
+	choice_made.emit(picked)
 	
 func finish_reading():
 	if tween and tween.is_valid():

@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://c36ehdqvuqlfm"]
+
+[ext_resource type="Texture2D" uid="uid://ce0mbifamj6mw" path="res://assets/TinyLibraryAssets.png" id="1_5ahxs"]
+[ext_resource type="Script" uid="uid://4vp1p1s37a3w" path="res://scenes/alchamy/ingredients/book.gd" id="1_87w7r"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_s7rlf"]
+radius = 16.03122
+
+[node name="Slow" type="CharacterBody2D" unique_id=1798645364]
+script = ExtResource("1_87w7r")
+
+[node name="1" type="Sprite2D" parent="." unique_id=1889953927]
+position = Vector2(4.7683716e-07, -4.7683716e-07)
+scale = Vector2(0.9033203, 0.9033203)
+texture = ExtResource("1_5ahxs")
+region_enabled = true
+region_rect = Rect2(0, 1, 18, 16)
+
+[node name="Area2D" type="Area2D" parent="." unique_id=353933179]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=369000382]
+shape = SubResource("CircleShape2D_s7rlf")
