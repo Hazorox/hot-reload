@@ -1,10 +1,19 @@
 extends Node2D
+
+@export var next_scene:PackedScene = null
+
 const monster_positions :Array[Vector2] = [Vector2(488,520)]
 var new_monsters = []
-@onready var void_area:Area2D = $void
 
 func _ready() -> void:
-	void_area.reset.connect(_on_reset)
+	$end.done.connect(_on_done)
+	$void.reset.connect(_on_reset)
+
+func _on_done():
+	get_tree().paused = true
+	await get_tree().create_timer(1.5).timeout
+	get_tree().paused = false
+	Globals.switch_scene(next_scene,1.6)
 
 func _on_reset():
 	# wait for 0.8 seconds till player goes back in place
