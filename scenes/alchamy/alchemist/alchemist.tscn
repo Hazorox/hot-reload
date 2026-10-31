@@ -1,0 +1,140 @@
+[gd_scene format=3 uid="uid://cx8ny1p0t0rqp"]
+
+[ext_resource type="Texture2D" uid="uid://bsxl2qg51e025" path="res://assets/Witch's brew-spritesheet.png" id="1_xikbo"]
+[ext_resource type="Script" uid="uid://btdywlahbu8ed" path="res://scenes/alchamy/alchemist/alchemist.gd" id="1_yemy3"]
+[ext_resource type="Script" uid="uid://bywr3aod1ejxs" path="res://scenes/alchamy/alchemist/area_2d.gd" id="2_7px4v"]
+[ext_resource type="FontFile" uid="uid://56elsektb64g" path="res://assets/fonts/alchemy-font/Elemental-lg5B0.ttf" id="3_yemy3"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_agtp0"]
+atlas = ExtResource("1_xikbo")
+region = Rect2(0, 0, 34, 51)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7px4v"]
+atlas = ExtResource("1_xikbo")
+region = Rect2(34, 0, 34, 51)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yemy3"]
+atlas = ExtResource("1_xikbo")
+region = Rect2(68, 0, 34, 51)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rx6vi"]
+atlas = ExtResource("1_xikbo")
+region = Rect2(102, 0, 34, 51)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mjxrl"]
+atlas = ExtResource("1_xikbo")
+region = Rect2(136, 0, 34, 51)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wue0a"]
+atlas = ExtResource("1_xikbo")
+region = Rect2(170, 0, 34, 51)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u4jhy"]
+atlas = ExtResource("1_xikbo")
+region = Rect2(204, 0, 34, 51)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x0cx7"]
+atlas = ExtResource("1_xikbo")
+region = Rect2(238, 0, 34, 51)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_td8kb"]
+atlas = ExtResource("1_xikbo")
+region = Rect2(272, 0, 34, 51)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5xddf"]
+atlas = ExtResource("1_xikbo")
+region = Rect2(306, 0, 34, 51)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jnmn6"]
+atlas = ExtResource("1_xikbo")
+region = Rect2(340, 0, 34, 51)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p7ebc"]
+atlas = ExtResource("1_xikbo")
+region = Rect2(374, 0, 34, 51)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gbg7l"]
+atlas = ExtResource("1_xikbo")
+region = Rect2(408, 0, 34, 51)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_s7wsd"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_agtp0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7px4v")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yemy3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rx6vi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mjxrl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wue0a")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u4jhy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x0cx7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_td8kb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5xddf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jnmn6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p7ebc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gbg7l")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 7.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_s7wsd"]
+radius = 13.0
+height = 52.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_s7wsd"]
+radius = 38.052597
+
+[node name="alchemist" type="CharacterBody2D" unique_id=273705664]
+script = ExtResource("1_yemy3")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1648133386]
+sprite_frames = SubResource("SpriteFrames_s7wsd")
+frame_progress = 0.55719346
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1762071771]
+shape = SubResource("CapsuleShape2D_s7wsd")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=856104274]
+script = ExtResource("2_7px4v")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1491402522]
+shape = SubResource("CircleShape2D_s7wsd")
+
+[node name="Label" type="Label" parent="." unique_id=263777475]
+offset_left = -36.0
+offset_top = -41.0
+offset_right = 36.0
+offset_bottom = -25.0
+theme_override_fonts/font = ExtResource("3_yemy3")
+theme_override_font_sizes/font_size = 11
+text = "E to Interact"
+
+[connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
+[connection signal="body_exited" from="Area2D" to="Area2D" method="_on_body_exited"]

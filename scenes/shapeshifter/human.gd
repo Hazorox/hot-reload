@@ -16,6 +16,9 @@ var player_state : String
 var gravity : float = 980
 var is_player_attacking : bool = false
 
+func _ready() -> void:
+	add_to_group("player")
+
 func _process(delta: float) -> void:
 	handle_player_items()
 	var direction := Input.get_vector("left", "right", "null", "null")

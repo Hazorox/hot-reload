@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://bo5n531cafxd4"]
+
+[ext_resource type="Texture2D" uid="uid://dkreu8e8x64r6" path="res://assets/alchhemy pack/alchhemy pack/basil 32.png" id="1_1t33h"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_s7rlf"]
+radius = 16.03122
+
+[node name="Slow" type="CharacterBody2D" unique_id=1798645364]
+
+[node name="1" type="Sprite2D" parent="." unique_id=1889953927]
+scale = Vector2(0.30664063, 0.30664063)
+texture = ExtResource("1_1t33h")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=353933179]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=369000382]
+shape = SubResource("CircleShape2D_s7rlf")
