@@ -164,6 +164,7 @@ _data = {
 }
 
 [node name="Human" type="CharacterBody2D" unique_id=2071774316]
+collision_layer = 2
 script = ExtResource("1_1w5uq")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1637730341]

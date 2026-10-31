@@ -8,7 +8,8 @@
 [ext_resource type="Texture2D" uid="uid://cycn0icx3dy37" path="res://assets/Vii/GandalfHardcore FREE Platformer Assets/GandalfHardcore FREE Platformer Assets/Animated Sprites/GandalfHardcore Animated Water Tiles.png" id="5_812e3"]
 [ext_resource type="Texture2D" uid="uid://cwmm67aeff2kv" path="res://assets/Vii/GandalfHardcore FREE Platformer Assets/GandalfHardcore FREE Platformer Assets/Other Tiles1.png" id="6_gpi6y"]
 [ext_resource type="PackedScene" uid="uid://dnv8kl8nseyrj" path="res://scenes/shapeshifter/human.tscn" id="7_k536t"]
-[ext_resource type="PackedScene" uid="uid://cyi0lo7molblp" path="res://scenes/shapeshifter/monester.tscn" id="9_812e3"]
+[ext_resource type="PackedScene" uid="uid://cyi0lo7molblp" path="res://scenes/shapeshifter/monester_eye.tscn" id="9_812e3"]
+[ext_resource type="PackedScene" uid="uid://be8qnw3kygngq" path="res://scenes/shapeshifter/monester_bat.tscn" id="10_jvwk5"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_gbc6e"]
 texture = ExtResource("3_k536t")
@@ -1555,4 +1556,8 @@ player_has_stick = true
 
 [node name="FlyingMonster" parent="." unique_id=1090826913 instance=ExtResource("9_812e3")]
 position = Vector2(749, 439)
+scale = Vector2(2, 2)
+
+[node name="FlyingMonster2" parent="." unique_id=943448418 instance=ExtResource("10_jvwk5")]
+position = Vector2(448, 461)
 scale = Vector2(2, 2)

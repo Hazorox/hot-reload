@@ -1,0 +1,155 @@
+[gd_scene format=3 uid="uid://be8qnw3kygngq"]
+
+[ext_resource type="Script" uid="uid://b4kf5r8nxalt6" path="res://scenes/shapeshifter/monester_bat.gd" id="1_66ddj"]
+[ext_resource type="Texture2D" uid="uid://cct1vcd6ee17f" path="res://assets/Vii/Monsters Creatures Fantasy 2/Monsters Creatures Fantasy 2/Bat/fly.png" id="2_uqfuq"]
+[ext_resource type="Texture2D" uid="uid://du4w1kgjfpco8" path="res://assets/Vii/Monsters Creatures Fantasy 2/Monsters Creatures Fantasy 2/Bat/fly-to-fall.png" id="3_1e0sx"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1e0sx"]
+atlas = ExtResource("2_uqfuq")
+region = Rect2(0, 0, 87, 87)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_66ddj"]
+atlas = ExtResource("2_uqfuq")
+region = Rect2(87, 0, 87, 87)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0e5wq"]
+atlas = ExtResource("2_uqfuq")
+region = Rect2(174, 0, 87, 87)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p80it"]
+atlas = ExtResource("2_uqfuq")
+region = Rect2(261, 0, 87, 87)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b8fxg"]
+atlas = ExtResource("2_uqfuq")
+region = Rect2(348, 0, 87, 87)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h0ft6"]
+atlas = ExtResource("2_uqfuq")
+region = Rect2(435, 0, 87, 87)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gegnl"]
+atlas = ExtResource("2_uqfuq")
+region = Rect2(522, 0, 87, 87)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_aq0dx"]
+atlas = ExtResource("2_uqfuq")
+region = Rect2(609, 0, 87, 87)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oc2c8"]
+atlas = ExtResource("2_uqfuq")
+region = Rect2(696, 0, 87, 87)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i5viv"]
+atlas = ExtResource("2_uqfuq")
+region = Rect2(783, 0, 87, 87)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tx6l7"]
+atlas = ExtResource("2_uqfuq")
+region = Rect2(870, 0, 87, 87)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bxgw6"]
+atlas = ExtResource("3_1e0sx")
+region = Rect2(0, 0, 87, 87)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lowqn"]
+atlas = ExtResource("3_1e0sx")
+region = Rect2(87, 0, 87, 87)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dphw2"]
+atlas = ExtResource("3_1e0sx")
+region = Rect2(174, 0, 87, 87)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_onkbk"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1e0sx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_66ddj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0e5wq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p80it")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b8fxg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h0ft6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gegnl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_aq0dx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oc2c8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i5viv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tx6l7")
+}],
+"loop": 1,
+"name": &"Flying",
+"speed": 20.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bxgw6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lowqn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dphw2")
+}],
+"loop": 0,
+"name": &"dying",
+"speed": 3.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_onkbk"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_kaadr"]
+radius = 12.0
+
+[node name="FlyingMonster" type="CharacterBody2D" unique_id=1090826913]
+script = ExtResource("1_66ddj")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=975527515]
+position = Vector2(0, -26)
+sprite_frames = SubResource("SpriteFrames_onkbk")
+animation = &"dying"
+autoplay = "Flying"
+frame = 2
+frame_progress = 1.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1853667634]
+visible = false
+position = Vector2(3, -23)
+shape = SubResource("RectangleShape2D_onkbk")
+disabled = true
+debug_color = Color(0.07663252, 0.6496034, 0, 0.41960785)
+
+[node name="LeftRay" type="RayCast2D" parent="." unique_id=563847324]
+position = Vector2(-19, -22)
+rotation = 1.5707964
+target_position = Vector2(0, 5)
+
+[node name="RightRay" type="RayCast2D" parent="." unique_id=762431067]
+position = Vector2(25, -22)
+rotation = 4.712389
+target_position = Vector2(0, 5)
+
+[node name="Area2D" type="Area2D" parent="." unique_id=865543686 groups=["monster"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1349896866]
+position = Vector2(5, -24)
+shape = SubResource("CircleShape2D_kaadr")

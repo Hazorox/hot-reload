@@ -4,9 +4,9 @@ extends CharacterBody2D
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 
 @export_range(-1, 1) var dir: int = 1
-@export var health : int = 100
+@export var health : int = 50
 
-var speed : float = 75.0
+var speed : float = 5.0
 var gravity : float = 98.0
 var is_dead : bool = false
 
@@ -23,7 +23,7 @@ func _physics_process(delta: float) -> void:
 	if health <= 0:
 		is_dead = true
 		animated_sprite_2d.play("dying")
-		$CollisionShape2D.set_deferred("disabled", true)
+		$Area2D/CollisionShape2D.set_deferred("disabled", true)
 		$Area2D.set_deferred("monitoring", false)
 		return
 	if dir == 1 and ($RightRay.is_colliding()):
