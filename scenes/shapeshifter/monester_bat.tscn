@@ -121,7 +121,7 @@ animations = [{
 radius = 12.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ad8vj"]
-size = Vector2(22, 11)
+size = Vector2(54, 27)
 
 [node name="FlyingMonster" type="CharacterBody2D" unique_id=1090826913 groups=["monster"]]
 script = ExtResource("1_66ddj")
@@ -129,10 +129,8 @@ script = ExtResource("1_66ddj")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=975527515]
 position = Vector2(0, -26)
 sprite_frames = SubResource("SpriteFrames_onkbk")
-animation = &"dying"
+animation = &"Flying"
 autoplay = "Flying"
-frame = 2
-frame_progress = 1.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1853667634]
 visible = false
@@ -160,5 +158,5 @@ shape = SubResource("CircleShape2D_kaadr")
 [node name="BouncingArea" type="Area2D" parent="." unique_id=632075685 groups=["bouncing"]]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="BouncingArea" unique_id=1559035860]
-position = Vector2(34, -14)
+position = Vector2(5, -3)
 shape = SubResource("RectangleShape2D_ad8vj")
