@@ -148,7 +148,7 @@ script/source = "extends Button
 
 
 func _on_pressed() -> void:
-	get_tree().change_scene_to_file(\"res://scenes/settings/settings.tscn\")
+	get_tree().change_scene_to_file(\"res://scenes/Main Menu/settings.tscn\")
 "
 
 [sub_resource type="GDScript" id="GDScript_0hvcy"]
@@ -156,7 +156,6 @@ resource_name = "help"
 script/source = "extends Button
 signal help_opened
 func _on_pressed() -> void:
-	get_tree().change_scene_to_file(\"res://scenes/help/help.tscn\")
 	help_opened.emit()
 "
 

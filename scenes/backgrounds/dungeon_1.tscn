@@ -1,12 +1,15 @@
 [gd_scene format=4 uid="uid://4kuiroaxuprj"]
 
 [ext_resource type="Texture2D" uid="uid://bc8fe2v2dsl8q" path="res://assets/Vii/GandalfHardcore FREE Platformer Assets/GandalfHardcore FREE Platformer Assets/Other Tiles2.png" id="1_gbc6e"]
+[ext_resource type="Script" uid="uid://cvcqpws2dkn7t" path="res://scenes/backgrounds/dungeon_1.gd" id="1_vyk6n"]
 [ext_resource type="Texture2D" uid="uid://f8s58h4vob0l" path="res://assets/Vii/GandalfHardcore FREE Platformer Assets/GandalfHardcore FREE Platformer Assets/BG Dirt1.png" id="2_gpi6y"]
 [ext_resource type="Texture2D" uid="uid://w2r1r6o2j106" path="res://assets/Vii/GandalfHardcore FREE Platformer Assets/GandalfHardcore FREE Platformer Assets/BG Dirt2.png" id="3_k536t"]
 [ext_resource type="Texture2D" uid="uid://rnnnh0lki65y" path="res://assets/Vii/GandalfHardcore FREE Platformer Assets/GandalfHardcore FREE Platformer Assets/Animated Sprites/GandalfHardcore Water Tiles sheet.png" id="4_vyk6n"]
 [ext_resource type="Texture2D" uid="uid://cycn0icx3dy37" path="res://assets/Vii/GandalfHardcore FREE Platformer Assets/GandalfHardcore FREE Platformer Assets/Animated Sprites/GandalfHardcore Animated Water Tiles.png" id="5_812e3"]
 [ext_resource type="Texture2D" uid="uid://cwmm67aeff2kv" path="res://assets/Vii/GandalfHardcore FREE Platformer Assets/GandalfHardcore FREE Platformer Assets/Other Tiles1.png" id="6_gpi6y"]
 [ext_resource type="PackedScene" uid="uid://dnv8kl8nseyrj" path="res://scenes/shapeshifter/human.tscn" id="7_k536t"]
+[ext_resource type="PackedScene" uid="uid://cyi0lo7molblp" path="res://scenes/shapeshifter/monester_eye.tscn" id="9_812e3"]
+[ext_resource type="PackedScene" uid="uid://be8qnw3kygngq" path="res://scenes/shapeshifter/monester_bat.tscn" id="10_jvwk5"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_gbc6e"]
 texture = ExtResource("3_k536t")
@@ -1508,9 +1511,13 @@ sources/4 = SubResource("TileSetAtlasSource_okie3")
 sources/5 = SubResource("TileSetAtlasSource_k536t")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_onkbk"]
-size = Vector2(1213, 20)
+size = Vector2(2000, 30)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vyk6n"]
+size = Vector2(20, 30)
 
 [node name="Dungeon1" type="Node2D" unique_id=740129556]
+script = ExtResource("1_vyk6n")
 
 [node name="BG" type="TileMapLayer" parent="." unique_id=1208982910]
 scale = Vector2(4, 4)
@@ -1525,9 +1532,32 @@ tile_set = SubResource("TileSet_onkbk")
 [node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=512190289]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=341512955]
-position = Vector2(675.5, 669)
+position = Vector2(674, 685)
 shape = SubResource("RectangleShape2D_onkbk")
 
+[node name="StaticBody2D2" type="StaticBody2D" parent="." unique_id=1340176895]
+position = Vector2(10, -286)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2" unique_id=581498356]
+position = Vector2(524, 676)
+shape = SubResource("RectangleShape2D_vyk6n")
+
+[node name="StaticBody2D3" type="StaticBody2D" parent="." unique_id=180658422]
+position = Vector2(498, -281)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D3" unique_id=1119319898]
+position = Vector2(524, 676)
+shape = SubResource("RectangleShape2D_vyk6n")
+
 [node name="Human" parent="." unique_id=2071774316 instance=ExtResource("7_k536t")]
-position = Vector2(263, 621)
+position = Vector2(486, 218)
 scale = Vector2(3, 3)
+player_has_stick = true
+
+[node name="FlyingMonster" parent="." unique_id=1090826913 instance=ExtResource("9_812e3")]
+position = Vector2(749, 439)
+scale = Vector2(2, 2)
+
+[node name="FlyingMonster2" parent="." unique_id=943448418 instance=ExtResource("10_jvwk5")]
+position = Vector2(448, 461)
+scale = Vector2(2, 2)

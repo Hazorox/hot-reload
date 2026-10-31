@@ -1,11 +1,17 @@
 [gd_scene format=3 uid="uid://dnv8kl8nseyrj"]
 
 [ext_resource type="Script" uid="uid://bem8amnd1d0tq" path="res://scenes/shapeshifter/human.gd" id="1_1w5uq"]
-[ext_resource type="Texture2D" uid="uid://btyvb3odq453" path="res://assets/Vii/Player/Player.png" id="1_87455"]
+[ext_resource type="Texture2D" uid="uid://b4a77y88btrlt" path="res://assets/Vii/Player/player_with_stick.png" id="2_1w5uq"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_1w5uq"]
 radius = 7.0
-height = 42.0
+height = 40.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vyk6n"]
+size = Vector2(24, 22)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_onkbk"]
+size = Vector2(20, 6)
 
 [sub_resource type="Animation" id="Animation_87455"]
 length = 0.001
@@ -20,6 +26,23 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_w75iq"]
+resource_name = "attacking"
+length = 0.7
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [50, 51, 52, 53, 54, 55, 50]
 }
 
 [sub_resource type="Animation" id="Animation_1w5uq"]
@@ -40,7 +63,7 @@ tracks/0/keys = {
 
 [sub_resource type="Animation" id="Animation_36iml"]
 resource_name = "falling"
-length = 0.39999999999999997
+length = 0.4
 loop_mode = 1
 step = 0.1
 tracks/0/type = "value"
@@ -76,7 +99,7 @@ tracks/0/keys = {
 
 [sub_resource type="Animation" id="Animation_mayo7"]
 resource_name = "jumping"
-length = 0.39999999999999997
+length = 0.4
 loop_mode = 1
 step = 0.1
 tracks/0/type = "value"
@@ -131,6 +154,7 @@ tracks/0/keys = {
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_w75iq"]
 _data = {
 &"RESET": SubResource("Animation_87455"),
+&"attacking": SubResource("Animation_w75iq"),
 &"death": SubResource("Animation_1w5uq"),
 &"falling": SubResource("Animation_36iml"),
 &"idle": SubResource("Animation_0gjc5"),
@@ -139,12 +163,17 @@ _data = {
 &"walking": SubResource("Animation_qwwio")
 }
 
-[node name="Human" type="CharacterBody2D" unique_id=2071774316]
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_onkbk"]
+radius = 7.0
+height = 44.0
+
+[node name="Human" type="CharacterBody2D" unique_id=2071774316 groups=["player"]]
+collision_layer = 2
 script = ExtResource("1_1w5uq")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1637730341]
 position = Vector2(-40, -64)
-texture = ExtResource("1_87455")
+texture = ExtResource("2_1w5uq")
 centered = false
 hframes = 10
 vframes = 7
@@ -153,9 +182,27 @@ vframes = 7
 position = Vector2(0, -21)
 shape = SubResource("CapsuleShape2D_1w5uq")
 
-[node name="Area2D" type="Area2D" parent="." unique_id=1641460309]
+[node name="SideAttack" type="Area2D" parent="." unique_id=1641460309]
+monitoring = false
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=960490721]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SideAttack" unique_id=960490721]
+position = Vector2(-26, -30)
+shape = SubResource("RectangleShape2D_vyk6n")
+
+[node name="DoubleJump" type="Area2D" parent="." unique_id=495442634]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DoubleJump" unique_id=1017786113]
+position = Vector2(0, -1)
+shape = SubResource("RectangleShape2D_onkbk")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=128517361]
 libraries/ = SubResource("AnimationLibrary_w75iq")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=157287713]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=195197675]
+position = Vector2(-1, -22)
+shape = SubResource("CapsuleShape2D_onkbk")
+
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
