@@ -2,12 +2,12 @@ extends CharacterBody2D
 
 
 const SPEED = 300.0
-const JUMP_VELOCITY = -600.0
+const JUMP_VELOCITY = -650.0
 
 @onready var attack_area = $attack
 @onready var attack_collision = $attack/CollisionShape2D
 # Jump cut for increasing jump based on how much up was held
-const jump_cut = 0.25
+const jump_cut = 0.2
 const attack_down = Vector2(0,30)
 const attack_up = Vector2(0,-30)
 const attack_left = Vector2(-30,0)
@@ -18,6 +18,7 @@ var facing := 1
 func _ready():
 	attack_collision.disabled = true
 @export var attacking := false
+@export var is_heavy := true
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
 	if not is_on_floor():
@@ -58,3 +59,7 @@ func get_offset()->Vector2:
 	if Input.is_action_pressed("right"):
 		return attack_right
 	return attack_right if facing >0 else attack_left
+
+
+func _on_trap_body_entered(body: Node2D) -> void:
+	pass # Replace with function body.
