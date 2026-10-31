@@ -1,0 +1,33 @@
+[gd_scene format=3 uid="uid://bln0jbf2p76pn"]
+
+[ext_resource type="Script" uid="uid://crf8sbansoyr3" path="res://scenes/items/stick.gd" id="1_7rqfo"]
+[ext_resource type="Texture2D" uid="uid://bqdk24pu22lru" path="res://assets/item-stick.png" id="2_tkx6t"]
+[ext_resource type="Script" uid="uid://twxlwdo0a1vr" path="res://scenes/items/key.gd" id="3_hhyfn"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_nfrx5"]
+radius = 112.04017
+
+[node name="Stick" type="Area2D" unique_id=909055187]
+script = ExtResource("1_7rqfo")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=96509395]
+offset_left = -40.0
+offset_top = -39.0
+offset_bottom = 1.0
+scale = Vector2(2, 2)
+texture = ExtResource("2_tkx6t")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1466972219]
+shape = SubResource("CircleShape2D_nfrx5")
+
+[node name="key" type="TextureRect" parent="." unique_id=1067433647]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -36.0
+offset_top = -240.0
+offset_right = 4.0
+offset_bottom = -200.0
+grow_horizontal = 2
+scale = Vector2(2, 2)
+script = ExtResource("3_hhyfn")
