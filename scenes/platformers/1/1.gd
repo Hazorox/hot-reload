@@ -6,4 +6,4 @@ func _ready():
 	end.reached.connect(_on_reached)
 
 func _on_reached():
-	Globals.switch_scene(next_scene)
+	Globals.switch_scene(next_scene,1.6)
