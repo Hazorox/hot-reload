@@ -167,7 +167,7 @@ _data = {
 radius = 7.0
 height = 44.0
 
-[node name="Human" type="CharacterBody2D" unique_id=2071774316]
+[node name="Human" type="CharacterBody2D" unique_id=2071774316 groups=["player"]]
 collision_layer = 2
 script = ExtResource("1_1w5uq")
 

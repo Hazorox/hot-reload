@@ -31,7 +31,7 @@ func _physics_process(delta: float) -> void:
 		$Area2D.scale.x = -1
 		$BouncingArea.scale.x = -1
 		dir = -1
-	if dir == -1 and ($LeftRay.is_colliding()):
+	elif dir == -1 and ($LeftRay.is_colliding()):
 		animated_sprite_2d.flip_h = false
 		$Area2D.scale.x = 1
 		$BouncingArea.scale.x = 1
