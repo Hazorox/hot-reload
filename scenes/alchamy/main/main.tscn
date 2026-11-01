@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://mw3j1gmf0vwp" path="res://assets/The Fan-tasy Tileset (Free) 1.5.7/The Fan-tasy Tileset (Free)/Art/Ground Tileset/Tileset_Ground.png" id="1_fj6oy"]
 [ext_resource type="Script" uid="uid://bgmvdkiopwuvg" path="res://scenes/alchamy/main/main.gd" id="1_ymbda"]
 [ext_resource type="Texture2D" uid="uid://33vycbqravrq" path="res://assets/The Fan-tasy Tileset (Free) 1.5.7/The Fan-tasy Tileset (Free)/Art/Ground Tileset/Tileset_Road.png" id="2_mo1nl"]
-[ext_resource type="PackedScene" uid="uid://4kuiroaxuprj" path="res://scenes/backgrounds/dungeon_1.tscn" id="2_tvke3"]
+[ext_resource type="PackedScene" uid="uid://4kuiroaxuprj" path="res://scenes/backgrounds/dungeon.tscn" id="2_tvke3"]
 [ext_resource type="Texture2D" uid="uid://b704qkprdmls4" path="res://assets/Alchemy_Shop_Tiles/Alchemy_Shop_Tiles/PNG/alchemy_shop_floor_walls_32x32.png" id="3_pfpqp"]
 [ext_resource type="PackedScene" uid="uid://g2sgninh5xqp" path="res://scenes/shapeshifter/HUD/winning_screen.tscn" id="3_whxeu"]
 [ext_resource type="Texture2D" uid="uid://bgag1hy4aqm5r" path="res://assets/Alchemy_Shop_Tiles/Alchemy_Shop_Tiles/PNG/alchemy_shop_props_32x32.png" id="4_05fwc"]

@@ -15,7 +15,7 @@ extends CharacterBody2D
 @export var slide_duration_min : float = 0.3
 @export var slide_duration_max : float = 0.5
 @export var attack_windup_time : float = 0.3
-@export var alchemist_scene : PackedScene = null
+@export var alchemist_scene_path : String = "res://scenes/alchamy/main/main.tscn"
 
 var player : Node2D = null
 var gravity : float = 980.0
@@ -147,7 +147,7 @@ func _on_animation_player_animation_finished(anim_name: StringName) -> void:
 				is_preparing_attack = true
 				attack_windup_timer = attack_windup_time
 	elif anim_name == "death":
-		Globals.switch_scene(alchemist_scene, 0.67)
+		Globals.switch_scene(load(alchemist_scene_path), 0.67)
 
 func _on_hitting_box_area_entered(area: Area2D) -> void:
 	if area.is_in_group("player"):

@@ -158,6 +158,13 @@ position = Vector2(-17, -25)
 shape = SubResource("RectangleShape2D_onkbk")
 disabled = true
 
+[node name="HittingBox" type="Area2D" parent="HittingBox" unique_id=400698545 groups=["boss_attack"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HittingBox/HittingBox" unique_id=1491291492]
+position = Vector2(-17, -25)
+shape = SubResource("RectangleShape2D_onkbk")
+disabled = true
+
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
 [connection signal="area_entered" from="HurtBox" to="." method="_on_hurt_box_area_entered"]
 [connection signal="area_entered" from="HittingBox" to="." method="_on_hitting_box_area_entered"]
