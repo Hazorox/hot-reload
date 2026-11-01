@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://dsmlkxq7eubel" path="res://scenes/platformers/2/2.gd" id="1_2fiiu"]
 [ext_resource type="Texture2D" uid="uid://bjej57um0ms4e" path="res://assets/free-cartoon-forest-game-backgrounds/PNG/Cartoon_Forest_BG_03/Layers/Sky.png" id="1_2l8xk"]
-[ext_resource type="PackedScene" uid="uid://bgpob5ntcoils" path="res://scenes/Main Menu/main.tscn" id="2_6dlvn"]
+[ext_resource type="PackedScene" uid="uid://bgpob5ntcoils" path="res://scenes/MainMenu/main.tscn" id="2_6dlvn"]
 [ext_resource type="Texture2D" uid="uid://u43r3m8jbyx6" path="res://assets/Vii/GandalfHardcore FREE Platformer Assets/GandalfHardcore FREE Platformer Assets/GandalfHardcore Background layers/Autumn BG/GandalfHardcore Background layers_layer 1.png" id="2_voi22"]
 [ext_resource type="Texture2D" uid="uid://cttjeqioc27uv" path="res://assets/Vii/GandalfHardcore FREE Platformer Assets/GandalfHardcore FREE Platformer Assets/Floor Tiles1.png" id="4_bwdjn"]
 [ext_resource type="Texture2D" uid="uid://cwmm67aeff2kv" path="res://assets/Vii/GandalfHardcore FREE Platformer Assets/GandalfHardcore FREE Platformer Assets/Other Tiles1.png" id="5_2fiiu"]

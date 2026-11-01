@@ -1,0 +1,214 @@
+[gd_scene format=3 uid="uid://g2sgninh5xqp"]
+
+[ext_resource type="FontFile" uid="uid://56elsektb64g" path="res://assets/fonts/alchemy-font/Elemental-lg5B0.ttf" id="1_35els"]
+[ext_resource type="Script" uid="uid://bqgla37g8dsxn" path="res://scenes/shapeshifter/HUD/color_rect.gd" id="1_myf2u"]
+[ext_resource type="Texture2D" uid="uid://cduqmc7wyk03b" path="res://assets/Alchemy_Ingredients_Items_Pack_FREE/Alchemy_Ingredients_Items_Pack_FREE/Alchemy_Ingredients_Items_Pack_FREE-48x48.png" id="2_g4v2i"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_onkbk"]
+bg_color = Color(0.15280873, 0.61774546, 0.9999998, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.9999998, 0.7568185, 0.17863241, 1)
+border_blend = true
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+expand_margin_left = 10.0
+expand_margin_top = 10.0
+expand_margin_right = 10.0
+expand_margin_bottom = 10.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_35els"]
+bg_color = Color(0, 1, 0.22745098, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0, 0, 1, 1)
+border_blend = true
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+expand_margin_left = 10.0
+expand_margin_top = 10.0
+expand_margin_right = 10.0
+expand_margin_bottom = 10.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_g4v2i"]
+bg_color = Color(0.6, 1, 0.6, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(1, 0.8, 0.8, 1)
+border_blend = true
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+expand_margin_left = 10.0
+expand_margin_top = 10.0
+expand_margin_right = 10.0
+expand_margin_bottom = 10.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_35els"]
+atlas = ExtResource("2_g4v2i")
+region = Rect2(201, 99, 30, 42)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_myf2u"]
+atlas = ExtResource("2_g4v2i")
+region = Rect2(249, 99, 30, 42)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rkpma"]
+atlas = ExtResource("2_g4v2i")
+region = Rect2(198, 150, 36, 36)
+
+[node name="WinningScreen" type="Control" unique_id=1744722251]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1904852484]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.078431375, 0.078431375, 0.078431375, 1)
+script = ExtResource("1_myf2u")
+
+[node name="Label" type="Label" parent="." unique_id=1027588481]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -20.0
+offset_right = 20.0
+offset_bottom = 23.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_35els")
+theme_override_font_sizes/font_size = 48
+text = "Congratsss You've won"
+
+[node name="Button" type="Button" parent="." unique_id=302688869]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -32.5
+offset_top = -15.5
+offset_right = 32.5
+offset_bottom = 15.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_pressed_color = Color(0, 0, 1, 1)
+theme_override_colors/font_hover_color = Color(0.5246658, 0.00019574777, 0.524662, 1)
+theme_override_fonts/font = ExtResource("1_35els")
+theme_override_font_sizes/font_size = 48
+theme_override_styles/normal = SubResource("StyleBoxFlat_onkbk")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_35els")
+theme_override_styles/hover = SubResource("StyleBoxFlat_g4v2i")
+text = "Restart"
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1479630678]
+layout_mode = 0
+offset_left = 895.0
+offset_top = 156.0
+offset_right = 925.0
+offset_bottom = 198.0
+rotation = 0.7853982
+scale = Vector2(3, 3)
+texture = SubResource("AtlasTexture_35els")
+
+[node name="TextureRect4" type="TextureRect" parent="." unique_id=209008043]
+layout_mode = 0
+offset_left = 1036.0
+offset_top = 543.0
+offset_right = 1066.0
+offset_bottom = 585.0
+rotation = -0.7853982
+scale = Vector2(3, 3)
+texture = SubResource("AtlasTexture_35els")
+
+[node name="TextureRect5" type="TextureRect" parent="." unique_id=1982774519]
+layout_mode = 0
+offset_left = 87.0
+offset_top = 288.0
+offset_right = 117.0
+offset_bottom = 330.0
+rotation = -2.6179938
+scale = Vector2(3, 3)
+texture = SubResource("AtlasTexture_35els")
+
+[node name="TextureRect2" type="TextureRect" parent="." unique_id=2117084361]
+layout_mode = 0
+offset_left = 288.0
+offset_top = 306.0
+offset_right = 318.0
+offset_bottom = 348.0
+rotation = 0.2617994
+scale = Vector2(3, 3)
+texture = SubResource("AtlasTexture_myf2u")
+
+[node name="TextureRect6" type="TextureRect" parent="." unique_id=394003592]
+layout_mode = 0
+offset_left = 1111.0
+offset_top = 104.0
+offset_right = 1141.0
+offset_bottom = 146.0
+rotation = -1.3089969
+scale = Vector2(3, 3)
+texture = SubResource("AtlasTexture_myf2u")
+
+[node name="TextureRect7" type="TextureRect" parent="." unique_id=1343625828]
+layout_mode = 0
+offset_left = 714.0
+offset_top = 614.0
+offset_right = 744.0
+offset_bottom = 656.0
+rotation = 2.8797934
+scale = Vector2(3, 3)
+texture = SubResource("AtlasTexture_myf2u")
+
+[node name="TextureRect3" type="TextureRect" parent="." unique_id=236703286]
+layout_mode = 0
+offset_left = 1113.0
+offset_top = 317.0
+offset_right = 1149.0
+offset_bottom = 353.0
+rotation = 1.0471976
+scale = Vector2(3, 3)
+texture = SubResource("AtlasTexture_rkpma")
+
+[node name="TextureRect8" type="TextureRect" parent="." unique_id=845223767]
+layout_mode = 0
+offset_left = 667.00006
+offset_top = 244.00002
+offset_right = 703.00006
+offset_bottom = 280.0
+rotation = 2.8797934
+scale = Vector2(3, 3)
+texture = SubResource("AtlasTexture_rkpma")
+
+[node name="TextureRect9" type="TextureRect" parent="." unique_id=261678652]
+layout_mode = 0
+offset_left = 70.0
+offset_top = 588.00006
+offset_right = 106.0
+offset_bottom = 624.00006
+rotation = -0.5235988
+scale = Vector2(3, 3)
+texture = SubResource("AtlasTexture_rkpma")
+
+[connection signal="pressed" from="Button" to="ColorRect" method="_on_button_pressed"]

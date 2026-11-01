@@ -71,7 +71,7 @@ tracks/0/keys = {
 
 [sub_resource type="Animation" id="Animation_0ckip"]
 resource_name = "sliding"
-length = 0.39999999999999997
+length = 0.4
 loop_mode = 1
 step = 0.1
 tracks/0/type = "value"
@@ -124,7 +124,7 @@ radius = 8.0
 height = 42.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_onkbk"]
-size = Vector2(25, 12)
+size = Vector2(12, 12)
 
 [node name="Boss" type="CharacterBody2D" unique_id=105943920 groups=["monster"]]
 script = ExtResource("1_obqma")
@@ -154,9 +154,10 @@ shape = SubResource("CapsuleShape2D_onkbk")
 [node name="HittingBox" type="Area2D" parent="." unique_id=1955122901]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HittingBox" unique_id=1337384980]
-position = Vector2(-23.5, -25)
+position = Vector2(-17, -25)
 shape = SubResource("RectangleShape2D_onkbk")
 disabled = true
 
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
+[connection signal="area_entered" from="HurtBox" to="." method="_on_hurt_box_area_entered"]
 [connection signal="area_entered" from="HittingBox" to="." method="_on_hitting_box_area_entered"]

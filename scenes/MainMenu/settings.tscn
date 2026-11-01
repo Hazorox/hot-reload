@@ -1,28 +1,25 @@
-[gd_scene format=3 uid="uid://bjsplafh0wt4f"]
+[gd_scene format=3 uid="uid://cck323w1mugfg"]
 
-[ext_resource type="Texture2D" uid="uid://wb0rfyo0vg5l" path="res://assets/controls.png" id="1_vttr7"]
-[ext_resource type="FontFile" uid="uid://dcnoxc2coa4sc" path="res://assets/pixelwarden/PixelWarden.ttf" id="2_1elg5"]
-[ext_resource type="FontFile" uid="uid://dlsw8mfvu7hof" path="res://assets/fonts/Enchanted Land.otf" id="3_fgfdp"]
-[ext_resource type="Script" uid="uid://d0cxk4igv0wm5" path="res://scenes/Main Menu/control_change.gd" id="4_6eabd"]
-[ext_resource type="Script" uid="uid://bwkb0a8wcfpl8" path="res://scenes/Main Menu/fullscreen.gd" id="5_t30n4"]
-[ext_resource type="Script" uid="uid://cymjpeov4p00h" path="res://scenes/Main Menu/audio.gd" id="6_1elg5"]
-[ext_resource type="Script" uid="uid://bdsgqdhnoavl" path="res://scenes/Main Menu/back.gd" id="7_fgfdp"]
-[ext_resource type="Script" uid="uid://c2mbuudc2nhfh" path="res://scenes/Main Menu/main_menu.gd" id="8_6eabd"]
+[ext_resource type="Texture2D" uid="uid://wb0rfyo0vg5l" path="res://assets/controls.png" id="1_nchv8"]
+[ext_resource type="FontFile" uid="uid://dcnoxc2coa4sc" path="res://assets/pixelwarden/PixelWarden.ttf" id="2_qji5x"]
+[ext_resource type="FontFile" uid="uid://dlsw8mfvu7hof" path="res://assets/fonts/Enchanted Land.otf" id="3_kq3ng"]
+[ext_resource type="Script" uid="uid://d0cxk4igv0wm5" path="res://scenes/MainMenu/control_change.gd" id="4_nchv8"]
+[ext_resource type="Script" uid="uid://bwkb0a8wcfpl8" path="res://scenes/MainMenu/fullscreen.gd" id="5_qji5x"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_8tkh1"]
-atlas = ExtResource("1_vttr7")
+atlas = ExtResource("1_nchv8")
 region = Rect2(0, 0, 80, 128)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_prh7v"]
-atlas = ExtResource("1_vttr7")
+atlas = ExtResource("1_nchv8")
 region = Rect2(80, 0, 80, 128)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_yvpam"]
-atlas = ExtResource("1_vttr7")
+atlas = ExtResource("1_nchv8")
 region = Rect2(160, 0, 80, 128)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_4ls8l"]
-atlas = ExtResource("1_vttr7")
+atlas = ExtResource("1_nchv8")
 region = Rect2(240, 0, 80, 128)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_s7wsd"]
@@ -128,20 +125,14 @@ offset_left = 421.0
 offset_top = 50.0
 offset_right = 871.0
 offset_bottom = 180.0
-theme_override_fonts/font = ExtResource("2_1elg5")
+theme_override_fonts/font = ExtResource("2_qji5x")
 theme_override_font_sizes/font_size = 120
-text = "Pause"
-horizontal_alignment = 1
-vertical_alignment = 1
+text = "Conrtols"
 
 [node name="Control" type="Control" parent="." unique_id=1590902060]
-layout_mode = 1
-anchor_left = -0.016
-anchor_right = -0.016
-offset_left = 245.48
-offset_top = -16.0
-offset_right = 285.48
-offset_bottom = 24.0
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
 
 [node name="label" type="Label" parent="Control" unique_id=1371679845]
 layout_mode = 0
@@ -149,7 +140,7 @@ offset_left = 114.0
 offset_top = 190.0
 offset_right = 196.0
 offset_bottom = 274.0
-theme_override_fonts/font = ExtResource("3_fgfdp")
+theme_override_fonts/font = ExtResource("3_kq3ng")
 theme_override_font_sizes/font_size = 72
 text = "Left"
 
@@ -159,20 +150,20 @@ offset_left = 129.0
 offset_top = 282.0
 offset_right = 193.0
 offset_bottom = 376.0
-theme_override_fonts/font = ExtResource("3_fgfdp")
+theme_override_fonts/font = ExtResource("3_kq3ng")
 theme_override_font_sizes/font_size = 72
 theme_override_styles/normal = SubResource("StyleBoxFlat_s7wsd")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_s7rlf")
 theme_override_styles/hover = SubResource("StyleBoxFlat_0cvp5")
 text = "A"
-script = ExtResource("4_6eabd")
+script = ExtResource("4_nchv8")
 
 [node name="Control2" type="Control" parent="." unique_id=987186083]
 anchors_preset = 0
-offset_left = 880.0
-offset_top = -32.0
-offset_right = 920.0
-offset_bottom = 8.0
+offset_left = 804.0
+offset_top = -8.0
+offset_right = 844.0
+offset_bottom = 32.0
 
 [node name="label" type="Label" parent="Control2" unique_id=1500154100]
 layout_mode = 0
@@ -180,7 +171,7 @@ offset_left = -437.0
 offset_top = 210.0
 offset_right = -323.0
 offset_bottom = 294.0
-theme_override_fonts/font = ExtResource("3_fgfdp")
+theme_override_fonts/font = ExtResource("3_kq3ng")
 theme_override_font_sizes/font_size = 72
 text = "Right"
 
@@ -190,20 +181,20 @@ offset_left = -409.0
 offset_top = 297.0
 offset_right = -345.0
 offset_bottom = 391.0
-theme_override_fonts/font = ExtResource("3_fgfdp")
+theme_override_fonts/font = ExtResource("3_kq3ng")
 theme_override_font_sizes/font_size = 72
 theme_override_styles/normal = SubResource("StyleBoxFlat_s7wsd")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_s7rlf")
 theme_override_styles/hover = SubResource("StyleBoxFlat_0cvp5")
 text = "D"
-script = ExtResource("4_6eabd")
+script = ExtResource("4_nchv8")
 
 [node name="Control3" type="Control" parent="." unique_id=863385138]
 anchors_preset = 0
-offset_left = 313.0
-offset_top = 228.0
-offset_right = 353.0
-offset_bottom = 268.0
+offset_left = -2.0
+offset_top = 135.0
+offset_right = 38.0
+offset_bottom = 175.0
 
 [node name="label" type="Label" parent="Control3" unique_id=1244657617]
 layout_mode = 0
@@ -211,7 +202,7 @@ offset_left = 252.0
 offset_top = -51.0
 offset_right = 334.0
 offset_bottom = 33.0
-theme_override_fonts/font = ExtResource("3_fgfdp")
+theme_override_fonts/font = ExtResource("3_kq3ng")
 theme_override_font_sizes/font_size = 72
 text = "Up"
 horizontal_alignment = 1
@@ -223,20 +214,20 @@ offset_left = 259.0
 offset_top = 37.0
 offset_right = 323.0
 offset_bottom = 131.0
-theme_override_fonts/font = ExtResource("3_fgfdp")
+theme_override_fonts/font = ExtResource("3_kq3ng")
 theme_override_font_sizes/font_size = 72
 theme_override_styles/normal = SubResource("StyleBoxFlat_s7wsd")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_s7rlf")
 theme_override_styles/hover = SubResource("StyleBoxFlat_0cvp5")
 text = "W"
-script = ExtResource("4_6eabd")
+script = ExtResource("4_nchv8")
 
 [node name="Control4" type="Control" parent="." unique_id=941654826]
 anchors_preset = 0
-offset_left = 1224.0
-offset_top = 46.0
-offset_right = 1264.0
-offset_bottom = 86.0
+offset_left = 803.0
+offset_top = 123.0
+offset_right = 843.0
+offset_bottom = 163.0
 
 [node name="label" type="Label" parent="Control4" unique_id=1951373388]
 layout_mode = 0
@@ -244,7 +235,7 @@ offset_left = -576.0
 offset_top = 137.0
 offset_right = -455.0
 offset_bottom = 221.0
-theme_override_fonts/font = ExtResource("3_fgfdp")
+theme_override_fonts/font = ExtResource("3_kq3ng")
 theme_override_font_sizes/font_size = 72
 text = "Down"
 horizontal_alignment = 1
@@ -256,20 +247,20 @@ offset_left = -543.0
 offset_top = 213.0
 offset_right = -479.0
 offset_bottom = 307.0
-theme_override_fonts/font = ExtResource("3_fgfdp")
+theme_override_fonts/font = ExtResource("3_kq3ng")
 theme_override_font_sizes/font_size = 72
 theme_override_styles/normal = SubResource("StyleBoxFlat_s7wsd")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_s7rlf")
 theme_override_styles/hover = SubResource("StyleBoxFlat_0cvp5")
 text = "S"
-script = ExtResource("4_6eabd")
+script = ExtResource("4_nchv8")
 
 [node name="Control5" type="Control" parent="." unique_id=1437051176]
 anchors_preset = 0
-offset_left = -54.0
-offset_top = 74.0
-offset_right = -14.0
-offset_bottom = 114.0
+offset_left = 4.0
+offset_top = 304.0
+offset_right = 44.0
+offset_bottom = 344.0
 
 [node name="label" type="Label" parent="Control5" unique_id=604259107]
 layout_mode = 0
@@ -277,7 +268,7 @@ offset_left = 232.0
 offset_top = 112.0
 offset_right = 346.0
 offset_bottom = 196.0
-theme_override_fonts/font = ExtResource("3_fgfdp")
+theme_override_fonts/font = ExtResource("3_kq3ng")
 theme_override_font_sizes/font_size = 72
 text = "Jump"
 
@@ -287,27 +278,27 @@ offset_left = 230.0
 offset_top = 188.0
 offset_right = 362.0
 offset_bottom = 282.0
-theme_override_fonts/font = ExtResource("3_fgfdp")
+theme_override_fonts/font = ExtResource("3_kq3ng")
 theme_override_font_sizes/font_size = 72
 theme_override_styles/normal = SubResource("StyleBoxFlat_s7wsd")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_s7rlf")
 theme_override_styles/hover = SubResource("StyleBoxFlat_0cvp5")
 text = "Space"
-script = ExtResource("4_6eabd")
+script = ExtResource("4_nchv8")
 
 [node name="Control6" type="Control" parent="." unique_id=1740144097]
 anchors_preset = 0
-offset_left = -26.0
-offset_top = 262.0
-offset_right = 14.0
-offset_bottom = 302.0
+offset_left = 813.0
+offset_top = 279.0
+offset_right = 853.0
+offset_bottom = 319.0
 
 [node name="label" type="Label" parent="Control6" unique_id=2135481550]
 layout_mode = 0
 offset_left = 35.0
 offset_top = -84.0
 offset_right = 184.0
-theme_override_fonts/font = ExtResource("3_fgfdp")
+theme_override_fonts/font = ExtResource("3_kq3ng")
 theme_override_font_sizes/font_size = 72
 text = "Interact"
 
@@ -317,20 +308,20 @@ offset_left = 75.0
 offset_top = 4.0
 offset_right = 139.0
 offset_bottom = 98.0
-theme_override_fonts/font = ExtResource("3_fgfdp")
+theme_override_fonts/font = ExtResource("3_kq3ng")
 theme_override_font_sizes/font_size = 72
 theme_override_styles/normal = SubResource("StyleBoxFlat_s7wsd")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_s7rlf")
 theme_override_styles/hover = SubResource("StyleBoxFlat_0cvp5")
 text = "E"
-script = ExtResource("4_6eabd")
+script = ExtResource("4_nchv8")
 
 [node name="Control7" type="Control" parent="." unique_id=266380519]
 anchors_preset = 0
-offset_left = 744.0
-offset_top = 163.0
-offset_right = 784.0
-offset_bottom = 203.0
+offset_left = 665.0
+offset_top = 371.0
+offset_right = 705.0
+offset_bottom = 411.0
 
 [node name="label" type="Label" parent="Control7" unique_id=1259317860]
 layout_mode = 0
@@ -338,7 +329,7 @@ offset_left = 17.0
 offset_top = 17.0
 offset_right = 175.0
 offset_bottom = 101.0
-theme_override_fonts/font = ExtResource("3_fgfdp")
+theme_override_fonts/font = ExtResource("3_kq3ng")
 theme_override_font_sizes/font_size = 72
 text = "Dash"
 horizontal_alignment = 1
@@ -349,20 +340,20 @@ offset_left = 57.0
 offset_top = 105.0
 offset_right = 121.0
 offset_bottom = 199.0
-theme_override_fonts/font = ExtResource("3_fgfdp")
+theme_override_fonts/font = ExtResource("3_kq3ng")
 theme_override_font_sizes/font_size = 72
 theme_override_styles/normal = SubResource("StyleBoxFlat_s7wsd")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_s7rlf")
 theme_override_styles/hover = SubResource("StyleBoxFlat_0cvp5")
 text = "V"
-script = ExtResource("4_6eabd")
+script = ExtResource("4_nchv8")
 
 [node name="attackControl" type="Control" parent="." unique_id=238777764]
 anchors_preset = 0
-offset_left = 657.0
-offset_top = 109.0
-offset_right = 697.0
-offset_bottom = 149.0
+offset_left = 423.0
+offset_top = 124.0
+offset_right = 463.0
+offset_bottom = 164.0
 
 [node name="label" type="Label" parent="attackControl" unique_id=241375130]
 layout_mode = 0
@@ -370,7 +361,7 @@ offset_left = 258.0
 offset_top = 68.0
 offset_right = 407.0
 offset_bottom = 152.0
-theme_override_fonts/font = ExtResource("3_fgfdp")
+theme_override_fonts/font = ExtResource("3_kq3ng")
 theme_override_font_sizes/font_size = 72
 text = "Attack"
 
@@ -380,7 +371,7 @@ offset_left = 261.0
 offset_top = 154.0
 offset_right = 392.0
 offset_bottom = 248.0
-theme_override_fonts/font = ExtResource("3_fgfdp")
+theme_override_fonts/font = ExtResource("3_kq3ng")
 theme_override_font_sizes/font_size = 72
 theme_override_styles/normal = SubResource("StyleBoxFlat_s7wsd")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_s7rlf")
@@ -389,10 +380,10 @@ text = "LMB"
 
 [node name="Control8" type="Control" parent="." unique_id=1469620001]
 anchors_preset = 0
-offset_left = 619.0
-offset_top = 394.0
-offset_right = 659.0
-offset_bottom = 434.0
+offset_left = 627.0
+offset_top = 373.0
+offset_right = 667.0
+offset_bottom = 413.0
 
 [node name="label" type="Label" parent="Control8" unique_id=868711849]
 layout_mode = 0
@@ -400,7 +391,7 @@ offset_left = 238.0
 offset_top = 19.0
 offset_right = 443.0
 offset_bottom = 103.0
-theme_override_fonts/font = ExtResource("3_fgfdp")
+theme_override_fonts/font = ExtResource("3_kq3ng")
 theme_override_font_sizes/font_size = 72
 text = "Fullscreen"
 
@@ -410,77 +401,12 @@ offset_left = 278.0
 offset_top = 107.0
 offset_right = 398.0
 offset_bottom = 201.0
-theme_override_fonts/font = ExtResource("3_fgfdp")
+theme_override_fonts/font = ExtResource("3_kq3ng")
 theme_override_font_sizes/font_size = 72
 theme_override_styles/normal = SubResource("StyleBoxFlat_s7wsd")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_s7rlf")
 theme_override_styles/hover = SubResource("StyleBoxFlat_0cvp5")
 text = "OFF"
-script = ExtResource("5_t30n4")
-
-[node name="Control9" type="Control" parent="." unique_id=1975716346]
-anchors_preset = 0
-offset_left = 372.0
-offset_top = 387.0
-offset_right = 412.0
-offset_bottom = 427.0
-
-[node name="label" type="Label" parent="Control9" unique_id=1649659773]
-layout_mode = 0
-offset_left = 238.0
-offset_top = 21.0
-offset_right = 443.0
-offset_bottom = 105.0
-theme_override_fonts/font = ExtResource("3_fgfdp")
-theme_override_font_sizes/font_size = 72
-text = "SFX"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="audio" type="Button" parent="Control9" unique_id=129760523]
-layout_mode = 0
-offset_left = 278.0
-offset_top = 107.0
-offset_right = 398.0
-offset_bottom = 201.0
-theme_override_fonts/font = ExtResource("3_fgfdp")
-theme_override_font_sizes/font_size = 72
-theme_override_styles/normal = SubResource("StyleBoxFlat_s7wsd")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_s7rlf")
-theme_override_styles/hover = SubResource("StyleBoxFlat_0cvp5")
-text = "ON"
-script = ExtResource("6_1elg5")
-
-[node name="back" type="Button" parent="." unique_id=219897085]
-layout_mode = 0
-offset_left = 339.0
-offset_top = 441.0
-offset_right = 566.0
-offset_bottom = 535.0
-theme_override_fonts/font = ExtResource("3_fgfdp")
-theme_override_font_sizes/font_size = 72
-theme_override_styles/normal = SubResource("StyleBoxFlat_s7wsd")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_s7rlf")
-theme_override_styles/hover = SubResource("StyleBoxFlat_0cvp5")
-text = "Back"
-script = ExtResource("7_fgfdp")
-
-[node name="main menu" type="Button" parent="." unique_id=1507999496]
-layout_mode = 0
-offset_left = 47.0
-offset_top = 447.0
-offset_right = 295.0
-offset_bottom = 541.0
-theme_override_fonts/font = ExtResource("3_fgfdp")
-theme_override_font_sizes/font_size = 72
-theme_override_styles/normal = SubResource("StyleBoxFlat_s7wsd")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_s7rlf")
-theme_override_styles/hover = SubResource("StyleBoxFlat_0cvp5")
-text = "Main Menu"
-script = ExtResource("8_6eabd")
+script = ExtResource("5_qji5x")
 
 [connection signal="pressed" from="Control8/fullscreen" to="Control8/fullscreen" method="_on_pressed"]
-[connection signal="pressed" from="Control9/audio" to="Control9/audio" method="_on_pressed"]
-[connection signal="pressed" from="back" to="Control/left" method="_on_back_pressed"]
-[connection signal="pressed" from="back" to="back" method="_on_pressed"]
-[connection signal="pressed" from="main menu" to="main menu" method="_on_pressed"]

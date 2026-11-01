@@ -47,7 +47,7 @@ script/source = "extends CanvasLayer
 
 @onready var start_btn = $buttons/start
 @onready var help_btn = $buttons/help
-@onready var help_scene = preload(\"res://scenes/Main Menu/help.tscn\")
+@onready var help_scene = preload(\"res://scenes/MainMenu/help.tscn\")
 func _ready():
 	help_btn.help_opened.connect(_on_help_opened)
 

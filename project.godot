@@ -47,6 +47,7 @@ folder_colors={
 player="global player group"
 monster=""
 bouncing=""
+player_attack=""
 
 [input]
 
@@ -108,4 +109,3 @@ attack={
 [rendering]
 
 textures/canvas_textures/default_texture_filter=0
-rendering_device/driver.windows="d3d12"

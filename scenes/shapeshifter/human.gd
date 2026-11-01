@@ -11,7 +11,9 @@ const PLAYER_WITH_STICK = preload("uid://b4a77y88btrlt")
 @onready var double_jump_shape: CollisionShape2D = $DoubleJump/CollisionShape2D
 
 @export var player_has_stick : bool = false
-@export var is_heavy:bool = false
+@export var is_heavy : bool = false
+@export var is_light : bool = false
+
 var speed : float = 0.0
 var speed_rate := 500
 var jump_force : int = 700 # I changed init value Vii added
@@ -21,7 +23,6 @@ var gravity : float = 980
 var is_player_attacking : bool = false
 var is_bouncing_h : bool = false
 var bounce_timer : float = 0.0
-var is_player_heavy : bool = false
 
 func _ready() -> void:
 	add_to_group("player")
@@ -45,7 +46,7 @@ func _process(delta: float) -> void:
 		handling_player_jump(delta)
 	flip_animation()
 	set_animations()
-	print(player_state)
+	weight_control()
 	move_and_slide()
 
 func _unhandled_input(event: InputEvent) -> void:
@@ -69,15 +70,37 @@ func is_direction_pressed() -> bool:
 func movement_speed_modifier(delta: float) -> void:
 	if is_direction_pressed():
 		if Input.is_action_pressed("dashing"):
-			if speed <= 750:
-				speed += speed_rate * delta
-			if is_on_floor():
-				player_state = "player_running"
+			if is_heavy and !is_light:
+				if speed <= 350:
+					speed += speed_rate * delta
+				if is_on_floor():
+					player_state = "player_running"
+			elif !is_heavy and is_light:
+				if speed <= 1150:
+					speed += speed_rate * delta
+				if is_on_floor():
+					player_state = "player_running"
+			elif !is_heavy and !is_light:
+				if speed <= 750:
+					speed += speed_rate * delta
+				if is_on_floor():
+					player_state = "player_running"
 		else:
-			if speed <= 300.0:
-				speed += speed_rate * delta
-			if is_on_floor():
-				player_state = "player_walking"
+			if is_heavy and !is_light:
+				if speed <= 150:
+					speed += speed_rate * delta
+				if is_on_floor():
+					player_state = "player_running"
+			elif !is_heavy and is_light:
+				if speed <= 550:
+					speed += speed_rate * delta
+				if is_on_floor():
+					player_state = "player_running"
+			elif !is_heavy and !is_light:
+				if speed <= 300:
+					speed += speed_rate * delta
+				if is_on_floor():
+					player_state = "player_running"
 	else:
 		speed = 0
 		if is_on_floor() and not is_player_attacking:
@@ -155,3 +178,26 @@ func _on_area_2d_area_entered(area: Area2D) -> void:
 		velocity.x = bounce_direction * 500.0
 		is_bouncing_h = true
 		bounce_timer = 0.2
+
+func _on_curse_timer_timeout() -> void:
+	var rnd = randi_range(0, 2)
+	if rnd == 0 :
+		is_heavy = true
+		is_light = false
+		$".".scale = Vector2(5, 5)
+	elif rnd == 1 :
+		is_heavy = false
+		is_light = false
+		$".".scale = Vector2(3, 3)
+	elif rnd == 2 :
+		is_heavy = false
+		is_light = true
+		$".".scale = Vector2(1, 1)
+
+func weight_control() -> void:
+	if is_heavy and !is_light:
+		gravity = 1960
+	elif is_light and !is_heavy:
+		gravity = 490
+	elif !is_heavy and !is_light:
+		gravity = 980
