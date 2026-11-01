@@ -8,6 +8,7 @@ func _ready():
 func _on_body_entered(body:Node2D):
 	if body.is_in_group("player"):
 		if body.is_heavy:
+			print("Adhams is عفوي")
 			# Wait for 0.8 seconds, hide
 			await get_tree().create_timer(0.8).timeout
 			hide()

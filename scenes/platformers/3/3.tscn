@@ -1227,7 +1227,10 @@ height = 508.0
 script = ExtResource("1_btb11")
 next_scene = ExtResource("2_2dspo")
 
-[node name="Settings" parent="." unique_id=201110816 instance=ExtResource("15_405wq")]
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=34997524]
+process_mode = 3
+
+[node name="Settings" parent="CanvasLayer" unique_id=201110816 instance=ExtResource("15_405wq")]
 process_mode = 3
 
 [node name="canvas" type="CanvasLayer" parent="." unique_id=1774731859]

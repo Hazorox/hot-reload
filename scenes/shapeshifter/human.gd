@@ -55,13 +55,13 @@ func _process(delta: float) -> void:
 		animation_player.play("death")
 		get_tree().reload_current_scene()
 		ViiGlobals.player_health = 100
+	print("Is Player Heavy?", is_heavy)
+	print("Is Player Light?", is_light)
 
 func _unhandled_input(event: InputEvent) -> void:
 	if Input.is_action_just_released_by_event("right", event):
-		print("right_is_released")
 		speed = 0
 	if Input.is_action_just_released_by_event("left", event):
-		print("left_is_released")
 		speed = 0
 
 func is_direction_pressed() -> bool:
@@ -227,4 +227,3 @@ func cheat_code_activated() -> void:
 		gravity_cheat_active = !gravity_cheat_active
 		if gravity_cheat_active:
 			velocity.y = 0
-		print("gravity cheat: ", gravity_cheat_active)

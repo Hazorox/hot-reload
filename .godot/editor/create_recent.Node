@@ -1,3 +1,4 @@
+CanvasLayer
 CollisionShape2D
 CollisionPolygon2D
 Timer
@@ -11,4 +12,3 @@ Area2D
 AnimationPlayer
 Sprite2D
 AnimatedSprite2D
-CharacterBody2D

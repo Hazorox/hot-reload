@@ -1242,9 +1242,12 @@ size = Vector2(405, 189)
 script = ExtResource("1_kyqpc")
 next_scene = ExtResource("2_niy6k")
 
-[node name="Settings" parent="." unique_id=201110816 instance=ExtResource("19_xvrcg")]
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1324452328]
 process_mode = 3
 visible = false
+
+[node name="Settings" parent="CanvasLayer" unique_id=201110816 instance=ExtResource("19_xvrcg")]
+process_mode = 3
 
 [node name="canvas" type="CanvasLayer" parent="." unique_id=259139653]
 layer = -1
@@ -1327,6 +1330,8 @@ position = Vector2(19.5, 26.5)
 shape = SubResource("RectangleShape2D_nfrx5")
 
 [node name="Area2D" type="Area2D" parent="airTile" unique_id=2028121348]
+collision_layer = 7
+collision_mask = 7
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="airTile/Area2D" unique_id=1654988766]
 position = Vector2(19.5, 23.5)
@@ -1347,6 +1352,8 @@ position = Vector2(19.5, 26.5)
 shape = SubResource("RectangleShape2D_nfrx5")
 
 [node name="Area2D" type="Area2D" parent="airTile2" unique_id=1633097762]
+collision_layer = 7
+collision_mask = 7
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="airTile2/Area2D" unique_id=90209323]
 position = Vector2(19.5, 23.5)
@@ -1367,28 +1374,34 @@ position = Vector2(19.5, 26.5)
 shape = SubResource("RectangleShape2D_nfrx5")
 
 [node name="Area2D" type="Area2D" parent="airTile3" unique_id=24396281]
+collision_layer = 7
+collision_mask = 7
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="airTile3/Area2D" unique_id=1025726596]
 position = Vector2(19.5, 23.5)
 shape = SubResource("RectangleShape2D_osswa")
 
-[node name="airTile4" type="StaticBody2D" parent="." unique_id=737594934]
+[node name="Faketile" type="StaticBody2D" parent="." unique_id=737594934]
 position = Vector2(1831, 372)
+collision_layer = 7
+collision_mask = 7
 script = ExtResource("10_w36no")
 
-[node name="tiless" type="TileMapLayer" parent="airTile4" unique_id=1438767994]
+[node name="tiless" type="TileMapLayer" parent="Faketile" unique_id=1438767994]
 position = Vector2(-828, -517)
 scale = Vector2(2, 2)
 tile_map_data = PackedByteArray("AAAYABAAAAAMAAoAAAAYABEAAAAMAAsAAAAZABAAAAANAAoAAAAZABEAAAANAAsAAAAaABAAAAAOAAoAAAAaABEAAAAOAAsAAAAbABAAAAAPAAoAAAAbABEAAAAPAAsAAAAcABAAAAARAAoAAAAcABEAAAARAAsAAAA=")
 tile_set = SubResource("TileSet_nfrx5")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="airTile4" unique_id=1833818548]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Faketile" unique_id=1833818548]
 position = Vector2(19.5, 26.5)
 shape = SubResource("RectangleShape2D_nfrx5")
 
-[node name="Area2D" type="Area2D" parent="airTile4" unique_id=808202518]
+[node name="Area2D" type="Area2D" parent="Faketile" unique_id=808202518]
+collision_layer = 7
+collision_mask = 7
 
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="airTile4/Area2D" unique_id=1981874912]
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Faketile/Area2D" unique_id=1981874912]
 position = Vector2(-9, -19)
 shape = SubResource("RectangleShape2D_siinn")
 
@@ -1407,6 +1420,8 @@ position = Vector2(19.5, 26.5)
 shape = SubResource("RectangleShape2D_nfrx5")
 
 [node name="Area2D" type="Area2D" parent="airTile5" unique_id=1588484978]
+collision_layer = 7
+collision_mask = 7
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="airTile5/Area2D" unique_id=317140607]
 position = Vector2(19.5, 23.5)
@@ -1427,6 +1442,8 @@ position = Vector2(19.5, 26.5)
 shape = SubResource("RectangleShape2D_nfrx5")
 
 [node name="Area2D" type="Area2D" parent="airTile6" unique_id=1964345199]
+collision_layer = 7
+collision_mask = 7
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="airTile6/Area2D" unique_id=243536107]
 position = Vector2(19.5, 23.5)
@@ -1447,6 +1464,8 @@ position = Vector2(19.5, 26.5)
 shape = SubResource("RectangleShape2D_nfrx5")
 
 [node name="Area2D" type="Area2D" parent="airTile7" unique_id=571473473]
+collision_layer = 7
+collision_mask = 7
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="airTile7/Area2D" unique_id=453196609]
 position = Vector2(19.5, 23.5)
@@ -1467,28 +1486,34 @@ position = Vector2(19.5, 26.5)
 shape = SubResource("RectangleShape2D_nfrx5")
 
 [node name="Area2D" type="Area2D" parent="airTile8" unique_id=595671633]
+collision_layer = 7
+collision_mask = 7
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="airTile8/Area2D" unique_id=671973443]
 position = Vector2(19.5, 23.5)
 shape = SubResource("RectangleShape2D_osswa")
 
-[node name="airTile9" type="StaticBody2D" parent="." unique_id=1979257461]
+[node name="FakeTile" type="StaticBody2D" parent="." unique_id=1979257461]
 position = Vector2(3090, 138)
+collision_layer = 7
+collision_mask = 7
 script = ExtResource("10_w36no")
 
-[node name="tiless" type="TileMapLayer" parent="airTile9" unique_id=508802753]
+[node name="tiless" type="TileMapLayer" parent="FakeTile" unique_id=508802753]
 position = Vector2(-828, -517)
 scale = Vector2(2, 2)
 tile_map_data = PackedByteArray("AAAYABAAAAAMAAoAAAAYABEAAAAMAAsAAAAZABAAAAANAAoAAAAZABEAAAANAAsAAAAaABAAAAAOAAoAAAAaABEAAAAOAAsAAAAbABAAAAAPAAoAAAAbABEAAAAPAAsAAAAcABAAAAARAAoAAAAcABEAAAARAAsAAAA=")
 tile_set = SubResource("TileSet_nfrx5")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="airTile9" unique_id=1799058631]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="FakeTile" unique_id=1799058631]
 position = Vector2(19.5, 26.5)
 shape = SubResource("RectangleShape2D_nfrx5")
 
-[node name="Area2D" type="Area2D" parent="airTile9" unique_id=1878470426]
+[node name="Area2D" type="Area2D" parent="FakeTile" unique_id=1878470426]
+collision_layer = 7
+collision_mask = 7
 
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="airTile9/Area2D" unique_id=322249179]
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="FakeTile/Area2D" unique_id=322249179]
 position = Vector2(-6.5, -4.5)
 shape = SubResource("RectangleShape2D_w36no")
 
@@ -1575,3 +1600,5 @@ collision_mask = 7
 [node name="MonsterSlime" parent="." unique_id=270356229 instance=ExtResource("18_niy6k")]
 position = Vector2(623, 556)
 scale = Vector2(1.5, 1.5)
+
+[editable path="CanvasLayer/Settings"]

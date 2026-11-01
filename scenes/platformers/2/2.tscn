@@ -1221,7 +1221,10 @@ b = Vector2(-170, 0)
 script = ExtResource("1_2fiiu")
 next_scene = ExtResource("2_mp8n0")
 
-[node name="Settings" parent="." unique_id=201110816 instance=ExtResource("16_6dlvn")]
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=933769817]
+process_mode = 3
+
+[node name="Settings" parent="CanvasLayer" unique_id=201110816 instance=ExtResource("16_6dlvn")]
 process_mode = 3
 visible = false
 
