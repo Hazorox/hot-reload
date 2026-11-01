@@ -1,6 +1,7 @@
 extends Node2D
 
-@onready var settings: Control = $Settings
+@onready var settings: CanvasLayer = $CanvasLayer
+@onready var settings_node: Control = $CanvasLayer/Settings
 
 @export var next_scene:PackedScene = null
 
@@ -16,6 +17,7 @@ func _process(_delta: float) -> void:
 	if Input.is_action_just_pressed("esc"):
 		get_tree().paused = true
 		settings.visible = true
+		settings_node.visible = true
 
 func _on_done():
 	get_tree().paused = true
