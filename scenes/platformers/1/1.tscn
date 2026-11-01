@@ -1288,7 +1288,7 @@ tile_map_data = PackedByteArray("AAAAABIAAAABAAAAAAAAABMAAAABAAEAAAAAABQAAAABAAI
 tile_set = SubResource("TileSet_nfrx5")
 
 [node name="Human" parent="." unique_id=2071774316 instance=ExtResource("9_pk8jt")]
-position = Vector2(88.99999, 564.99994)
+position = Vector2(2156, 493)
 scale = Vector2(2.25, 2.25)
 
 [node name="tile" type="StaticBody2D" parent="." unique_id=1734707629]
@@ -1513,6 +1513,8 @@ shape = SubResource("CapsuleShape2D_4hts0")
 
 [node name="final_tile_fake" type="StaticBody2D" parent="." unique_id=63533905]
 position = Vector2(3568, 610)
+collision_layer = 7
+collision_mask = 7
 script = ExtResource("11_t6rus")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="final_tile_fake" unique_id=1364518149]

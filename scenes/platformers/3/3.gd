@@ -25,5 +25,6 @@ func _on_reset():
 		monster.queue_free()
 	for i in range(len(monster_positions)):
 		var to_add_monster = new_monsters[i]
+		to_add_monster.health = 1500
 		to_add_monster.position = monster_positions[i]
 		add_child(to_add_monster)
