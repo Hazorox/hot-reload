@@ -13,6 +13,7 @@ var timer := 0.0
 var last_safe_pos : Vector2
 var is_dead := false
 func _ready() -> void:
+	$HurtBox.area_entered.connect(_on_hurtbox_area_entered)
 	last_safe_pos = global_position
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -45,6 +46,10 @@ func _physics_process(delta: float) -> void:
 		sprite.play("idle")
 	velocity.x = direction*speed if moving else 0.0
 	move_and_slide()
+
+func _on_hurtbox_area_entered(area: Area2D) -> void:
+	if area.name == "SideAttack" and area.get_parent().is_in_group("player"):
+		take_damage()
 
 func take_damage(amount=50):
 	if is_dead:
