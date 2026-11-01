@@ -151,7 +151,7 @@ shape = SubResource("CapsuleShape2D_ad8vj")
 position = Vector2(1, -22)
 shape = SubResource("CapsuleShape2D_onkbk")
 
-[node name="HittingBox" type="Area2D" parent="." unique_id=1955122901]
+[node name="HittingBox" type="Area2D" parent="." unique_id=1955122901 groups=["boss_attack"]]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HittingBox" unique_id=1337384980]
 position = Vector2(-17, -25)

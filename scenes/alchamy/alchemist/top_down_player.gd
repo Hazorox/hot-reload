@@ -9,7 +9,7 @@ enum State{
 	ATTACKING,
 }
 
-var speed : int = 10000
+var speed : int = 25000
 var heading : Vector2 = Vector2.DOWN
 var state := State.IDLE
 

@@ -3,7 +3,9 @@
 [ext_resource type="Texture2D" uid="uid://mw3j1gmf0vwp" path="res://assets/The Fan-tasy Tileset (Free) 1.5.7/The Fan-tasy Tileset (Free)/Art/Ground Tileset/Tileset_Ground.png" id="1_fj6oy"]
 [ext_resource type="Script" uid="uid://bgmvdkiopwuvg" path="res://scenes/alchamy/main/main.gd" id="1_ymbda"]
 [ext_resource type="Texture2D" uid="uid://33vycbqravrq" path="res://assets/The Fan-tasy Tileset (Free) 1.5.7/The Fan-tasy Tileset (Free)/Art/Ground Tileset/Tileset_Road.png" id="2_mo1nl"]
+[ext_resource type="PackedScene" uid="uid://4kuiroaxuprj" path="res://scenes/backgrounds/dungeon_1.tscn" id="2_tvke3"]
 [ext_resource type="Texture2D" uid="uid://b704qkprdmls4" path="res://assets/Alchemy_Shop_Tiles/Alchemy_Shop_Tiles/PNG/alchemy_shop_floor_walls_32x32.png" id="3_pfpqp"]
+[ext_resource type="PackedScene" uid="uid://g2sgninh5xqp" path="res://scenes/shapeshifter/HUD/winning_screen.tscn" id="3_whxeu"]
 [ext_resource type="Texture2D" uid="uid://bgag1hy4aqm5r" path="res://assets/Alchemy_Shop_Tiles/Alchemy_Shop_Tiles/PNG/alchemy_shop_props_32x32.png" id="4_05fwc"]
 [ext_resource type="Texture2D" uid="uid://bc7hjbcfodo2b" path="res://assets/The Fan-tasy Tileset (Free) 1.5.7/The Fan-tasy Tileset (Free)/Art/Trees and Bushes/Atlas/Trees_Bushes.png" id="5_nixkr"]
 [ext_resource type="PackedScene" uid="uid://4vvlb1gwn2j3" path="res://scenes/alchamy/ingredients/death.tscn" id="6_mo1nl"]
@@ -1050,6 +1052,8 @@ size = Vector2(4.0816197, 9.375)
 [node name="Main" type="Node2D" unique_id=271197293]
 scale = Vector2(1.9599993, 1.9599993)
 script = ExtResource("1_ymbda")
+boss_scene = ExtResource("2_tvke3")
+winning_screen = ExtResource("3_whxeu")
 
 [node name="Map" type="Node2D" parent="." unique_id=1717498564]
 

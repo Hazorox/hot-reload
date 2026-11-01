@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://dwulw3exfgo8i"]
+
+[ext_resource type="PackedScene" uid="uid://dhjbs51wdfmph" path="res://scenes/platformers/1/1.tscn" id="1_0sr1o"]
+[ext_resource type="PackedScene" uid="uid://dgsnnuqemfwod" path="res://scenes/platformers/2/2.tscn" id="2_kelw5"]
+[ext_resource type="PackedScene" uid="uid://rxvlueqsw13l" path="res://scenes/platformers/3/3.tscn" id="3_lfrn8"]
+
+[node name="Game" type="Node2D" unique_id=1881894441]
+
+[node name="1" parent="." unique_id=390054091 instance=ExtResource("1_0sr1o")]
+
+[node name="2" parent="." unique_id=1602830302 instance=ExtResource("2_kelw5")]
+position = Vector2(4561, 36)
+
+[node name="3" parent="." unique_id=517302901 instance=ExtResource("3_lfrn8")]
+position = Vector2(8562, 38)

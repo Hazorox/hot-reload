@@ -3,6 +3,9 @@ extends Node2D
 @onready var ing = [$death, $life]
 @onready var book = $Slow
 
+@export var boss_scene : PackedScene = null
+@export var winning_screen : PackedScene = null
+
 var waiting_for_choice := false
 
 func _ready() -> void:
@@ -13,7 +16,7 @@ func _ready() -> void:
 	for i in ing:
 		set_active(i, false)
 	book.enable(false)
-	
+
 func set_active(node: Node, on: bool) -> void:
 	if node.has_method("enable"):
 		node.enable(on)
@@ -138,7 +141,9 @@ func _book_found():
 			"*bluetooth device is connected successfully*",
 			"res://assets/sound_beeps/susie_s_dialogue.wav"
 		)
-	
+	await Dialogue.finished
+	Globals.switch_scene(winning_screen, 0.67)
+
 func die():
 	Dialogue.queue_text(
 			"Luna the Alchemist",
@@ -172,4 +177,4 @@ func die():
 			"res://assets/sound_beeps/susie_s_dialogue.wav"
 		)
 	await Dialogue.finished
-	get_tree().reload_current_scene()
+	Globals.switch_scene(boss_scene, 0.67)

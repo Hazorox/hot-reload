@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://bjej57um0ms4e" path="res://assets/free-cartoon-forest-game-backgrounds/PNG/Cartoon_Forest_BG_03/Layers/Sky.png" id="1_0r3yk"]
 [ext_resource type="Script" uid="uid://4405cg8p05qm" path="res://scenes/platformers/1/1.gd" id="1_kyqpc"]
 [ext_resource type="Texture2D" uid="uid://bfd4w2ucojb7o" path="res://assets/Vii/GandalfHardcore FREE Platformer Assets/GandalfHardcore FREE Platformer Assets/GandalfHardcore Background layers/Normal BG/GandalfHardcore Background layers_layer 1.png" id="2_0euf2"]
-[ext_resource type="PackedScene" uid="uid://bgpob5ntcoils" path="res://scenes/MainMenu/main.tscn" id="2_pk8jt"]
+[ext_resource type="PackedScene" uid="uid://dgsnnuqemfwod" path="res://scenes/platformers/2/2.tscn" id="2_niy6k"]
 [ext_resource type="Texture2D" uid="uid://c16s2mmv50u8y" path="res://assets/free-cartoon-forest-game-backgrounds/PNG/Cartoon_Forest_BG_03/Layers/Ground.png" id="3_lyh2c"]
 [ext_resource type="Texture2D" uid="uid://cttjeqioc27uv" path="res://assets/Vii/GandalfHardcore FREE Platformer Assets/GandalfHardcore FREE Platformer Assets/Floor Tiles1.png" id="4_qht3a"]
 [ext_resource type="Texture2D" uid="uid://cwmm67aeff2kv" path="res://assets/Vii/GandalfHardcore FREE Platformer Assets/GandalfHardcore FREE Platformer Assets/Other Tiles1.png" id="5_qht3a"]
@@ -18,6 +18,7 @@
 [ext_resource type="Script" uid="uid://bxlh6rdkrlq06" path="res://scenes/platformers/1/final_trap.gd" id="13_ojoxh"]
 [ext_resource type="PackedScene" uid="uid://bln0jbf2p76pn" path="res://scenes/items/stick.tscn" id="17_vix0j"]
 [ext_resource type="PackedScene" uid="uid://1g8smsa6o603" path="res://scenes/shapeshifter/monster_slime.tscn" id="18_niy6k"]
+[ext_resource type="PackedScene" uid="uid://bjsplafh0wt4f" path="res://scenes/MainMenu/pause.tscn" id="19_xvrcg"]
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_0hvcy"]
 a = Vector2(29, 1)
@@ -1239,7 +1240,11 @@ size = Vector2(405, 189)
 
 [node name="1" type="Node2D" unique_id=390054091]
 script = ExtResource("1_kyqpc")
-next_scene = ExtResource("2_pk8jt")
+next_scene = ExtResource("2_niy6k")
+
+[node name="Settings" parent="." unique_id=201110816 instance=ExtResource("19_xvrcg")]
+process_mode = 3
+visible = false
 
 [node name="canvas" type="CanvasLayer" parent="." unique_id=259139653]
 layer = -1

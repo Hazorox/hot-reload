@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://dfo4vlkqsgrbm" path="res://scenes/platformers/3/3.gd" id="1_btb11"]
 [ext_resource type="Texture2D" uid="uid://u43r3m8jbyx6" path="res://assets/Vii/GandalfHardcore FREE Platformer Assets/GandalfHardcore FREE Platformer Assets/GandalfHardcore Background layers/Autumn BG/GandalfHardcore Background layers_layer 1.png" id="1_jxoq8"]
 [ext_resource type="Texture2D" uid="uid://nsq06nut0x6m" path="res://assets/free-cartoon-forest-game-backgrounds/PNG/Cartoon_Forest_BG_04/Layers/Sky.png" id="2_1ljrq"]
-[ext_resource type="PackedScene" uid="uid://bgpob5ntcoils" path="res://scenes/MainMenu/main.tscn" id="2_2dspo"]
+[ext_resource type="PackedScene" uid="uid://4kuiroaxuprj" path="res://scenes/backgrounds/dungeon_1.tscn" id="2_2dspo"]
 [ext_resource type="Texture2D" uid="uid://cttjeqioc27uv" path="res://assets/Vii/GandalfHardcore FREE Platformer Assets/GandalfHardcore FREE Platformer Assets/Floor Tiles1.png" id="2_btb11"]
 [ext_resource type="Texture2D" uid="uid://cwmm67aeff2kv" path="res://assets/Vii/GandalfHardcore FREE Platformer Assets/GandalfHardcore FREE Platformer Assets/Other Tiles1.png" id="3_oylfy"]
 [ext_resource type="Texture2D" uid="uid://b2rv8k2gk02dv" path="res://assets/Vii/GandalfHardcore FREE Platformer Assets/GandalfHardcore FREE Platformer Assets/Decor.png" id="4_mlkfl"]
@@ -14,6 +14,7 @@
 [ext_resource type="Script" uid="uid://c0nq46b24tcuh" path="res://scenes/platformers/3/fake_tile.gd" id="10_mlkfl"]
 [ext_resource type="Script" uid="uid://bkg6o1471qyf" path="res://scenes/platformers/3/fake_ground.gd" id="11_vd4qw"]
 [ext_resource type="Script" uid="uid://b71vmjlpxqc5c" path="res://scenes/platformers/3/end.gd" id="13_1tkpx"]
+[ext_resource type="PackedScene" uid="uid://bjsplafh0wt4f" path="res://scenes/MainMenu/pause.tscn" id="15_405wq"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_2dspo"]
 texture = ExtResource("2_btb11")
@@ -1226,6 +1227,9 @@ height = 508.0
 script = ExtResource("1_btb11")
 next_scene = ExtResource("2_2dspo")
 
+[node name="Settings" parent="." unique_id=201110816 instance=ExtResource("15_405wq")]
+process_mode = 3
+
 [node name="canvas" type="CanvasLayer" parent="." unique_id=1774731859]
 layer = -1
 
@@ -1262,7 +1266,7 @@ tile_map_data = PackedByteArray("AAAZABMAAgAVAAgAAAAaABMAAgAUAAgAAAALABMAAgAUAAg
 tile_set = SubResource("TileSet_imc61")
 
 [node name="Human" parent="." unique_id=2071774316 instance=ExtResource("5_vd4qw")]
-position = Vector2(3949.0002, 484)
+position = Vector2(259.00024, 503.00003)
 scale = Vector2(3, 3)
 player_has_stick = true
 

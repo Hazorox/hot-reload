@@ -1,4 +1,5 @@
 extends Button
 
 func _on_pressed() -> void:
-	Globals.go_back()
+	get_parent().visible = false
+	get_tree().paused = false
