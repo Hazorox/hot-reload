@@ -14,12 +14,15 @@ extends CharacterBody2D
 @export var chance_combo_attack : float = 0.25
 @export var slide_duration_min : float = 0.3
 @export var slide_duration_max : float = 0.5
+@export var attack_windup_time : float = 0.3
 
 var player : Node2D = null
 var gravity : float = 980.0
 var is_dead : bool = false
 var is_sliding : bool = false
 var is_attacking : bool = false
+var is_preparing_attack : bool = false
+var attack_windup_timer : float = 0.0
 var slide_direction : int = 1
 var slide_timer : float = 0.0
 
@@ -30,7 +33,6 @@ func _ready() -> void:
 
 func _physics_process(delta: float) -> void:
 	check_player_attack()
-
 	if is_dead:
 		play_animation("death")
 		velocity.x = 0
@@ -46,21 +48,28 @@ func _physics_process(delta: float) -> void:
 		return
 	if not is_on_floor():
 		velocity.y += gravity * delta
-
 	if is_sliding:
 		velocity.x = slide_direction * slide_speed
 		slide_timer -= delta
 		play_animation("sliding")
 		if slide_timer <= 0:
 			is_sliding = false
+	elif is_preparing_attack:
+		velocity.x = 0
+		attack_windup_timer -= delta
+		play_animation("idle") # swap for a windup/telegraph animation if you have one
+		if attack_windup_timer <= 0:
+			is_preparing_attack = false
+			is_attacking = true
+			play_animation("attacking")
 	elif is_attacking:
 		velocity.x = 0
 	elif player:
 		var distance_x = player.global_position.x - global_position.x
 		if abs(distance_x) <= attack_range:
 			velocity.x = 0
-			is_attacking = true
-			play_animation("attacking")
+			is_preparing_attack = true
+			attack_windup_timer = attack_windup_time
 			if distance_x > 0:
 				sprite_2d.flip_h = true
 				hurt_box.scale.x = -1
@@ -87,8 +96,8 @@ func _physics_process(delta: float) -> void:
 	else:
 		velocity.x = 0
 		play_animation("idle")
-
 	move_and_slide()
+	print(health)
 
 func play_animation(anim_name : String) -> void:
 	if animation_player.current_animation != anim_name:
@@ -132,11 +141,15 @@ func _on_animation_player_animation_finished(anim_name: StringName) -> void:
 		elif roll < chance_slide_after_attack + chance_combo_attack:
 			var distance_x = player.global_position.x - global_position.x
 			if abs(distance_x) <= attack_range:
-				is_attacking = true
-				play_animation("attacking")
+				is_preparing_attack = true
+				attack_windup_timer = attack_windup_time
 	elif anim_name == "death":
 		pass
 
 func _on_hitting_box_area_entered(area: Area2D) -> void:
 	if area.is_in_group("player"):
 		ViiGlobals.player_health -= 10
+
+func _on_hurt_box_area_entered(area: Area2D) -> void:
+	if area.is_in_group("player_attack"):
+		take_damage()
