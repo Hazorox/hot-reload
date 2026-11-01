@@ -1,7 +1,7 @@
 # Hot Reload
 # A Curse? A Merit?
 ## A Game By [Hazorox](https://github.com/hazorox) - [Vii](https://github.com/vii-abdullatif) - [AboEl5yr](https://github.com/adhammohamedkhairy)
-## Live on [itch.io](https://hazoro.itch.io/hot-reload)
+## Live on [itch.io](https://vbdullatif.itch.io/hotreload)
 # Plot:
 ## Setup:
 You, an arrogant, stumble across a dwarf in the jungles. You mock their size.
