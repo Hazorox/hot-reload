@@ -160,21 +160,29 @@ radius = 22.022715
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nfrx5"]
 size = Vector2(55, 52)
 
-[node name="MonsterSlime" type="CharacterBody2D" unique_id=270356229]
+[sub_resource type="CircleShape2D" id="CircleShape2D_0hvcy"]
+radius = 23.0
+
+[node name="MonsterSlime" type="CharacterBody2D" unique_id=270356229 groups=["monster"]]
 script = ExtResource("1_13ypr")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=716497798]
 sprite_frames = SubResource("SpriteFrames_nfrx5")
 animation = &"idle"
-frame_progress = 0.5397758
+frame_progress = 0.5613302
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=568944873]
 shape = SubResource("CircleShape2D_nfrx5")
 
-[node name="bounce" type="Area2D" parent="." unique_id=446260643]
+[node name="bounce" type="Area2D" parent="." unique_id=446260643 groups=["bouncing"]]
 collision_layer = 7
 collision_mask = 7
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="bounce" unique_id=1376542415 groups=["bouncing"]]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="bounce" unique_id=1376542415]
 position = Vector2(0.5, 0)
 shape = SubResource("RectangleShape2D_nfrx5")
+
+[node name="HurtBox" type="Area2D" parent="." unique_id=1180551292 groups=["monster"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HurtBox" unique_id=1738343602]
+shape = SubResource("CircleShape2D_0hvcy")
