@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://cimq0sm46jp6e"]
+
+[ext_resource type="Texture2D" uid="uid://b3jwcx2tsvaf8" path="res://assets/Vii/GandalfHardcore Hp bar/GandalfHardcore Hp bar/Hp_bar.png" id="1_tr0h1"]
+[ext_resource type="Script" uid="uid://7j81gnogfy4p" path="res://scenes/shapeshifter/HUD/health_bar.gd" id="1_wigta"]
+[ext_resource type="Texture2D" uid="uid://y78y6jtthp1q" path="res://assets/Vii/GandalfHardcore Hp bar/GandalfHardcore Hp bar/red bar.png" id="2_wigta"]
+
+[node name="HealthBar" type="Node2D" unique_id=1682704456]
+script = ExtResource("1_wigta")
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="." unique_id=2079386063]
+offset_right = 40.0
+offset_bottom = 40.0
+texture_over = ExtResource("1_tr0h1")
+
+[node name="ProgressBar" type="TextureProgressBar" parent="." unique_id=1437946689]
+offset_left = 4.0
+offset_top = 4.0
+offset_right = 74.0
+offset_bottom = 68.0
+value = 100.0
+texture_progress = ExtResource("2_wigta")
