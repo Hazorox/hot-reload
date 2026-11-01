@@ -17,6 +17,7 @@
 [ext_resource type="Script" uid="uid://w6r6j4rn2lf4" path="res://scenes/platformers/1/end.gd" id="12_pk8jt"]
 [ext_resource type="Script" uid="uid://bxlh6rdkrlq06" path="res://scenes/platformers/1/final_trap.gd" id="13_ojoxh"]
 [ext_resource type="PackedScene" uid="uid://bln0jbf2p76pn" path="res://scenes/items/stick.tscn" id="17_vix0j"]
+[ext_resource type="PackedScene" uid="uid://1g8smsa6o603" path="res://scenes/shapeshifter/monster_slime.tscn" id="18_niy6k"]
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_0hvcy"]
 a = Vector2(29, 1)
@@ -1298,6 +1299,8 @@ shape = SubResource("SegmentShape2D_nfrx5")
 
 [node name="trap" type="Area2D" parent="." unique_id=1603308665]
 position = Vector2(387, 707)
+collision_layer = 7
+collision_mask = 7
 script = ExtResource("8_1l6v0")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="trap" unique_id=969817091]
@@ -1492,6 +1495,8 @@ shape = SubResource("WorldBoundaryShape2D_nfrx5")
 
 [node name="void" type="Area2D" parent="." unique_id=427445908]
 position = Vector2(741, 721)
+collision_layer = 7
+collision_mask = 7
 script = ExtResource("8_1l6v0")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="void" unique_id=896917785]
@@ -1499,6 +1504,8 @@ shape = SubResource("WorldBoundaryShape2D_0hvcy")
 
 [node name="end" type="Area2D" parent="." unique_id=467646960]
 position = Vector2(4008, 611)
+collision_layer = 7
+collision_mask = 7
 script = ExtResource("12_pk8jt")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="end" unique_id=1312469846]
@@ -1519,6 +1526,8 @@ tile_map_data = PackedByteArray("AABiABMAAAAAAAAAAABiABQAAAAAAAEAAABiABUAAAAAAAI
 tile_set = SubResource("TileSet_nfrx5")
 
 [node name="Area2D" type="Area2D" parent="final_tile_fake" unique_id=1322966246]
+collision_layer = 7
+collision_mask = 7
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="final_tile_fake/Area2D" unique_id=1869683586]
 position = Vector2(-179, 5)
@@ -1544,6 +1553,8 @@ tile_set = SubResource("TileSet_nfrx5")
 
 [node name="trap2" type="Area2D" parent="final_tile_real" unique_id=559631879]
 position = Vector2(-96, 165)
+collision_layer = 7
+collision_mask = 7
 script = ExtResource("13_ojoxh")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="final_tile_real/trap2" unique_id=1306357435]
@@ -1555,3 +1566,7 @@ position = Vector2(226, 560)
 scale = Vector2(0.4, 0.4)
 collision_layer = 7
 collision_mask = 7
+
+[node name="MonsterSlime" parent="." unique_id=270356229 instance=ExtResource("18_niy6k")]
+position = Vector2(623, 556)
+scale = Vector2(1.5, 1.5)
