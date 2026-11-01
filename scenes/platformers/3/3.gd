@@ -1,13 +1,21 @@
 extends Node2D
 
+@onready var settings: Control = $Settings
+
 @export var next_scene:PackedScene = null
 
 const monster_positions :Array[Vector2] = [Vector2(488,520)]
 var new_monsters = []
 
 func _ready() -> void:
+	settings.visible = false
 	$end.done.connect(_on_done)
 	$void.reset.connect(_on_reset)
+
+func _process(_delta: float) -> void:
+	if Input.is_action_just_pressed("esc"):
+		get_tree().paused = true
+		settings.visible = true
 
 func _on_done():
 	get_tree().paused = true
