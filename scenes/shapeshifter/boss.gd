@@ -15,6 +15,7 @@ extends CharacterBody2D
 @export var slide_duration_min : float = 0.3
 @export var slide_duration_max : float = 0.5
 @export var attack_windup_time : float = 0.3
+@export var alchemist_scene : PackedScene = null
 
 var player : Node2D = null
 var gravity : float = 980.0
@@ -42,6 +43,8 @@ func _physics_process(delta: float) -> void:
 		return
 	if health <= 0:
 		is_dead = true
+		is_attacking = false
+		is_preparing_attack = false
 		play_animation("death")
 		velocity.x = 0
 		move_and_slide()
@@ -57,11 +60,12 @@ func _physics_process(delta: float) -> void:
 	elif is_preparing_attack:
 		velocity.x = 0
 		attack_windup_timer -= delta
-		play_animation("idle") # swap for a windup/telegraph animation if you have one
+		play_animation("idle")
 		if attack_windup_timer <= 0:
 			is_preparing_attack = false
-			is_attacking = true
-			play_animation("attacking")
+			if player and abs(player.global_position.x - global_position.x) <= attack_range:
+				is_attacking = true
+				play_animation("attacking")
 	elif is_attacking:
 		velocity.x = 0
 	elif player:
@@ -97,7 +101,6 @@ func _physics_process(delta: float) -> void:
 		velocity.x = 0
 		play_animation("idle")
 	move_and_slide()
-	print(health)
 
 func play_animation(anim_name : String) -> void:
 	if animation_player.current_animation != anim_name:
@@ -144,7 +147,7 @@ func _on_animation_player_animation_finished(anim_name: StringName) -> void:
 				is_preparing_attack = true
 				attack_windup_timer = attack_windup_time
 	elif anim_name == "death":
-		pass
+		Globals.switch_scene(alchemist_scene, 0.67)
 
 func _on_hitting_box_area_entered(area: Area2D) -> void:
 	if area.is_in_group("player"):

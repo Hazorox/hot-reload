@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://dsmlkxq7eubel" path="res://scenes/platformers/2/2.gd" id="1_2fiiu"]
 [ext_resource type="Texture2D" uid="uid://bjej57um0ms4e" path="res://assets/free-cartoon-forest-game-backgrounds/PNG/Cartoon_Forest_BG_03/Layers/Sky.png" id="1_2l8xk"]
-[ext_resource type="PackedScene" uid="uid://bgpob5ntcoils" path="res://scenes/MainMenu/main.tscn" id="2_6dlvn"]
+[ext_resource type="PackedScene" uid="uid://rxvlueqsw13l" path="res://scenes/platformers/3/3.tscn" id="2_mp8n0"]
 [ext_resource type="Texture2D" uid="uid://u43r3m8jbyx6" path="res://assets/Vii/GandalfHardcore FREE Platformer Assets/GandalfHardcore FREE Platformer Assets/GandalfHardcore Background layers/Autumn BG/GandalfHardcore Background layers_layer 1.png" id="2_voi22"]
 [ext_resource type="Texture2D" uid="uid://cttjeqioc27uv" path="res://assets/Vii/GandalfHardcore FREE Platformer Assets/GandalfHardcore FREE Platformer Assets/Floor Tiles1.png" id="4_bwdjn"]
 [ext_resource type="Texture2D" uid="uid://cwmm67aeff2kv" path="res://assets/Vii/GandalfHardcore FREE Platformer Assets/GandalfHardcore FREE Platformer Assets/Other Tiles1.png" id="5_2fiiu"]
@@ -15,6 +15,7 @@
 [ext_resource type="Script" uid="uid://cbbd27ky14ot" path="res://scenes/platformers/2/hidden_plat.gd" id="13_4eyjj"]
 [ext_resource type="PackedScene" uid="uid://cyi0lo7molblp" path="res://scenes/shapeshifter/monester_eye.tscn" id="14_4eyjj"]
 [ext_resource type="Script" uid="uid://cdgrtwom7j15" path="res://scenes/platformers/2/end.gd" id="15_mp8n0"]
+[ext_resource type="PackedScene" uid="uid://bjsplafh0wt4f" path="res://scenes/MainMenu/pause.tscn" id="16_6dlvn"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_mp8n0"]
 texture = ExtResource("4_bwdjn")
@@ -1218,7 +1219,11 @@ b = Vector2(-170, 0)
 
 [node name="2" type="Node2D" unique_id=1602830302]
 script = ExtResource("1_2fiiu")
-next_scene = ExtResource("2_6dlvn")
+next_scene = ExtResource("2_mp8n0")
+
+[node name="Settings" parent="." unique_id=201110816 instance=ExtResource("16_6dlvn")]
+process_mode = 3
+visible = false
 
 [node name="canvas" type="CanvasLayer" parent="." unique_id=1931686239]
 layer = -1
@@ -1249,7 +1254,7 @@ tile_map_data = PackedByteArray("AAAZABMAAgAVAAgAAAAaABMAAgAUAAgAAAALABMAAgAUAAg
 tile_set = SubResource("TileSet_mp8n0")
 
 [node name="Human" parent="." unique_id=2071774316 instance=ExtResource("7_voi22")]
-position = Vector2(2866, 464)
+position = Vector2(241, 478)
 scale = Vector2(3, 3)
 player_has_stick = true
 

@@ -1,4 +1,4 @@
 extends Button
 
 func _on_pressed() -> void:
-	Globals.switch_scene(preload("res://scenes/Main Menu/main.tscn"), 0.2)
+	get_tree().change_scene_to_file("res://scenes/MainMenu/main.tscn")

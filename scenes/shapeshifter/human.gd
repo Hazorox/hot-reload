@@ -13,6 +13,7 @@ const PLAYER_WITH_STICK = preload("uid://b4a77y88btrlt")
 @export var player_has_stick : bool = false
 @export var is_heavy : bool = false
 @export var is_light : bool = false
+@export var fly_speed : float = 400.0
 
 var speed : float = 0.0
 var speed_rate := 500
@@ -23,6 +24,7 @@ var gravity : float = 980
 var is_player_attacking : bool = false
 var is_bouncing_h : bool = false
 var bounce_timer : float = 0.0
+var gravity_cheat_active : bool = false
 
 func _ready() -> void:
 	add_to_group("player")
@@ -47,7 +49,12 @@ func _process(delta: float) -> void:
 	flip_animation()
 	set_animations()
 	weight_control()
+	cheat_code_activated()
 	move_and_slide()
+	if ViiGlobals.player_health <= 0:
+		animation_player.play("death")
+		get_tree().reload_current_scene()
+		ViiGlobals.player_health = 100
 
 func _unhandled_input(event: InputEvent) -> void:
 	if Input.is_action_just_released_by_event("right", event):
@@ -107,6 +114,14 @@ func movement_speed_modifier(delta: float) -> void:
 			player_state = "player_idle"
 
 func handling_player_jump(delta: float) -> void:
+	if gravity_cheat_active:
+		var vertical := 0.0
+		if Input.is_action_pressed("jump"):
+			vertical -= 1.0
+		if Input.is_action_pressed("fly_down"):
+			vertical += 1.0
+		velocity.y = vertical * fly_speed
+		return
 	if not is_on_floor():
 		velocity.y += gravity * delta
 		
@@ -178,6 +193,8 @@ func _on_area_2d_area_entered(area: Area2D) -> void:
 		velocity.x = bounce_direction * 500.0
 		is_bouncing_h = true
 		bounce_timer = 0.2
+	elif area.is_in_group("boss_attack"):
+		ViiGlobals.player_health -= 20
 
 func _on_curse_timer_timeout() -> void:
 	var rnd = randi_range(0, 2)
@@ -195,9 +212,19 @@ func _on_curse_timer_timeout() -> void:
 		$".".scale = Vector2(1, 1)
 
 func weight_control() -> void:
+	if gravity_cheat_active:
+		gravity = 0
+		return
 	if is_heavy and !is_light:
-		gravity = 1960
+		gravity = 1400
 	elif is_light and !is_heavy:
 		gravity = 490
 	elif !is_heavy and !is_light:
 		gravity = 980
+
+func cheat_code_activated() -> void:
+	if Input.is_action_just_pressed("cheat"):
+		gravity_cheat_active = !gravity_cheat_active
+		if gravity_cheat_active:
+			velocity.y = 0
+		print("gravity cheat: ", gravity_cheat_active)
